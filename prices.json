@@ -1,16 +1,46 @@
 {
- "updated": "2026-10-07T09:54:32+09:00",
+ "updated": "2026-10-07T09:57:02+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
-   "rakuten": null,
-   "yahoo": null,
-   "lowest": null
+   "rakuten": {
+    "price": 10000,
+    "url": "https://item.rakuten.co.jp/shichi-assist/rc_itthi4gs5ppw_4bdq/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "質屋アシスト楽天市場店",
+    "freeShipping": true,
+    "name": "BURTLE リチウムイオンバッテリー AC10 マットブラック 家電 電化製品 【新品】 42609K345"
+   },
+   "yahoo": {
+    "price": 9900,
+    "url": "https://store.shopping.yahoo.co.jp/oyama/burtle.html",
+    "shop": "おやま質店ヤフーショップ",
+    "freeShipping": false,
+    "name": "BURTLE エアークラフト 2026年モデル 30Vリチウムイオンバッテリー AC10-78 マットブラック バートル"
+   },
+   "lowest": {
+    "site": "yahoo",
+    "price": 9900
+   }
   },
   "AC09": {
-   "rakuten": null,
-   "yahoo": null,
-   "lowest": null
+   "rakuten": {
+    "price": 12001,
+    "url": "https://item.rakuten.co.jp/jukoin/186051694/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "JUKO.IN 楽天市場店",
+    "freeShipping": true,
+    "name": "即出荷可能 バートル AC09 エアークラフト専用 リチウムイオン バッテリー 24V 2025年モデル BURTLE"
+   },
+   "yahoo": {
+    "price": 7980,
+    "url": "https://store.shopping.yahoo.co.jp/douguya-dug/ic01-1b.html",
+    "shop": "どうぐ屋・だぐ工房",
+    "freeShipping": true,
+    "name": "【単品売り・箱無し】 バートル BURTLE IC01 バッテリー単体   ＊ベスト・ペルチェ類は別売 IC101S/AC09-1/AC09-2/AC08-1/AC08-2/AC370/AC371/AC310等対応"
+   },
+   "lowest": {
+    "site": "yahoo",
+    "price": 7980
+   }
   },
   "RD9690PJ": {
    "rakuten": {
@@ -34,11 +64,11 @@
   },
   "RD9691NJ": {
    "rakuten": {
-    "price": 12800,
-    "url": "https://item.rakuten.co.jp/santecdirect/rd9691nj/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "サンテクダイレクト 楽天市場店",
-    "freeShipping": true,
-    "name": "国産24Vバッテリーセット RD9691NJ サンエス sun-s 日本製 空調風神服 空調作業服 2026年入荷 リチウムイオンバッテリー ACアダプター Japan Label 対応ファン：RD9610PH、RD9620PH、RD9410PH、RD9420PH、RD9330PC、RD9310PH、RD9320PH ビッグボーン ジャパンレーベル"
+    "price": 15730,
+    "url": "https://item.rakuten.co.jp/auc-michio/305rd9691nj/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "ミチオショップ",
+    "freeShipping": false,
+    "name": "【マラソン期間＼P2倍／】[即日発送]空調風神服 新型24V バッテリーセット RD9691NJ JL-2BN 日本製 サンエス 2026年型 Japan Label"
    },
    "yahoo": {
     "price": 15700,
@@ -48,16 +78,16 @@
     "name": "(あすつく) サンエス:２４Ｖリチウムイオンバッテリーセット（BN） RD9691NJ 熱中症対策 熱中症 サンエス  空調風神服??"
    },
    "lowest": {
-    "site": "rakuten",
-    "price": 12800
+    "site": "yahoo",
+    "price": 15700
    }
   },
   "RD9680G": {
    "rakuten": null,
    "yahoo": {
     "price": 13700,
-    "url": "https://store.shopping.yahoo.co.jp/cocoterrace/icn-acb-002461137.html",
-    "shop": "RECOROOM",
+    "url": "https://store.shopping.yahoo.co.jp/cocoterracemore/icn-acb-002461137.html",
+    "shop": "イチネンネットmore",
     "freeShipping": true,
     "name": "(あすつく) サンエス:３０Ｖバッテリーセット RD9680G 熱中症対策 熱中症 サンエス  空調風神服??  リチウムイオンバッテリー"
    },
@@ -108,11 +138,11 @@
   },
   "SK25012K90": {
    "rakuten": {
-    "price": 22800,
-    "url": "https://item.rakuten.co.jp/tshirt-st/ah-01t-08-sk25012/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "無地Tシャツ Tshirt.st楽天市場店",
-    "freeShipping": false,
-    "name": "作業着 メンズ 無地 Asahicho アサヒチョウ 空調服スターターキット25V（ケーブルロングタイプ） SK25012 男女兼用 ユニセックス レディース ファン バッテリー 暑さ対策 ワンタッチファン ケース 急速充電 アダプター ロング 冷却 クール 長時間 連続稼働 フリーサイズ F"
+    "price": 33308,
+    "url": "https://item.rakuten.co.jp/workwearlab/e9214sk25011/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "WORKWEAR LAB",
+    "freeShipping": true,
+    "name": "平日14時まで当日出荷 即納 空調服 フルセット 長袖ブルゾン シルバー ブルー ブラック 25V バッテリーセット ターボモード搭載 Asahicho 旭蝶繊維 アサヒチョウ 作業着 作業服 E9214 春 夏 S〜6L 帯電防止素材 SK25011 SK25012 暑さ対策 熱中症対策"
    },
    "yahoo": {
     "price": 21300,
@@ -147,9 +177,24 @@
    }
   },
   "BT23211": {
-   "rakuten": null,
-   "yahoo": null,
-   "lowest": null
+   "rakuten": {
+    "price": 9647,
+    "url": "https://item.rakuten.co.jp/kanajin/bt23211-xebec/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "カナジン 楽天市場店",
+    "freeShipping": false,
+    "name": "ジーベック BT23211 バッテリー 本体 18V 999-888 空調服 XEBEC 小型便 在庫"
+   },
+   "yahoo": {
+    "price": 9552,
+    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt23211-xebec.html",
+    "shop": "カナジン 2号店",
+    "freeShipping": false,
+    "name": "ジーベック BT23211 バッテリー 本体 18V 999-888 空調服 XEBEC 小型便 在庫"
+   },
+   "lowest": {
+    "site": "yahoo",
+    "price": 9552
+   }
   },
   "18302": {
    "rakuten": {
@@ -217,7 +262,13 @@
    "lowest": null
   },
   "SV900": {
-   "rakuten": null,
+   "rakuten": {
+    "price": 8280,
+    "url": "https://item.rakuten.co.jp/first23/hooh-sv903/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "セミプロDIY店ファースト",
+    "freeShipping": true,
+    "name": "＼村上被服｜まとめ買いクーポン対象商品／村上被服(HOOH) SV903 快適ウェア用 19Vバッテリー 単体 SV900シリーズ 空調ウェア 作業服 作業着 ウェア用バッテリー"
+   },
    "yahoo": {
     "price": 9280,
     "url": "https://store.shopping.yahoo.co.jp/kurasinodepo-store/mk-sv903.html",
@@ -226,8 +277,8 @@
     "name": "鳳皇 HOOH 快適ウェア用 バッテリー SV903 単品 村上被服 SV900シリーズ 2026年新型"
    },
    "lowest": {
-    "site": "yahoo",
-    "price": 9280
+    "site": "rakuten",
+    "price": 8280
    }
   }
  }
