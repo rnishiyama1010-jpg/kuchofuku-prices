@@ -32,6 +32,6 @@ jobs:
         run: |
           git config user.name "price-bot"
           git config user.email "price-bot@users.noreply.github.com"
-          git add prices.json
+          git add prices.json diagnostics.json
           git diff --cached --quiet || git commit -m "最安値を更新 $(TZ=Asia/Tokyo date +%F)"
           git push

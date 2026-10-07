@@ -51,6 +51,9 @@ def matches(name, p):
     return True
 
 
+RAW = {}
+
+
 def get_json(url, headers=None):
     req = urllib.request.Request(url, headers={"User-Agent": UA, **(headers or {})})
     with urllib.request.urlopen(req, timeout=30) as r:
@@ -73,6 +76,7 @@ def rakuten(p):
     url = RAKUTEN_URL + "?" + urllib.parse.urlencode(params)
     data = get_json(url, {"Referer": SITE, "Origin": SITE.rstrip("/")})
     items = data.get("Items") or data.get("items") or []
+    RAW[(p["id"], "rakuten")] = [((i.get("Item", i)).get("itemName", "")[:80], (i.get("Item", i)).get("itemPrice")) for i in items[:12]]
     best = None
     for it in items:
         it = it.get("Item", it)
@@ -105,6 +109,7 @@ def yahoo(p):
         params["affiliate_type"] = "vc"
         params["affiliate_id"] = os.environ["YAHOO_VC_AFFILIATE_ID"]
     data = get_json(YAHOO_URL + "?" + urllib.parse.urlencode(params))
+    RAW[(p["id"], "yahoo")] = [(h.get("name", "")[:80], h.get("price")) for h in data.get("hits", [])[:12]]
     best = None
     for it in data.get("hits", []):
         price = int(it.get("price") or 0)
@@ -154,6 +159,10 @@ def main():
     }
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
+    # 最安値が取れなかった製品の検索結果を残し、条件調整に使う
+    diag = {f"{k[0]} {k[1]}": v for k, v in RAW.items() if not items.get(k[0], {}).get(k[1])}
+    with open(os.path.join(here, "diagnostics.json"), "w", encoding="utf-8") as f:
+        json.dump(diag, f, ensure_ascii=False, indent=1)
     found = sum(1 for v in items.values() if v["lowest"])
     print(f"updated {found}/{len(items)} items")
     for e in errors:
