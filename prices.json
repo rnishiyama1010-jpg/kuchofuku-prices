@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07T09:44:40+09:00",
+ "updated": "2026-10-07T09:46:58+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -53,23 +53,17 @@
    }
   },
   "RD9680G": {
-   "rakuten": {
-    "price": 10000,
-    "url": "https://item.rakuten.co.jp/border-less1/rc_it2camcexh88_q6dx/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "ボーダレス 楽天市場店",
-    "freeShipping": true,
-    "name": "☆未使用品☆SAN-S サンエス 30V バッテリーセット GL-2 RD9680G ファンセット RD9630H 空調風神服 空調作業服用 熱中症対策131708"
-   },
+   "rakuten": null,
    "yahoo": {
-    "price": 10000,
-    "url": "https://store.shopping.yahoo.co.jp/borderless01/rc-itmi4mkjc1x2-t3dz.html",
-    "shop": "工具販売専門店BORDERLESS",
+    "price": 13700,
+    "url": "https://store.shopping.yahoo.co.jp/cocoterrace/icn-acb-002461137.html",
+    "shop": "RECOROOM",
     "freeShipping": true,
-    "name": "☆未使用品☆サンエス 30Vバッテリーセット GL-2 RD9680G ファンセット RD9630H 空調風神服 24V+15VMODE＝8.25h127711"
+    "name": "(あすつく) サンエス:３０Ｖバッテリーセット RD9680G 熱中症対策 熱中症 サンエス  空調風神服??  リチウムイオンバッテリー"
    },
    "lowest": {
-    "site": "rakuten",
-    "price": 10000
+    "site": "yahoo",
+    "price": 13700
    }
   },
   "RD9293NJ": {
@@ -141,15 +135,15 @@
     "name": "BT25211 バッテリー 25V 本体のみ バッテリー 8216025 空調服 小型便 在庫"
    },
    "yahoo": {
-    "price": 10560,
-    "url": "https://store.shopping.yahoo.co.jp/ssol-shopping/2319724900434.html",
-    "shop": "セカンドストリートYahoo!店",
-    "freeShipping": true,
-    "name": "空調服R/バッテリー/25V/BT25211//"
+    "price": 11113,
+    "url": "https://store.shopping.yahoo.co.jp/toolking/bt25211.html",
+    "shop": "ツールキング",
+    "freeShipping": false,
+    "name": "BT25211 バッテリー 25V 本体のみ バッテリー 8216025 空調服 小型便 在庫"
    },
    "lowest": {
     "site": "yahoo",
-    "price": 10560
+    "price": 11113
    }
   },
   "BT23211": {
@@ -186,15 +180,15 @@
     "name": "SOWA 16108 デバイスセット F 【 作業着 作業服 桑和 ソーワ オールシーズン対応 小さめサイズ 普通サイズ 大きめサイズ】"
    },
    "yahoo": {
-    "price": 11660,
-    "url": "https://store.shopping.yahoo.co.jp/ssol-shopping/2340423532435.html",
-    "shop": "セカンドストリートYahoo!店",
+    "price": 14198,
+    "url": "https://store.shopping.yahoo.co.jp/gochi-shop/sowa-16108.html",
+    "shop": "ファーストギア",
     "freeShipping": true,
-    "name": "桑和/G.GROUND バッテリーファンセット/16108//"
+    "name": "桑和 SOWA 16108 G.G. デバイスセット バッテリーファンセット EFウェア 空調ウェア 空調ベスト ファンバッテリーセット 作業着 作業服"
    },
    "lowest": {
-    "site": "yahoo",
-    "price": 11660
+    "site": "rakuten",
+    "price": 13534
    }
   },
   "V3001": {
@@ -225,15 +219,15 @@
   "SV900": {
    "rakuten": null,
    "yahoo": {
-    "price": 10180,
-    "url": "https://store.shopping.yahoo.co.jp/douguya-dug/sv900.html",
-    "shop": "どうぐ屋・だぐ工房",
+    "price": 9280,
+    "url": "https://store.shopping.yahoo.co.jp/kurasinodepo-store/mk-sv903.html",
+    "shop": "Pro Depot",
     "freeShipping": true,
-    "name": "鳳皇 HOOH SV900 村上被服 2026年モデル 快適ウェア用コンプリートセット バッテリ＆ファンケーブルセット 空調作業服用  ベスト 長袖 半袖等対応"
+    "name": "鳳皇 HOOH 快適ウェア用 バッテリー SV903 単品 村上被服 SV900シリーズ 2026年新型"
    },
    "lowest": {
     "site": "yahoo",
-    "price": 10180
+    "price": 9280
    }
   }
  }
