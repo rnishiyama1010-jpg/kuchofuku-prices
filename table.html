@@ -104,6 +104,11 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
 
 .notice{font-size:12.5px;color:var(--mute);border-top:1px solid var(--line);padding-top:12px;margin-top:16px;display:grid;gap:2px}
 .notice p{margin:0}
+.biz{margin-top:16px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px;padding:12px 14px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+.biz p{margin:0;flex:1 1 320px;font-size:13px;color:var(--body)}
+.biz b{display:block;color:var(--ink);font-size:14px;margin-bottom:2px}
+.biz a{font-size:13px;font-weight:700;color:#fff;background:var(--accent);border-radius:4px;padding:8px 14px;text-decoration:none;white-space:nowrap}
+.biz small{font-size:11px;color:var(--mute);margin-left:4px}
 .related{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12.5px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
 .related b{color:var(--ink);font-size:12.5px}
 .related a{color:var(--accent)}
@@ -142,6 +147,8 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
     <div class="cards" id="cards"></div>
   </section>
 
+  <aside class="biz" aria-label="法人・まとめ買いの方へ"><p><b>会社・現場でまとめて購入する方へ</b>社員分の空調服やバッテリーをまとめて揃えるなら、作業服通販「フクくる」もご検討ください。</p><a href="https://x.gd/0n7uS" target="_blank" rel="nofollow sponsored noopener">フクくるを見る</a><small>PR</small></aside>
+
   <div class="notice">
     <p>価格は調査時点の公式通販・販売店の掲載値で、変わることがあります。購入前に販売ページで最新の価格と仕様をご確認ください。</p>
     <p>稼働時間・風量はメーカーまたは販売店の公称値です。気温や使い方で変わります。「—」は公表値が見つからなかった項目です。</p>
@@ -175,9 +182,9 @@ const st={mk:"すべて",vc:"すべて",sort:"air",only26:false};
 const maxAir=Math.max(...D.map(d=>d.air||0));
 const yen=n=>"¥"+n.toLocaleString("ja-JP");
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const amz=q=>"https://www.amazon.co.jp/s?k="+encodeURIComponent(q);
-const rkt=q=>"https://search.rakuten.co.jp/search/mall/"+encodeURIComponent(q)+"/";
-const yhs=q=>"https://shopping.yahoo.co.jp/search?p="+encodeURIComponent(q);
+const amz=q=>"https://www.amazon.co.jp/s?k="+encodeURIComponent(q)+"&tag=youtube2023-22";
+const rkt=q=>"https://hb.afl.rakuten.co.jp/hgc/1f0987b9.eb6007e5.1f0987ba.31e18824/?pc="+encodeURIComponent("https://search.rakuten.co.jp/search/mall/"+encodeURIComponent(q)+"/");
+const yhs=q=>"https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3783843&pid=892721954&vc_url="+encodeURIComponent("https://shopping.yahoo.co.jp/search?p="+encodeURIComponent(q));
 const R='target="_blank" rel="nofollow sponsored noopener"';
 const PRICE_URL="https://rnishiyama1010-jpg.github.io/kuchofuku-prices/prices.json";
 let LIVE={};

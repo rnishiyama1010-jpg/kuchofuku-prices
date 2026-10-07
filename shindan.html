@@ -90,9 +90,9 @@ const D=[
 
 const yen=n=>"¥"+n.toLocaleString("ja-JP");
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const amz=q=>"https://www.amazon.co.jp/s?k="+encodeURIComponent(q);
-const rkt=q=>"https://search.rakuten.co.jp/search/mall/"+encodeURIComponent(q)+"/";
-const yhs=q=>"https://shopping.yahoo.co.jp/search?p="+encodeURIComponent(q);
+const amz=q=>"https://www.amazon.co.jp/s?k="+encodeURIComponent(q)+"&tag=youtube2023-22";
+const rkt=q=>"https://hb.afl.rakuten.co.jp/hgc/1f0987b9.eb6007e5.1f0987ba.31e18824/?pc="+encodeURIComponent("https://search.rakuten.co.jp/search/mall/"+encodeURIComponent(q)+"/");
+const yhs=q=>"https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3783843&pid=892721954&vc_url="+encodeURIComponent("https://shopping.yahoo.co.jp/search?p="+encodeURIComponent(q));
 const R='target="_blank" rel="nofollow sponsored noopener"';
 const PRICE_URL="https://rnishiyama1010-jpg.github.io/kuchofuku-prices/prices.json";
 const CTX=new URLSearchParams(location.search).get("ctx");
@@ -148,7 +148,7 @@ function result(){
       <div class="price"><strong>${yen(price(d))}${lo?"":"〜"}</strong><small>${lo?(lo.site==="rakuten"?"楽天市場":"Yahoo!ショッピング")+"の最安値":"参考価格"}</small></div>
       <div class="shops"><a class="buy amazon" href="${amz(d.q)}" ${R}>Amazon</a><a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!</a></div>
     </article>`}).join("");
-  const more=CTX==="article"?`<a href="https://www.stockmedia.biz/battery" target="_top">空調服バッテリー比較</a>で全15製品を比べられます。`:"全15製品は、下の比較表で比べられます。";
+  const more=CTX==="article"?`<a href="https://www.stockmedia.biz/battery" target="_top">空調服バッテリー比較</a>で全15製品を比べられます。会社でまとめて購入する方は、作業服通販<a href="https://x.gd/0n7uS" target="_blank" rel="nofollow sponsored noopener">「フクくる」</a>（PR）もご検討ください。`:"全15製品は、下の比較表で比べられます。";
   const own=mk?"お手持ちのファンの品番が「対応」に含まれるか、購入前にご確認ください。":"";
   return `<p class="q">あなたへの候補</p>${note?`<p class="note">${note}</p>`:""}<div class="res">${cards}</div><p class="note">${own}価格は楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）を毎朝更新しています。${more}</p>`;
 }
