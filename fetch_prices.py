@@ -23,6 +23,7 @@ YAHOO_URL = "https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch"
 # 参考価格からこの範囲を外れる結果は、付属品やウェア込みセットとみなして除外する
 FLOOR, CEIL = 0.6, 1.6
 RAKUTEN_AFFILIATE_ID = "1f0987b9.eb6007e5.1f0987ba.31e18824"
+YAHOO_VC_AFFILIATE_ID = "http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3783843&pid=892721954&vc_url="
 COMMON_NG = ["中古", "未使用品", "USED", "箱無し", "フルセット", "ブルゾン", "ジャケット", "ベスト付", "訳あり", "ジャンク", "互換", "保護フィルム", "交換用ケーブルのみ"]
 # 中古品を主に扱う店は除外する
 NG_SHOPS = ["質屋", "質店", "セカンドストリート", "2nd STREET", "ボーダレス", "BORDERLESS", "ブックオフ", "ハードオフ", "トレジャーファクトリー"]
@@ -112,9 +113,9 @@ def yahoo(p):
         "price_from": int(p["ref"] * FLOOR),
         "price_to": int(p["ref"] * CEIL),
     }
-    if os.environ.get("YAHOO_VC_AFFILIATE_ID"):
-        params["affiliate_type"] = "vc"
-        params["affiliate_id"] = os.environ["YAHOO_VC_AFFILIATE_ID"]
+    # バリューコマース経由のYahoo!ショッピング用リンク（sid=サイトID, pid=提携プログラム用ID。リンクに公開される値）
+    params["affiliate_type"] = "vc"
+    params["affiliate_id"] = os.environ.get("YAHOO_VC_AFFILIATE_ID") or YAHOO_VC_AFFILIATE_ID
     data = get_json(YAHOO_URL + "?" + urllib.parse.urlencode(params))
     RAW[(p["id"], "yahoo")] = [(h.get("name", "")[:80], h.get("price")) for h in data.get("hits", [])[:12]]
     best = None
