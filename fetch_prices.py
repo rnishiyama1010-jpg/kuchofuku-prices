@@ -127,7 +127,8 @@ def yahoo(p):
             ship = it.get("shipping") or {}
             best = {
                 "price": price,
-                "url": it.get("url"),
+                # バリューコマース経由のリンクに包む（sid=サイトID, pid=提携プログラム用ID。リンクに公開される値）
+                "url": (os.environ.get("YAHOO_VC_AFFILIATE_ID") or YAHOO_VC_AFFILIATE_ID) + urllib.parse.quote(it.get("url") or "", safe=""),
                 "shop": (it.get("seller") or {}).get("name"),
                 "freeShipping": "無料" in str(ship.get("name", "")),
                 "name": it.get("name"),
