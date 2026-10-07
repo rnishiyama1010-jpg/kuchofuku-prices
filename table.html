@@ -58,26 +58,29 @@ select{font:inherit;font-size:13.5px;padding:5px 10px;border:1px solid var(--lin
 
 /* 表 */
 .tablebox{overflow-x:auto;border-top:2px solid var(--ink)}
-table{width:100%;border-collapse:collapse;min-width:920px;font-size:13.5px}
+table{width:100%;border-collapse:collapse;min-width:900px;font-size:13.5px;line-height:1.55}
 th{font-size:12px;font-weight:500;color:var(--mute);text-align:left;padding:10px 10px;border-bottom:1px solid var(--line);white-space:nowrap;letter-spacing:.04em}
-td{padding:14px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{padding:8px 8px}
+td.name{width:38%}
 td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
 td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute);white-space:normal;text-align:right}
-.name b{display:block;color:var(--ink);font-size:14.5px}
+.name b{display:block;color:var(--ink);font-size:14.5px;line-height:1.45}
 .name .model{font-family:var(--mono);font-size:12.5px;color:var(--accent)}
 .name .maker{font-size:12px;color:var(--mute)}
-.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
 .tag{font-size:11px;padding:0 7px;border-radius:2px;background:var(--accent-soft);color:var(--accent);line-height:1.8}
 .tag.new{background:var(--new-soft);color:var(--new);font-weight:700}
-.compat{font-size:12.5px;min-width:220px}
-.compat .warn{color:var(--warn);display:block;margin-top:4px}
-.buy{display:block;white-space:nowrap;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;background:var(--bg);border:1px solid var(--line);border-left:5px solid var(--shop);padding:5px 12px 5px 10px;border-radius:3px;text-align:left}
+.compat{font-size:12px;display:block;margin-top:4px;color:var(--body)}
+.compat .warn{color:var(--warn)}
+.compat .warn::before{content:"／"}
+.buy{display:block;white-space:nowrap;font-size:12px;font-weight:700;line-height:1.5;color:var(--ink);text-decoration:none;background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--shop);padding:3px 10px 3px 8px;border-radius:3px;text-align:left}
 .buy:hover{background:var(--panel)}
 .buy.amazon{--shop:var(--amazon)}.buy.rakuten{--shop:var(--rakuten)}.buy.yahoo{--shop:var(--yahoo)}
 .low{display:block;font-size:11.5px;font-family:var(--sans);color:var(--mute);white-space:nowrap;text-align:right}
 .low b{color:var(--ink);font-weight:500}
 .site-r{color:var(--rakuten)}.site-y{color:var(--yahoo)}
-.shops{display:grid;gap:6px;min-width:150px}
+.shops{display:grid;gap:4px;min-width:138px}
 @media (max-width:760px){.shops{grid-template-columns:repeat(3,minmax(0,1fr));min-width:0}.shops .buy{padding:6px 4px 6px 8px;font-size:12px;white-space:normal}}
 .bar{height:3px;background:var(--line);margin-top:6px;border-radius:2px;overflow:hidden}
 .bar i{display:block;height:100%;background:var(--accent)}
@@ -87,20 +90,18 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
 @media (max-width:760px){
   .tablebox{display:none}
   .cards{display:grid;gap:12px}
-  .card{border:1px solid var(--line);border-radius:4px;padding:16px;display:grid;gap:12px;min-width:0}
-  .card dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px;margin:0}
+  .card{border:1px solid var(--line);border-radius:4px;padding:12px;display:grid;gap:8px;min-width:0}
+  .card dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 10px;margin:0}
+  .card dl .wide{grid-column:span 2}
+  .card dd{font-size:13px}
   .card dt{font-size:11.5px;color:var(--mute)}
   .card dd{margin:0;font-family:var(--mono);color:var(--ink);font-variant-numeric:tabular-nums}
-  .card .compat{min-width:0}
+  .card .compat{margin-top:0}
+  .card .low{text-align:left}
   .count{margin-left:0;width:100%}
 }
 .empty{padding:24px;text-align:center;color:var(--mute)}
 
-/* 互換性 */
-.makers{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-.maker{border-top:2px solid var(--accent);padding-top:12px;display:grid;gap:4px;min-width:0}
-.maker b{color:var(--ink)}
-.maker p{margin:0;font-size:14px}
 .notice{font-size:12.5px;color:var(--mute);border-top:1px solid var(--line);padding-top:18px;margin-top:28px;display:grid;gap:4px}
 .notice p{margin:0}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -129,7 +130,7 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
     <div class="tablebox">
       <table>
         <thead><tr>
-          <th>製品</th><th class="num">最大風量</th><th class="num">電圧</th><th class="num">最長稼働</th><th class="num">充電時間</th><th class="num">重量</th><th class="num">最安値（税込）</th><th>互換性</th><th></th>
+          <th>製品・対応ファン</th><th class="num">最大風量</th><th class="num">電圧</th><th class="num">最長稼働</th><th class="num">重量</th><th class="num">最安値（税込）</th><th></th>
         </tr></thead>
         <tbody id="rows"></tbody>
       </table>
@@ -214,31 +215,29 @@ function render(){
   document.getElementById("cnt").textContent=r.length;
   const tb=document.getElementById("rows"),cd=document.getElementById("cards");
   if(!r.length){
-    tb.innerHTML='<tr><td colspan="9" class="empty">条件に合うバッテリーはありません。条件を変えてください。</td></tr>';
+    tb.innerHTML='<tr><td colspan="7" class="empty">条件に合うバッテリーはありません。条件を変えてください。</td></tr>';
     cd.innerHTML='<div class="empty">条件に合うバッテリーはありません。条件を変えてください。</div>';return;
   }
   tb.innerHTML=r.map(d=>`<tr>
-    <td class="name"><span class="maker">${esc(d.mk)}</span><b>${esc(d.nm)}</b><span class="model">${esc(d.md)}</span>${tags(d)}</td>
+    <td class="name"><span class="maker">${esc(d.mk)}</span>　<span class="model">${esc(d.md)}</span><b>${esc(d.nm)}</b><span class="compat">${esc(d.cp)}${d.warn?`<span class="warn">${esc(d.warn)}</span>`:""}</span>${tags(d)}</td>
     <td class="num">${d.air?d.air+" L/秒":"—"}${d.air?`<div class="bar"><i style="width:${d.air/maxAir*100}%"></i></div>`:""}</td>
-    <td class="num">${d.v}V<span class="sub">${esc(d.vt)}</span></td>
-    <td class="num">${d.run?d.run+" 時間":"—"}<span class="sub">${esc(d.runN)}</span></td>
-    <td class="num">${esc(d.ch)}</td>
+    <td class="num" title="${esc(d.vt)}">${d.v}V</td>
+    <td class="num">${d.run?d.run+" 時間":"—"}<span class="sub">${[d.runN,d.ch!=="—"?"充電"+d.ch:""].filter(Boolean).map(esc).join("<br>")}</span></td>
     <td class="num">${d.w?d.w+" g":"—"}</td>
     <td class="num">${priceCell(d).main}${priceCell(d).sub}</td>
-    <td class="compat">${esc(d.cp)}${d.warn?`<span class="warn">${esc(d.warn)}</span>`:""}</td>
     <td>${shops(d)}</td>
   </tr>`).join("");
   cd.innerHTML=r.map(d=>`<article class="card">
-    <div class="name"><span class="maker">${esc(d.mk)}</span><b>${esc(d.nm)}</b><span class="model">${esc(d.md)}</span>${tags(d)}</div>
+    <div class="name"><span class="maker">${esc(d.mk)}</span>　<span class="model">${esc(d.md)}</span><b>${esc(d.nm)}</b>${tags(d)}</div>
     <dl>
       <div><dt>最大風量</dt><dd>${d.air?d.air+" L/秒":"—"}</dd></div>
       <div><dt>最大電圧</dt><dd>${d.v}V</dd></div>
       <div><dt>最長稼働</dt><dd>${d.run?d.run+" 時間":"—"}</dd></div>
       <div><dt>重量</dt><dd>${d.w?d.w+" g":"—"}</dd></div>
       <div><dt>充電時間</dt><dd>${esc(d.ch)}</dd></div>
-      <div><dt>最安値（税込）</dt><dd>${priceCell(d).main}${priceCell(d).sub}</dd></div>
+      <div><dt>最安値</dt><dd>${priceCell(d).main}${priceCell(d).sub}</dd></div>
     </dl>
-    <div class="compat">${esc(d.cp)}${d.warn?`<span class="warn">${esc(d.warn)}</span>`:""}</div>
+    <span class="compat">${esc(d.cp)}${d.warn?`<span class="warn">${esc(d.warn)}</span>`:""}</span>
     ${shops(d)}
   </article>`).join("");
 }
