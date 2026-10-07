@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>空調服バッテリー診断</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: 1問ずつ表示する診断。上に進行バー、中央に質問と大きな選択ボタン、最後に候補カード */
+:root{--bg:#FFFFFF;--panel:#EDF1F6;--ink:#14181D;--body:#4A545F;--mute:#8E959D;--line:#E2E4E6;--accent:#1B3A5C;--accent-soft:#DCE6F1;--new:#2F6B4F;--new-soft:#E3F0E8;--warn:#8A5A12;
+--amazon:#FF9900;--rakuten:#BF0000;--yahoo:#FF0033;
+--display:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;--sans:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg)}
+body{color:var(--body);font-family:var(--sans);font-size:15px;line-height:1.7}
+.wrap{max-width:1120px;margin:0 auto;padding:8px 16px 16px}
+.box{border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:4px;padding:20px 22px 22px;display:grid;gap:16px}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+h2{font-family:var(--display);color:var(--ink);font-size:24px;margin:0;line-height:1.35}
+.lead{margin:0;font-size:13.5px;color:var(--mute)}
+.prog{display:flex;gap:6px}
+.prog i{width:34px;height:4px;border-radius:2px;background:var(--line)}
+.prog i.on{background:var(--accent)}
+.q{font-size:18px;font-weight:700;color:var(--ink);margin:0}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:10px}
+.opt{font:inherit;text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:14px 16px;cursor:pointer;display:grid;gap:2px;color:var(--ink)}
+.opt b{font-size:15.5px}
+.opt span{font-size:12.5px;color:var(--mute)}
+.opt:hover{border-color:var(--accent);background:var(--panel)}
+.opt:focus-visible,.back:focus-visible,.buy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.back{font:inherit;font-size:13px;background:none;border:none;color:var(--accent);cursor:pointer;padding:4px 0}
+.ans{font-size:12.5px;color:var(--mute)}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:grid;gap:8px;align-content:start;min-width:0}
+.rank{font-size:11.5px;font-weight:700;color:var(--accent);letter-spacing:.06em}
+.card .mk{font-size:12px;color:var(--mute)}
+.card .md{font-family:var(--mono);font-size:12.5px;color:var(--accent);margin-left:6px}
+.card b.nm{display:block;color:var(--ink);font-size:15px;line-height:1.45}
+.why{font-size:13px;color:var(--ink);background:var(--panel);border-radius:4px;padding:6px 10px;margin:0}
+.spec{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:0}
+.spec dt{font-size:11px;color:var(--mute)}
+.spec dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--ink);white-space:nowrap}
+.cp{font-size:12px;margin:0}
+.cp .warn{color:var(--warn)}
+.price{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.price strong{font-family:var(--mono);font-size:18px;color:var(--ink)}
+.price small{font-size:11.5px;color:var(--mute)}
+.shops{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.buy{display:block;font-size:12px;font-weight:700;color:var(--ink);text-decoration:none;background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--shop);padding:5px 6px 5px 8px;border-radius:3px;line-height:1.4}
+.buy:hover{background:var(--panel)}
+.buy.amazon{--shop:var(--amazon)}.buy.rakuten{--shop:var(--rakuten)}.buy.yahoo{--shop:var(--yahoo)}
+.note{font-size:12px;color:var(--mute);margin:0}
+.note a{color:var(--accent)}
+@media (max-width:600px){.wrap{padding:4px 0 8px}.box{padding:14px 12px 16px;gap:12px}h2{font-size:19px}.lead{font-size:12.5px}.q{font-size:16px}.opt{padding:10px 12px}.card{padding:12px;gap:6px}.spec dd{font-size:12px}.spec dt{font-size:10.5px}.why{font-size:12.5px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="box" aria-labelledby="h">
+    <div class="head">
+      <h2 id="h">30秒バッテリー診断</h2>
+      <div class="prog" id="prog" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+    <p class="lead">質問に答えると、2026年版の15製品から候補を3つまでに絞り込みます。</p>
+    <div id="stage" aria-live="polite"></div>
+  </section>
+</div>
+<script>
+const D=[
+ {mk:"バートル",nm:"エアークラフト バッテリー",md:"AC10",y:2026,v:30,vt:"30V / 23V / 16V / 9V",air:120,run:30,runN:"9V時",ch:"約4時間",w:405,p:13365,pN:"販売店",kind:"単品",cp:"AC10-1・AC10-2ファン",warn:"旧ファンとの組み合わせは要確認",q:"バートル AC10 バッテリー"},
+ {mk:"バートル",nm:"エアークラフト バッテリー",md:"AC09",y:2025,v:24,vt:"24V / 18V / 13V / 8V",air:105,run:30,runN:"8V時",ch:"約4時間",w:395,p:13190,pN:"販売店",kind:"単品",cp:"AC09・AC08系ファン",warn:"在庫限りの販売店あり",q:"バートル AC09 バッテリー"},
+ {mk:"サンエス",nm:"空調風神服 JapanLabel 24V（Bluetooth対応）",md:"RD9690PJ",y:2026,v:24,vt:"24V〜9V（アプリで調整）",air:100,run:24,runN:"9V時",ch:"約3.5時間",w:345,p:20240,pN:"公式",kind:"充電器付",cp:"JapanLabel 24Vファン",tag:"日本製",q:"空調風神服 RD9690PJ"},
+ {mk:"サンエス",nm:"空調風神服 JapanLabel 24V",md:"RD9691NJ",y:2026,v:24,vt:"24V / 19V / 15V / 12V / 8V",air:100,run:24,runN:"8V時",ch:"約3.5時間",w:345,p:18590,pN:"公式",kind:"充電器付",cp:"JapanLabel 24Vファン",tag:"日本製",q:"空調風神服 RD9691NJ"},
+ {mk:"サンエス",nm:"空調風神服 GlobalLabel 30V",md:"RD9680G",y:2026,v:30,vt:"30V / 24V / 15V / 12V",air:108,run:12,runN:"15V・12V時",ch:"約3.5時間",w:380,p:16280,pN:"公式",kind:"充電器付",cp:"GlobalLabelファン",warn:"風量は仕様表では約100L/秒",q:"空調風神服 RD9680G"},
+ {mk:"サンエス",nm:"空調風神服 JapanLabel 12V",md:"RD9293NJ",y:2026,v:12,vt:"12V / 9V / 6V",air:null,run:22,runN:"6V時",ch:"約4時間",w:300,p:14740,pN:"公式",kind:"充電器付",cp:"JapanLabel 12Vファン",tag:"日本製",q:"空調風神服 RD9293NJ"},
+ {mk:"サンエス",nm:"空調風神服 JapanLabel 24V（Bluetooth対応）",md:"RD9590PJ",y:2025,v:24,vt:"24V / 15V / 12V / 8V",air:100,run:24,runN:"8V時",ch:"約3.5時間",w:340,p:18590,pN:"公式",kind:"充電器付",cp:"JapanLabel 24Vファン",tag:"日本製",q:"空調風神服 RD9590PJ"},
+ {mk:"株式会社空調服",nm:"空調服® スターターキット 25V",md:"SK25012K90",y:2026,v:25,vt:"最大25V",air:103,run:null,runN:"",ch:"—",w:null,p:26334,pN:"直営店",kind:"ファン付きセット",cp:"25V系ファン（同梱）",tag:"ロングケーブル",q:"空調服 SK25012"},
+ {mk:"株式会社空調服",nm:"空調服® バッテリー 25V",md:"BT25211",y:2025,v:25,vt:"25V / 20V / 15V / 12V",air:103,run:16,runN:"12V時",ch:"約5.5時間",w:402,p:14080,pN:"販売店",kind:"単品",cp:"FA25112ファン",tag:"ライセンス各社対応",q:"空調服 BT25211"},
+ {mk:"株式会社空調服",nm:"空調服® バッテリー 18V",md:"BT23211",y:2025,v:18,vt:"18V / 15V / 10V / 6V",air:106,run:24,runN:"6V時",ch:"約3時間",w:353,p:12100,pN:"販売店",kind:"単品",cp:"FA23112ファン",tag:"ライセンス各社対応",q:"空調服 BT23211"},
+ {mk:"桑和",nm:"G.G. バッテリーセット 20V",md:"18302",y:2026,v:20,vt:"20V / 15V / 12V / 8V",air:97,run:32,runN:"8V時",ch:"約3.7時間",w:350,p:12650,pN:"販売店",kind:"充電器付",cp:"18301・18201系ファン",warn:"旧品との互換は要確認",q:"桑和 18302 バッテリー"},
+ {mk:"桑和",nm:"G.G. 16108機器セット 15V",md:"16108",y:2026,v:15,vt:"15V / 12V / 9V",air:80,run:24,runN:"9V時",ch:"約5時間",w:340,p:16500,pN:"販売店",kind:"ファン付きセット",cp:"G.G.専用",q:"桑和 16108"},
+ {mk:"村上被服",nm:"鳳皇 バッテリーセット V30",md:"V3001",y:2026,v:30,vt:"30V / 19V / 17V / 15V / 12V",air:120,run:17,runN:"12V時",ch:"約4.5時間",w:470,p:13695,pN:"販売店",kind:"充電器付",cp:"V30・V28ファン",warn:"V19ファンは注意",tag:"USB同時出力",q:"鳳皇 V3001"},
+ {mk:"村上被服",nm:"鳳皇 28Vファン・バッテリーセット",md:"V2801+V2802",y:2025,v:28,vt:"28V / 19V / 15V / 12V",air:105,run:10,runN:"12V時",ch:"約3.5時間",w:375,p:17600,pN:"販売店",kind:"ファン付きセット",cp:"V28ファン（同梱）",warn:"重量は販売店で375g/445gと表記が分かれる",q:"鳳皇 V2801"},
+ {mk:"村上被服",nm:"鳳皇 コンプリートセット 15V",md:"SV900",y:2025,v:15,vt:"15V / 13V / 10V / 8.4V",air:82,run:17.5,runN:"8.4V時",ch:"—",w:330,p:13178,pN:"販売店",kind:"ファン付きセット",cp:"SV900ファン（同梱）",tag:"USB-C充電",q:"鳳皇 SV900"}
+];
+
+const yen=n=>"¥"+n.toLocaleString("ja-JP");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const amz=q=>"https://www.amazon.co.jp/s?k="+encodeURIComponent(q);
+const rkt=q=>"https://search.rakuten.co.jp/search/mall/"+encodeURIComponent(q)+"/";
+const yhs=q=>"https://shopping.yahoo.co.jp/search?p="+encodeURIComponent(q);
+const R='target="_blank" rel="nofollow sponsored noopener"';
+const PRICE_URL="https://rnishiyama1010-jpg.github.io/kuchofuku-prices/prices.json";
+const CTX=new URLSearchParams(location.search).get("ctx");
+let LIVE={};
+const live=d=>LIVE[d.md]||{};
+const shopUrl=(d,site,fb)=>(live(d)[site]&&live(d)[site].url)||fb(d.q);
+const price=d=>(live(d).lowest||{}).price||d.p;
+const MAKERS=["バートル","サンエス","株式会社空調服","桑和","村上被服"];
+const ENV={hot:{l:"炎天下の屋外",f:d=>d.v>=24},shade:{l:"日陰や移動の多い屋外",f:d=>d.v>=18&&d.v<=25},indoor:{l:"屋内・倉庫",f:d=>d.v<=20}};
+const PRI={air:{l:"とにかく涼しく",k:d=>-(d.air??-1),why:d=>d.air?`最大風量 ${d.air}L/秒`:"風量は非公表"},
+ run:{l:"一日しっかりもつ",k:d=>-(d.run??-1),why:d=>d.run?`最長 約${d.run}時間（${d.runN}）`:"稼働時間は非公表"},
+ light:{l:"軽さ",k:d=>d.w??1e9,why:d=>d.w?`重さ 約${d.w}g`:"重さは非公表"},
+ price:{l:"価格の安さ",k:d=>price(d),why:d=>`最安 ${yen(price(d))}`}};
+const st={own:null,mk:null,env:null,pri:null};
+const seq=()=>["own",...(st.own==="have"?["mk"]:[]),"env","pri"];
+const cur=()=>seq().find(k=>st[k]===null)||"done";
+function prog(){const s=seq(),i=s.indexOf(cur());const n=i<0?s.length:i;const bars=document.querySelectorAll("#prog i");bars.forEach((e,j)=>e.classList.toggle("on",j<Math.round(n/s.length*bars.length)||cur()==="done"));}
+function opts(list){return `<div class="opts">${list.map(([v,b,s])=>`<button type="button" class="opt" data-v="${esc(v)}"><b>${esc(b)}</b>${s?`<span>${esc(s)}</span>`:""}</button>`).join("")}</div>`}
+const MKL={"バートル":"バートル","サンエス":"サンエス（空調風神服）","株式会社空調服":"空調服®（ジーベック・自重堂・アイトスなど）","桑和":"桑和（G.GROUND）","村上被服":"村上被服（鳳皇）"};
+function nav(){
+  const a=[];if(st.mk&&st.mk!=="any")a.push(MKL[st.mk]);else if(st.own)a.push(st.own==="new"?"これから購入":"メーカー問わず");if(st.env)a.push(ENV[st.env].l);if(st.pri)a.push(PRI[st.pri].l);
+  return `<div class="nav">${st.own!==null?'<button type="button" class="back" id="back">← 1つ戻る</button>':"<span></span>"}<span class="ans">${esc(a.join("／"))}</span></div>`;
+}
+function render(){
+  prog();
+  const S=document.getElementById("stage"),c=cur(),n=seq().indexOf(c)+1;let h="";
+  if(c==="own")h=`<p class="q">Q${n}. 空調服のウェアやファンを、すでにお持ちですか？</p>`+opts([["have","持っている","手持ちのファンに合うバッテリーを探す"],["new","これから買う","ファン・ウェアもこれから選ぶ"]]);
+  else if(c==="mk")h=`<p class="q">Q${n}. お持ちのウェア・ファンのメーカーは？</p>`+opts([...MAKERS.map(m=>[m,MKL[m],""]),["any","わからない","メーカーを問わず探す"]]);
+  else if(c==="env")h=`<p class="q">Q${n}. 主な作業場所は？</p>`+opts([["hot","炎天下の屋外","建設・土木・農作業など"],["shade","日陰や移動の多い屋外","配送・設備点検など"],["indoor","屋内・倉庫","工場・倉庫・厨房など"]]);
+  else if(c==="pri")h=`<p class="q">Q${n}. いちばん重視するのは？</p>`+opts(Object.entries(PRI).map(([k,v])=>[k,v.l,{air:"風量が大きい順",run:"最長稼働時間が長い順",light:"軽い順",price:"最安値が安い順"}[k]]));
+  else h=result();
+  S.innerHTML=h+nav();
+  S.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>{st[cur()]=b.dataset.v;render();}));
+  const bk=document.getElementById("back");if(bk)bk.addEventListener("click",back);
+}
+function back(){const s=seq().filter(k=>st[k]!==null);const k=s[s.length-1];st[k]=null;if(k==="own")st.mk=null;render();}
+function result(){
+  const mk=st.mk&&st.mk!=="any"?st.mk:null;
+  let pool=D.filter(d=>!mk||d.mk===mk);
+  const byEnv=pool.filter(ENV[st.env].f);
+  let note="";
+  if(byEnv.length)pool=byEnv;else note=`${esc(MKL[mk]||"")}には「${esc(ENV[st.env].l)}」向けの電圧帯の製品がないため、同じメーカーの全製品から選びました。`;
+  const k=PRI[st.pri].k;
+  pool=[...pool].sort((a,b)=>k(a)-k(b)||b.y-a.y).slice(0,3);
+  const cards=pool.map((d,i)=>{
+    const L=live(d),lo=L.lowest;
+    return `<article class="card">
+      <span class="rank">候補 ${i+1}</span>
+      <div><span class="mk">${esc(d.mk)}</span><span class="md">${esc(d.md)}</span><b class="nm">${esc(d.nm)}</b></div>
+      <p class="why">${esc(PRI[st.pri].why(d))}</p>
+      <dl class="spec"><div><dt>電圧</dt><dd>${d.v}V</dd></div><div><dt>風量</dt><dd>${d.air?d.air+"L/秒":"—"}</dd></div><div><dt>最長稼働</dt><dd>${d.run?d.run+"時間":"—"}</dd></div><div><dt>重さ</dt><dd>${d.w?d.w+"g":"—"}</dd></div></dl>
+      <p class="cp">対応：${esc(d.cp)}${d.warn?`<span class="warn">／${esc(d.warn)}</span>`:""}</p>
+      <div class="price"><strong>${yen(price(d))}${lo?"":"〜"}</strong><small>${lo?(lo.site==="rakuten"?"楽天市場":"Yahoo!ショッピング")+"の最安値":"参考価格"}</small></div>
+      <div class="shops"><a class="buy amazon" href="${amz(d.q)}" ${R}>Amazon</a><a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!</a></div>
+    </article>`}).join("");
+  const more=CTX==="article"?`<a href="https://www.stockmedia.biz/battery" target="_top">空調服バッテリー比較</a>で全15製品を比べられます。`:"全15製品は、下の比較表で比べられます。";
+  const own=mk?"お手持ちのファンの品番が「対応」に含まれるか、購入前にご確認ください。":"";
+  return `<p class="q">あなたへの候補</p>${note?`<p class="note">${note}</p>`:""}<div class="res">${cards}</div><p class="note">${own}価格は楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）を毎朝更新しています。${more}</p>`;
+}
+render();
+fetch(PRICE_URL,{cache:"no-store"}).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.items){LIVE=j.items;if(cur()==="done")render();}}).catch(()=>{});
+</script>
+</body>
+</html>
