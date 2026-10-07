@@ -92,13 +92,16 @@ const yen=n=>"¥"+n.toLocaleString("ja-JP");
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const amz=q=>"https://www.amazon.co.jp/s?k="+encodeURIComponent(q)+"&tag=youtube2023-22";
 const rkt=q=>"https://hb.afl.rakuten.co.jp/hgc/1f0987b9.eb6007e5.1f0987ba.31e18824/?pc="+encodeURIComponent("https://search.rakuten.co.jp/search/mall/"+encodeURIComponent(q)+"/");
-const yhs=q=>"https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3783843&pid=892721954&vc_url="+encodeURIComponent("https://shopping.yahoo.co.jp/search?p="+encodeURIComponent(q));
+// Yahoo!ショッピングはもしもアフィリエイト（どこでもリンク）経由
+const MSM_Y="https://af.moshimo.com/af/c/click?a_id=5837160&p_id=1225&pc_id=1925&pl_id=18502&url=";
+const msmY=u=>MSM_Y+encodeURIComponent(u);
+const yhs=q=>msmY("https://shopping.yahoo.co.jp/search?p="+encodeURIComponent(q));
 const R='target="_blank" rel="nofollow sponsored noopener"';
 const PRICE_URL="https://rnishiyama1010-jpg.github.io/kuchofuku-prices/prices.json";
 const CTX=new URLSearchParams(location.search).get("ctx");
 let LIVE={};
 const live=d=>LIVE[d.md]||{};
-const shopUrl=(d,site,fb)=>(live(d)[site]&&live(d)[site].url)||fb(d.q);
+const shopUrl=(d,site,fb)=>{const u=live(d)[site]&&live(d)[site].url;if(!u)return fb(d.q);return site==="yahoo"&&/^https?:\/\/([a-z]+\.)?shopping\.yahoo\.co\.jp\//.test(u)?msmY(u):u;};
 const price=d=>(live(d).lowest||{}).price||d.p;
 const MAKERS=["バートル","サンエス","株式会社空調服","桑和","村上被服"];
 const ENV={hot:{l:"炎天下の屋外",f:d=>d.v>=24},shade:{l:"日陰や移動の多い屋外",f:d=>d.v>=18&&d.v<=25},indoor:{l:"屋内・倉庫",f:d=>d.v<=20}};
