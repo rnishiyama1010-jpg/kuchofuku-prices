@@ -24,7 +24,7 @@ YAHOO_URL = "https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch"
 FLOOR, CEIL = 0.6, 1.6
 COMMON_NG = ["中古", "未使用品", "USED", "箱無し", "フルセット", "ブルゾン", "ジャケット", "ベスト付", "訳あり", "ジャンク", "互換", "保護フィルム", "交換用ケーブルのみ"]
 # 中古品を主に扱う店は除外する
-NG_SHOPS = ["セカンドストリート", "2nd STREET", "ボーダレス", "BORDERLESS", "ブックオフ", "ハードオフ", "トレジャーファクトリー"]
+NG_SHOPS = ["質屋", "質店", "セカンドストリート", "2nd STREET", "ボーダレス", "BORDERLESS", "ブックオフ", "ハードオフ", "トレジャーファクトリー"]
 
 
 def ng_shop(name):
