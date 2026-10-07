@@ -22,7 +22,14 @@ RAKUTEN_URL = "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/2026
 YAHOO_URL = "https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch"
 # 参考価格からこの範囲を外れる結果は、付属品やウェア込みセットとみなして除外する
 FLOOR, CEIL = 0.6, 1.6
-COMMON_NG = ["中古", "訳あり", "ジャンク", "互換", "保護フィルム", "交換用ケーブルのみ"]
+COMMON_NG = ["中古", "未使用品", "USED", "訳あり", "ジャンク", "互換", "保護フィルム", "交換用ケーブルのみ"]
+# 中古品を主に扱う店は除外する
+NG_SHOPS = ["セカンドストリート", "2nd STREET", "ボーダレス", "BORDERLESS", "ブックオフ", "ハードオフ", "トレジャーファクトリー"]
+
+
+def ng_shop(name):
+    n = norm(name)
+    return any(norm(s) in n for s in NG_SHOPS)
 
 
 def norm(s):
@@ -59,6 +66,7 @@ def rakuten(p):
         "hits": 30,
         "availability": 1,
         "formatVersion": 2,
+        "usedExcludeFlag": 1,
     }
     if os.environ.get("RAKUTEN_AFFILIATE_ID"):
         params["affiliateId"] = os.environ["RAKUTEN_AFFILIATE_ID"]
@@ -69,7 +77,7 @@ def rakuten(p):
     for it in items:
         it = it.get("Item", it)
         price = int(it.get("itemPrice") or 0)
-        if not price or not matches(it.get("itemName"), p):
+        if not price or not matches(it.get("itemName"), p) or ng_shop(it.get("shopName")):
             continue
         if not (p["ref"] * FLOOR <= price <= p["ref"] * CEIL):
             continue
@@ -91,6 +99,7 @@ def yahoo(p):
         "sort": "+price",
         "results": 50,
         "in_stock": "true",
+        "condition": "new",
     }
     if os.environ.get("YAHOO_VC_AFFILIATE_ID"):
         params["affiliate_type"] = "vc"
@@ -99,7 +108,7 @@ def yahoo(p):
     best = None
     for it in data.get("hits", []):
         price = int(it.get("price") or 0)
-        if not price or not matches(it.get("name"), p):
+        if not price or not matches(it.get("name"), p) or ng_shop((it.get("seller") or {}).get("name")):
             continue
         if not (p["ref"] * FLOOR <= price <= p["ref"] * CEIL):
             continue
