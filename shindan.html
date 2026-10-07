@@ -46,11 +46,11 @@ h2{font-family:var(--display);color:var(--ink);font-size:24px;margin:0;line-heig
 .spec dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--ink);white-space:nowrap}
 .cp{font-size:12px;margin:0}
 .cp .warn{color:var(--warn)}
-.price{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.price strong{font-family:var(--mono);font-size:18px;color:var(--ink)}
-.price small{font-size:11.5px;color:var(--mute)}
 .shops{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
-.buy{display:block;font-size:12px;font-weight:700;color:var(--ink);text-decoration:none;background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--shop);padding:5px 6px 5px 8px;border-radius:3px;line-height:1.4}
+.buy{display:flex;flex-direction:column;font-size:12px;font-weight:700;color:var(--ink);text-decoration:none;background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--shop);padding:5px 6px 5px 8px;border-radius:3px;line-height:1.4}
+.buy .bp{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13.5px;font-weight:700}
+.buy .bp small{font-family:var(--sans);font-size:10px;font-weight:400;color:var(--mute);margin-left:2px}
+.buy .bp.go{font-family:var(--sans);font-size:11px;font-weight:400;color:var(--mute)}
 .buy:hover{background:var(--panel)}
 .buy.amazon{--shop:var(--amazon)}.buy.rakuten{--shop:var(--rakuten)}.buy.yahoo{--shop:var(--yahoo)}
 .note{font-size:12px;color:var(--mute);margin:0}
@@ -106,12 +106,13 @@ let LIVE={};
 const live=d=>LIVE[d.md]||{};
 const shopUrl=(d,site,fb)=>{const u=live(d)[site]&&live(d)[site].url;if(!u)return fb(d.q);if(site==="yahoo"&&/^https?:\/\/([a-z]+\.)?shopping\.yahoo\.co\.jp\//.test(u))return msmY(u);if(site==="rakuten"&&/^https?:\/\/item\.rakuten\.co\.jp\//.test(u))return msmR(u);return u;};
 const price=d=>(live(d).lowest||{}).price||d.p;
+function sitePrice(d,k){const x=live(d)[k];return x&&x.price?`<span class="bp">${yen(x.price)}${x.freeShipping?"":"<small>＋送料</small>"}</span>`:'<span class="bp go">価格を見る</span>';}
 const MAKERS=["バートル","サンエス","株式会社空調服","桑和","村上被服"];
 const ENV={hot:{l:"炎天下の屋外",f:d=>d.v>=24},shade:{l:"日陰や移動の多い屋外",f:d=>d.v>=18&&d.v<=25},indoor:{l:"屋内・倉庫",f:d=>d.v<=20}};
 const PRI={air:{l:"とにかく涼しく",k:d=>-(d.air??-1),why:d=>d.air?`最大風量 ${d.air}L/秒`:"風量は非公表"},
  run:{l:"一日しっかりもつ",k:d=>-(d.run??-1),why:d=>d.run?`最長 約${d.run}時間（${d.runN}）`:"稼働時間は非公表"},
  light:{l:"軽さ",k:d=>d.w??1e9,why:d=>d.w?`重さ 約${d.w}g`:"重さは非公表"},
- price:{l:"価格の安さ",k:d=>price(d),why:d=>`最安 ${yen(price(d))}`}};
+ price:{l:"価格の安さ",k:d=>price(d),why:d=>`楽天・Yahoo!の最安 ${yen(price(d))}${(live(d).lowest)?"":"〜（参考価格）"}`}};
 const st={own:null,mk:null,env:null,pri:null};
 const seq=()=>["own",...(st.own==="have"?["mk"]:[]),"env","pri"];
 const cur=()=>seq().find(k=>st[k]===null)||"done";
@@ -144,19 +145,17 @@ function result(){
   const k=PRI[st.pri].k;
   pool=[...pool].sort((a,b)=>k(a)-k(b)||b.y-a.y).slice(0,3);
   const cards=pool.map((d,i)=>{
-    const L=live(d),lo=L.lowest;
     return `<article class="card">
       <span class="rank">候補 ${i+1}</span>
       <div><span class="mk">${esc(d.mk)}</span><span class="md">${esc(d.md)}</span><b class="nm">${esc(d.nm)}</b></div>
       <p class="why">${esc(PRI[st.pri].why(d))}</p>
       <dl class="spec"><div><dt>電圧</dt><dd>${d.v}V</dd></div><div><dt>風量</dt><dd>${d.air?d.air+"L/秒":"—"}</dd></div><div><dt>最長稼働</dt><dd>${d.run?d.run+"時間":"—"}</dd></div><div><dt>重さ</dt><dd>${d.w?d.w+"g":"—"}</dd></div></dl>
       <p class="cp">対応：${esc(d.cp)}${d.warn?`<span class="warn">／${esc(d.warn)}</span>`:""}</p>
-      <div class="price"><strong>${yen(price(d))}${lo?"":"〜"}</strong><small>${lo?(lo.site==="rakuten"?"楽天市場":"Yahoo!ショッピング")+"の最安値":"参考価格"}</small></div>
-      <div class="shops"><a class="buy amazon" href="${amz(d.q)}" ${R}>Amazon</a><a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!</a></div>
+      <div class="shops"><a class="buy amazon" href="${amz(d.q)}" ${R}>Amazon<span class="bp go">価格を見る</span></a><a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場${sitePrice(d,"rakuten")}</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!${sitePrice(d,"yahoo")}</a></div>
     </article>`}).join("");
   const more=CTX==="article"?`<a href="https://www.stockmedia.biz/battery" target="_top">空調服バッテリー比較</a>で全15製品を比べられます。会社でまとめて購入する方は、作業服通販<a href="https://x.gd/0n7uS" target="_blank" rel="nofollow sponsored noopener">「フクくる」</a>（PR）もご検討ください。`:"全15製品は、下の比較表で比べられます。";
   const own=mk?"お手持ちのファンの品番が「対応」に含まれるか、購入前にご確認ください。":"";
-  return `<p class="q">あなたへの候補</p>${note?`<p class="note">${note}</p>`:""}<div class="res">${cards}</div><p class="note">${own}価格は楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）を毎朝更新しています。${more}</p>`;
+  return `<p class="q">あなたへの候補</p>${note?`<p class="note">${note}</p>`:""}<div class="res">${cards}</div><p class="note">${own}楽天市場・Yahoo!ショッピングの価格は各店の税込最安値（送料別の場合あり）で、毎朝更新しています。Amazonの価格は販売ページでご確認ください。${more}</p>`;
 }
 render();
 fetch(PRICE_URL,{cache:"no-store"}).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.items){LIVE=j.items;if(cur()==="done")render();}}).catch(()=>{});

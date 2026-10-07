@@ -74,14 +74,17 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
 .compat{font-size:12px;display:block;margin-top:4px;color:var(--body)}
 .compat .warn{color:var(--warn)}
 .compat .warn::before{content:"／"}
-.buy{display:block;white-space:nowrap;font-size:12px;font-weight:700;line-height:1.5;color:var(--ink);text-decoration:none;background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--shop);padding:3px 10px 3px 8px;border-radius:3px;text-align:left}
+.buy{display:flex;justify-content:space-between;align-items:baseline;gap:10px;white-space:nowrap;font-size:12px;font-weight:700;line-height:1.5;color:var(--ink);text-decoration:none;background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--shop);padding:1px 8px 1px 7px;border-radius:3px;text-align:left}
+.buy .bp{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:12.5px;font-weight:700}
+.buy .bp small{font-family:var(--sans);font-size:10.5px;font-weight:400;color:var(--mute);margin-left:2px}
+.buy .bp.go{font-family:var(--sans);font-size:11.5px;font-weight:400;color:var(--mute)}
 .buy:hover{background:var(--panel)}
 .buy.amazon{--shop:var(--amazon)}.buy.rakuten{--shop:var(--rakuten)}.buy.yahoo{--shop:var(--yahoo)}
 .low{display:block;font-size:11.5px;font-family:var(--sans);color:var(--mute);white-space:nowrap;text-align:right}
 .low b{color:var(--ink);font-weight:500}
 .site-r{color:var(--rakuten)}.site-y{color:var(--yahoo)}
-.shops{display:grid;gap:4px;min-width:138px}
-@media (max-width:760px){.shops{grid-template-columns:repeat(3,minmax(0,1fr));min-width:0}.shops .buy{padding:6px 4px 6px 8px;font-size:12px;white-space:normal}}
+.shops{display:grid;gap:3px;min-width:200px}
+@media (max-width:760px){.shops{grid-template-columns:repeat(3,minmax(0,1fr));min-width:0;gap:4px}.shops .buy{flex-direction:column;align-items:flex-start;gap:0;padding:4px 3px 4px 6px;font-size:11.5px;white-space:normal;line-height:1.35}.buy .bp{font-size:12px;letter-spacing:-.02em}.buy .bp.go{font-size:10.5px}.ys{display:none}}
 .bar{height:3px;background:var(--line);margin-top:6px;border-radius:2px;overflow:hidden}
 .bar i{display:block;height:100%;background:var(--accent)}
 
@@ -139,7 +142,7 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
     <div class="tablebox">
       <table>
         <thead><tr>
-          <th>製品・対応ファン</th><th class="num">最大風量</th><th class="num">電圧</th><th class="num">最長稼働</th><th class="num">重量</th><th class="num">最安値（税込）</th><th></th>
+          <th>製品・対応ファン</th><th class="num">最大風量</th><th class="num">電圧</th><th class="num">最長稼働</th><th class="num">重量</th><th>販売店ごとの最安値（税込）</th>
         </tr></thead>
         <tbody id="rows"></tbody>
       </table>
@@ -152,7 +155,7 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
   <div class="notice">
     <p>価格は調査時点の公式通販・販売店の掲載値で、変わることがあります。購入前に販売ページで最新の価格と仕様をご確認ください。</p>
     <p>稼働時間・風量はメーカーまたは販売店の公称値です。気温や使い方で変わります。「—」は公表値が見つからなかった項目です。</p>
-    <p>セット品はファンを含んだ価格です。最安値は楽天市場・Yahoo!ショッピングの新品の税込価格を毎朝取得したもので、送料は含みません（「＋送料」は送料別の店です）。最安値が取れない製品は参考価格を表示しています。Amazonは規約上、価格を掲載していません。</p>
+    <p>セット品はファンを含んだ価格です。楽天市場・Yahoo!ショッピングの価格は、それぞれの新品の税込最安値を毎朝取得したもので、送料は含みません（「＋送料」は送料別の店です）。最安値が取れなかった店は「価格を見る」と表示しています。Amazonの価格は販売ページでご確認ください。</p>
   </div>
   <nav class="related" aria-label="関連記事"><b>あわせて読みたい</b><a href="https://www.stockmedia.biz/battery-guide" target="_top">空調服バッテリーの選び方（診断つき）</a><a href="https://www.stockmedia.biz/battery-compatibility" target="_top">メーカー別 互換性まとめ</a><a href="https://www.stockmedia.biz/battery-care" target="_top">長持ちさせる使い方と保管</a></nav>
 </div>
@@ -197,13 +200,11 @@ let LIVE={};
 const live=d=>LIVE[d.md]||{};
 const shopUrl=(d,site,fb)=>{const u=live(d)[site]&&live(d)[site].url;if(!u)return fb(d.q);if(site==="yahoo"&&/^https?:\/\/([a-z]+\.)?shopping\.yahoo\.co\.jp\//.test(u))return msmY(u);if(site==="rakuten"&&/^https?:\/\/item\.rakuten\.co\.jp\//.test(u))return msmR(u);return u;};
 const fmtSite={rakuten:"楽天市場",yahoo:"Yahoo!"};
-function priceCell(d){
-  const L=live(d), lo=L.lowest;
-  if(!lo) return {main:yen(d.p)+"〜", sub:'<span class="low">参考価格</span>'};
-  const parts=["rakuten","yahoo"].filter(k=>L[k]).map(k=>`<span class="${k==="rakuten"?"site-r":"site-y"}">${fmtSite[k]}</span> ${yen(L[k].price)}${L[k].freeShipping?"":"＋送料"}`);
-  return {main:yen(lo.price), sub:`<span class="low">${parts.join("<br>")}</span>`};
+function sitePrice(d,k){
+  const x=live(d)[k];
+  return x&&x.price?`<span class="bp">${yen(x.price)}${x.freeShipping?"":"<small>＋送料</small>"}</span>`:'<span class="bp go">価格を見る</span>';
 }
-const shops=d=>`<div class="shops"><a class="buy amazon" href="${amz(d.q)}" ${R}>Amazon</a><a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!ショッピング</a></div>`;
+const shops=d=>`<div class="shops"><a class="buy amazon" href="${amz(d.q)}" ${R}>Amazon<span class="bp go">価格を見る</span></a><a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場${sitePrice(d,"rakuten")}</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!<span class="ys">ショッピング</span>${sitePrice(d,"yahoo")}</a></div>`;
 
 function chips(el,list,key){
   el.innerHTML="";
@@ -233,7 +234,7 @@ function render(){
   document.getElementById("cnt").textContent=r.length;
   const tb=document.getElementById("rows"),cd=document.getElementById("cards");
   if(!r.length){
-    tb.innerHTML='<tr><td colspan="7" class="empty">条件に合うバッテリーはありません。条件を変えてください。</td></tr>';
+    tb.innerHTML='<tr><td colspan="6" class="empty">条件に合うバッテリーはありません。条件を変えてください。</td></tr>';
     cd.innerHTML='<div class="empty">条件に合うバッテリーはありません。条件を変えてください。</div>';return;
   }
   tb.innerHTML=r.map(d=>`<tr>
@@ -242,7 +243,6 @@ function render(){
     <td class="num" title="${esc(d.vt)}">${d.v}V</td>
     <td class="num">${d.run?d.run+" 時間":"—"}<span class="sub">${[d.runN,d.ch!=="—"?"充電"+d.ch:""].filter(Boolean).map(esc).join("<br>")}</span></td>
     <td class="num">${d.w?d.w+" g":"—"}</td>
-    <td class="num">${priceCell(d).main}${priceCell(d).sub}</td>
     <td>${shops(d)}</td>
   </tr>`).join("");
   cd.innerHTML=r.map(d=>`<article class="card">
@@ -253,7 +253,6 @@ function render(){
       <div><dt>最長稼働</dt><dd>${d.run?d.run+" 時間":"—"}</dd></div>
       <div><dt>重量</dt><dd>${d.w?d.w+" g":"—"}</dd></div>
       <div><dt>充電時間</dt><dd>${esc(d.ch)}</dd></div>
-      <div><dt>最安値</dt><dd>${priceCell(d).main}${priceCell(d).sub}</dd></div>
     </dl>
     <span class="compat">${esc(d.cp)}${d.warn?`<span class="warn">${esc(d.warn)}</span>`:""}</span>
     ${shops(d)}
