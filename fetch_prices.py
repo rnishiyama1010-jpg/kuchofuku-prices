@@ -22,6 +22,7 @@ RAKUTEN_URL = "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/2026
 YAHOO_URL = "https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch"
 # 参考価格からこの範囲を外れる結果は、付属品やウェア込みセットとみなして除外する
 FLOOR, CEIL = 0.6, 1.6
+RAKUTEN_AFFILIATE_ID = "1f0987b9.eb6007e5.1f0987ba.31e18824"
 COMMON_NG = ["中古", "未使用品", "USED", "箱無し", "フルセット", "ブルゾン", "ジャケット", "ベスト付", "訳あり", "ジャンク", "互換", "保護フィルム", "交換用ケーブルのみ"]
 # 中古品を主に扱う店は除外する
 NG_SHOPS = ["質屋", "質店", "セカンドストリート", "2nd STREET", "ボーダレス", "BORDERLESS", "ブックオフ", "ハードオフ", "トレジャーファクトリー"]
@@ -75,8 +76,8 @@ def rakuten(p):
         "maxPrice": int(p["ref"] * CEIL),
         "NGKeyword": "変換 ケース ポーチ",
     }
-    if os.environ.get("RAKUTEN_AFFILIATE_ID"):
-        params["affiliateId"] = os.environ["RAKUTEN_AFFILIATE_ID"]
+    # 楽天アフィリエイトIDはリンクに公開される値なので既定値をコードに置く（Secretsがあれば優先）
+    params["affiliateId"] = os.environ.get("RAKUTEN_AFFILIATE_ID") or RAKUTEN_AFFILIATE_ID
     url = RAKUTEN_URL + "?" + urllib.parse.urlencode(params)
     data = get_json(url, {"Referer": SITE, "Origin": SITE.rstrip("/")})
     items = data.get("Items") or data.get("items") or []
