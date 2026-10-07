@@ -70,6 +70,10 @@ def rakuten(p):
         "availability": 1,
         "formatVersion": 2,
         "usedExcludeFlag": 1,
+        # 付属品（ケーブル・アダプター等）で上位が埋まらないよう、価格帯をAPI側で絞る
+        "minPrice": int(p["ref"] * FLOOR),
+        "maxPrice": int(p["ref"] * CEIL),
+        "NGKeyword": "ケーブル アダプター 変換 ケース ポーチ",
     }
     if os.environ.get("RAKUTEN_AFFILIATE_ID"):
         params["affiliateId"] = os.environ["RAKUTEN_AFFILIATE_ID"]
@@ -104,6 +108,8 @@ def yahoo(p):
         "results": 50,
         "in_stock": "true",
         "condition": "new",
+        "price_from": int(p["ref"] * FLOOR),
+        "price_to": int(p["ref"] * CEIL),
     }
     if os.environ.get("YAHOO_VC_AFFILIATE_ID"):
         params["affiliate_type"] = "vc"
