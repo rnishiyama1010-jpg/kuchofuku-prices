@@ -2,9 +2,8 @@
 
 キーは環境変数（GitHub Secrets）から読む。リポジトリには書かない。
   RAKUTEN_APP_ID / RAKUTEN_ACCESS_KEY / YAHOO_CLIENT_ID
-任意（アフィリエイト登録後）:
-  RAKUTEN_AFFILIATE_ID
-Yahoo!ショッピングのURLは素のまま保存し、ページ側でもしもアフィリエイトのリンクに包む。
+楽天市場・Yahoo!ショッピングとも商品URLは素のまま保存し、
+ページ側（table.html / shindan.html）でもしもアフィリエイトのリンクに包む。
 """
 import json
 import os
@@ -23,8 +22,6 @@ RAKUTEN_URL = "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/2026
 YAHOO_URL = "https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch"
 # 参考価格からこの範囲を外れる結果は、付属品やウェア込みセットとみなして除外する
 FLOOR, CEIL = 0.6, 1.6
-RAKUTEN_AFFILIATE_ID = "1f0987b9.eb6007e5.1f0987ba.31e18824"
-YAHOO_VC_AFFILIATE_ID = "https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3783843&pid=892721954&vc_url="
 COMMON_NG = ["中古", "未使用品", "USED", "箱無し", "フルセット", "ブルゾン", "ジャケット", "ベスト付", "訳あり", "ジャンク", "互換", "保護フィルム", "交換用ケーブルのみ"]
 # 中古品を主に扱う店は除外する
 NG_SHOPS = ["質屋", "質店", "セカンドストリート", "2nd STREET", "ボーダレス", "BORDERLESS", "ブックオフ", "ハードオフ", "トレジャーファクトリー"]
@@ -78,8 +75,6 @@ def rakuten(p):
         "maxPrice": int(p["ref"] * CEIL),
         "NGKeyword": "変換 ケース ポーチ",
     }
-    # 楽天アフィリエイトIDはリンクに公開される値なので既定値をコードに置く（Secretsがあれば優先）
-    params["affiliateId"] = os.environ.get("RAKUTEN_AFFILIATE_ID") or RAKUTEN_AFFILIATE_ID
     url = RAKUTEN_URL + "?" + urllib.parse.urlencode(params)
     data = get_json(url, {"Referer": SITE, "Origin": SITE.rstrip("/")})
     items = data.get("Items") or data.get("items") or []
@@ -95,7 +90,7 @@ def rakuten(p):
         if best is None or price < best["price"]:
             best = {
                 "price": price,
-                "url": it.get("affiliateUrl") or it.get("itemUrl"),
+                "url": it.get("itemUrl"),  # もしもリンクはページ側で付ける
                 "shop": it.get("shopName"),
                 "freeShipping": it.get("postageFlag") == 0,
                 "name": it.get("itemName"),
@@ -128,8 +123,7 @@ def yahoo(p):
             ship = it.get("shipping") or {}
             best = {
                 "price": price,
-                # バリューコマース経由のリンクに包む（sid=サイトID, pid=提携プログラム用ID。リンクに公開される値）
-                "url": (os.environ.get("YAHOO_VC_AFFILIATE_ID") or YAHOO_VC_AFFILIATE_ID) + urllib.parse.quote(it.get("url") or "", safe=""),
+                "url": it.get("url"),  # もしもリンクはページ側で付ける
                 "shop": (it.get("seller") or {}).get("name"),
                 "freeShipping": "無料" in str(ship.get("name", "")),
                 "name": it.get("name"),
