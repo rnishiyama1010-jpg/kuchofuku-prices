@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T13:49:40+09:00",
+ "updated": "2026-10-09T06:00:17+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -86,8 +86,8 @@
    "rakuten": null,
    "yahoo": {
     "price": 13700,
-    "url": "https://store.shopping.yahoo.co.jp/cocoterrace/icn-acb-002461137.html",
-    "shop": "RECOROOM",
+    "url": "https://store.shopping.yahoo.co.jp/cocoterracemore/icn-acb-002461137.html",
+    "shop": "イチネンネットmore",
     "freeShipping": true,
     "name": "(あすつく) サンエス:３０Ｖバッテリーセット RD9680G 熱中症対策 熱中症 サンエス  空調風神服??  リチウムイオンバッテリー"
    },
@@ -166,8 +166,8 @@
    },
    "yahoo": {
     "price": 11113,
-    "url": "https://store.shopping.yahoo.co.jp/toolking/bt25211.html",
-    "shop": "ツールキング",
+    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt25211.html",
+    "shop": "カナジン 2号店",
     "freeShipping": false,
     "name": "BT25211 バッテリー 25V 本体のみ バッテリー 8216025 空調服 小型便 在庫"
    },
@@ -431,8 +431,8 @@
    },
    "yahoo": {
     "price": 11368,
-    "url": "https://store.shopping.yahoo.co.jp/kucho100ka/099-bo32550-rd9570.html",
-    "shop": "武蔵野ユニフォーム 空調服・作業着取扱店",
+    "url": "https://store.shopping.yahoo.co.jp/uniform100ka/099-bo32550-rd9570.html",
+    "shop": "空調服・ファン付き作業着取扱店 ユニフォーム百科",
     "freeShipping": false,
     "name": "サンエス インナーベスト 発熱ユニットセット BO32550-RD9570 5層構造でしっかり防風 秋冬 ヒートアイテム 作業着 作業服 メンズ ユニセックス ※バッテリー別売"
    },
@@ -565,8 +565,8 @@
    },
    "yahoo": {
     "price": 5870,
-    "url": "https://store.shopping.yahoo.co.jp/worktk/xb-167.html",
-    "shop": "作業服・空調服・医療白衣のWorkTK",
+    "url": "https://store.shopping.yahoo.co.jp/tk-netshop/xb-167.html",
+    "shop": "スポーツインナーSportsTK",
     "freeShipping": true,
     "name": "ヒーター内蔵ベスト ヒートベスト 服単品 ジーベック ポリエステル 防風 保温 防寒 秋冬 XEBEC xb-167"
    },
