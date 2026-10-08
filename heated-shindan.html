@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>電熱ベスト診断</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: 1問ずつ表示する診断。上に進行バー、中央に質問と大きな選択ボタン、最後に候補カード */
+:root{--bg:#FFFFFF;--panel:#EDF1F6;--ink:#14181D;--body:#4A545F;--mute:#8E959D;--line:#E2E4E6;--accent:#1B3A5C;--accent-soft:#DCE6F1;--new:#2F6B4F;--new-soft:#E3F0E8;--warn:#8A5A12;
+--amazon:#FF9900;--rakuten:#BF0000;--yahoo:#FF0033;
+--display:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;--sans:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg)}
+body{color:var(--body);font-family:var(--sans);font-size:15px;line-height:1.7}
+.wrap{max-width:1120px;margin:0 auto;padding:8px 16px 16px}
+.box{border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:4px;padding:20px 22px 22px;display:grid;gap:16px}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+h2{font-family:var(--display);color:var(--ink);font-size:24px;margin:0;line-height:1.35}
+.lead{margin:0;font-size:13.5px;color:var(--mute)}
+.prog{display:flex;gap:6px}
+.prog i{width:34px;height:4px;border-radius:2px;background:var(--line)}
+.prog i.on{background:var(--accent)}
+.q{font-size:18px;font-weight:700;color:var(--ink);margin:0}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:10px}
+.opt{font:inherit;text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:14px 16px;cursor:pointer;display:grid;gap:2px;color:var(--ink)}
+.opt b{font-size:15.5px}
+.opt span{font-size:12.5px;color:var(--mute)}
+.opt:hover{border-color:var(--accent);background:var(--panel)}
+.opt:focus-visible,.back:focus-visible,.buy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.back{font:inherit;font-size:13px;background:none;border:none;color:var(--accent);cursor:pointer;padding:4px 0}
+.ans{font-size:12.5px;color:var(--mute)}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:grid;gap:8px;align-content:start;min-width:0}
+.rank{font-size:11.5px;font-weight:700;color:var(--accent);letter-spacing:.06em}
+.card .mk{font-size:12px;color:var(--mute)}
+.card .md{font-family:var(--mono);font-size:12.5px;color:var(--accent);margin-left:6px}
+.card b.nm{display:block;color:var(--ink);font-size:15px;line-height:1.45}
+.why{font-size:13px;color:var(--ink);background:var(--panel);border-radius:4px;padding:6px 10px;margin:0}
+.spec{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:0}
+.spec dt{font-size:11px;color:var(--mute)}
+.spec dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--ink);white-space:nowrap}
+.cp{font-size:12px;margin:0}
+.cp .warn{color:var(--warn)}
+.shops{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.buy{display:flex;flex-direction:column;font-size:12px;font-weight:700;color:var(--ink);text-decoration:none;background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--shop);padding:5px 6px 5px 8px;border-radius:3px;line-height:1.4}
+.buy .bp{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13.5px;font-weight:700}
+.buy .bp small{font-family:var(--sans);font-size:10px;font-weight:400;color:var(--mute);margin-left:2px}
+.buy .bp.go{font-family:var(--sans);font-size:11px;font-weight:400;color:var(--mute)}
+.buy:hover{background:var(--panel)}
+.buy.amazon{--shop:var(--amazon)}.buy.rakuten{--shop:var(--rakuten)}.buy.yahoo{--shop:var(--yahoo)}.buy.official{--shop:var(--accent)}
+.shops.one{grid-template-columns:1fr}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.tag{font-size:10.5px;padding:1px 6px;border-radius:2px;background:var(--panel);color:var(--body)}
+.tag.new{background:var(--new-soft);color:var(--new)}
+.pw{font-size:12px;margin:0;color:var(--body)}
+.note{font-size:12px;color:var(--mute);margin:0}
+.note a{color:var(--accent)}
+@media (max-width:600px){.wrap{padding:4px 0 8px}.box{padding:14px 12px 16px;gap:12px}h2{font-size:19px}.lead{font-size:12.5px}.q{font-size:16px}.opt{padding:10px 12px}.card{padding:12px;gap:6px}.spec dd{font-size:12px}.spec dt{font-size:10.5px}.why{font-size:12.5px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="box" aria-labelledby="h">
+    <div class="head">
+      <h2 id="h">30秒電熱ベスト診断</h2>
+      <div class="prog" id="prog" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    </div>
+    <p class="lead">質問に答えると、9メーカー・16製品の電熱ベストから候補を3つまでに絞り込みます。</p>
+    <div id="stage" aria-live="polite"></div>
+  </section>
+</div>
+<script>
+const D=[
+ {id:"HV-FGA79000",runH:7.5,mk:"自重堂",nm:"FEVER GEAR 電熱ベスト（ハイネック）",md:"FGA79000",z:9,zd:"首1・前2・背中6",t:55,bat:true,fan:false,usb:true,pw:"専用10,000mAh付属（市販USB 5V・2A以上も可）",run:"強 約3時間／弱 約7.5時間（前後とも）",wash:"手洗い",p:5300,q:"自重堂 FGA79000",own:true},
+ {id:"HV-FGA79010",runH:7.5,mk:"自重堂",nm:"FEVER GEAR 電熱ベスト（リップストップ）",md:"FGA79010",z:9,zd:"首1・前2・背中6",t:55,bat:true,fan:false,usb:true,pw:"専用10,000mAh付属（市販USB 5V・2A以上も可）",run:"強 約3時間／弱 約7.5時間",wash:"手洗い",p:5500,q:"自重堂 FGA79010",own:true},
+ {id:"HV-FGA20000",runH:7.5,mk:"自重堂",nm:"FEVER GEAR 電熱ベスト（襟付き）",md:"FGA20000",z:9,zd:"首1・前2・背中6",t:55,bat:true,fan:false,usb:true,pw:"専用10,000mAh付属（市販USB 5V・2A以上も可）",run:"強 約3時間／弱 約7.5時間",wash:"手洗い",p:5200,q:"自重堂 FGA20000",own:true},
+ {id:"HV-FGA20010",runH:7.5,mk:"自重堂",nm:"FEVER GEAR 電熱インナーベスト",md:"FGA20010",z:9,zd:"前2・背中7",t:55,bat:true,fan:false,usb:true,pw:"専用10,000mAh付属（市販USB 5V・2A以上も可）",run:"強 約3時間／弱 約7.5時間",wash:"手洗い",p:5200,q:"自重堂 FGA20010",own:true,tag:"インナー"},
+ {id:"HV-3274",runH:10,mk:"バートル",nm:"サーモベスト＋電熱パッド TC501",md:"3274＋TC501",y:2026,z:1,zd:"背中にパッド1枚",t:60,bat:false,fan:true,usb:false,pw:"空調服用AC10（別売）専用",run:"60℃で約4時間／40℃で約10時間",wash:"—",p:10000,q:"バートル 3274 TC501",warn:"AC09以前のバッテリーは使えません"},
+ {id:"HV-3214",runH:11,mk:"バートル",nm:"ライトウエイトベスト（電熱パッドTC500対応）",md:"3214",z:1,zd:"背中にパッド1枚（TC500別売）",t:60,bat:false,fan:true,usb:false,pw:"空調服用AC09・AC08ほか（別売）",run:"60℃は約1時間で54℃へ／38℃で約11時間",wash:"—",p:3200,q:"バートル 3214",warn:"価格はベストのみ。電熱パッドTC500とバッテリーは別売"},
+ {id:"HV-EH32490",runH:8,mk:"サンエス",nm:"EXHEAT カーボンヒートベスト",md:"EH32490",z:5,zd:"首・背中・腰・お腹など5か所",t:null,bat:false,fan:false,usb:true,pw:"USBモバイルバッテリー（別売・推奨RD9241）",run:"強 約5時間／弱 約8時間",wash:"手洗い",p:10000,q:"サンエス EH32490",tag:"プレヒート"},
+ {id:"HV-BO32550",runH:11,mk:"サンエス",nm:"雷神服 インナーベスト＋発熱ユニット",md:"BO32550＋RD9570",z:2,zd:"背中に2枚",t:null,bat:false,fan:true,usb:true,pw:"空調風神服の24V・12Vバッテリー、またはUSB 2A以上（別売）",run:"弱で約11時間（24V系）",wash:"—",p:12000,q:"雷神服 BO32550 RD9570",tag:"インナー"},
+ {id:"HV-17029",runH:null,mk:"桑和",nm:"G.G. ヒートベスト コンプリートセット",md:"17029",z:null,zd:"前後を切替",t:60,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"—",wash:"—",p:6500,q:"桑和 17029",warn:"在庫限りの店が多い"},
+ {id:"HV-17019",runH:6,mk:"桑和",nm:"G.G. ヒートベスト（シート脱着式）",md:"17019",z:2,zd:"取り外せるシート2枚",t:45,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"高 約3.5時間／低 約6時間",wash:"シートを外して洗える",p:8000,q:"桑和 17019"},
+ {id:"HV-AZ8313",runH:null,mk:"アイトス",nm:"TULTEX Vネック ヒーターベスト",md:"AZ-8313",z:2,zd:"背中・腰",t:55,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"—",wash:"手洗い",p:5000,q:"タルテックス 8313 ヒーターベスト",tag:"インナー"},
+ {id:"HV-AZ8312",runH:null,mk:"アイトス",nm:"TULTEX 衿付 ヒーターベスト",md:"AZ-8312",z:2,zd:"2か所",t:null,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属",run:"—",wash:"手洗い",p:5000,q:"タルテックス 8312 ヒーターベスト"},
+ {id:"HV-1077",runH:23,mk:"村上被服",nm:"鳳皇 インナーヒートベスト",md:"1077",z:null,zd:"背中一面",t:null,bat:false,fan:true,usb:false,pw:"スモールバッテリーV1333（別売）。快適ウェア用バッテリーでも起動",run:"弱 約16〜23時間（V1333）",wash:"—",p:3500,q:"鳳皇 1077 ヒートベスト",tag:"インナー"},
+ {id:"WZ8100",runH:16,mk:"ワークマン",nm:"ウィンドコア ヒーターベスト",md:"WZ8100",z:null,zd:"背中・腰",t:50,bat:false,fan:true,usb:false,pw:"ハーフバッテリーWZ3310（別売4,900円）。ファン付きウェアと共用",run:"高 約4.3時間／低 約16時間",wash:"—",p:3900,q:"ワークマン ウィンドコア ヒーターベスト",official:{label:"ワークマン公式",price:3900,url:"https://workman.jp/"}},
+ {id:"HV-CV202D",runH:35,mk:"マキタ",nm:"充電式暖房ベスト",md:"CV202DZ",z:4,zd:"首元まで4か所",t:null,bat:false,fan:false,usb:false,pw:"マキタ10.8〜18Vバッテリ（ホルダ・充電器とも別売）",run:"18V 6.0Ahで強 約10時間／弱 約35時間",wash:"バッテリを外せば洗濯機可",p:15000,q:"マキタ CV202DZ",tag:"工具バッテリー"},
+ {id:"HV-XE167",runH:5,mk:"ジーベック",nm:"ヒーター内蔵ベスト",md:"167",z:2,zd:"背中・腰",t:60,bat:false,fan:false,usb:true,pw:"USBモバイルバッテリー5V・2.1A以上（別売）",run:"約3〜5時間（2時間で自動停止）",wash:"手洗い",p:6800,q:"ジーベック 167 ヒーター"}
+];
+const yen=n=>"¥"+n.toLocaleString("ja-JP");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const amz=q=>"https://www.amazon.co.jp/s?k="+encodeURIComponent(q)+"&tag=stockmedia-22";
+const MSM_R="https://af.moshimo.com/af/c/click?a_id=5837116&p_id=54&pc_id=54&pl_id=616&url=";
+const msmR=u=>MSM_R+encodeURIComponent(u);
+const rkt=q=>msmR("https://search.rakuten.co.jp/search/mall/"+encodeURIComponent(q)+"/");
+const MSM_Y="https://af.moshimo.com/af/c/click?a_id=5837160&p_id=1225&pc_id=1925&pl_id=18502&url=";
+const msmY=u=>MSM_Y+encodeURIComponent(u);
+const yhs=q=>msmY("https://shopping.yahoo.co.jp/search?p="+encodeURIComponent(q));
+const R='target="_blank" rel="nofollow sponsored noopener"';
+const PRICE_URL="https://rnishiyama1010-jpg.github.io/kuchofuku-prices/prices.json";
+let LIVE={};
+const live=d=>LIVE[d.id]||{};
+const shopUrl=(d,site,fb)=>{const u=live(d)[site]&&live(d)[site].url;if(!u)return fb(d.q);if(site==="yahoo"&&/^https?:\/\/([a-z]+\.)?shopping\.yahoo\.co\.jp\//.test(u))return msmY(u);if(site==="rakuten"&&/^https?:\/\/item\.rakuten\.co\.jp\//.test(u))return msmR(u);return u;};
+function sitePrice(d,k){const x=live(d)[k];return x&&x.price?`<span class="bp">${yen(x.price)}${x.freeShipping?"":"<small>＋送料</small>"}</span>`:'<span class="bp go">価格を見る</span>';}
+const CTX=new URLSearchParams(location.search).get("ctx");
+const price=d=>d.official?d.official.price:((live(d).lowest||{}).price||d.p);
+const inner=d=>d.tag==="インナー";
+// 電源の選び方
+const PW={bat:{l:"バッテリー付きで買いたい",s:"届いてすぐ使える",f:d=>d.bat},
+ fan:{l:"空調服のバッテリーを持っている",s:"夏のバッテリーを冬も使う",f:d=>d.fan},
+ usb:{l:"市販のモバイルバッテリーを使いたい",s:"スマホ用のUSBバッテリー",f:d=>d.usb},
+ tool:{l:"マキタの工具バッテリーを持っている",s:"10.8〜18Vのバッテリ",f:d=>d.mk==="マキタ"}};
+// 空調服バッテリーのメーカー → 使える電熱ベスト
+const FAN={ac10:{l:"バートル AC10",ids:["HV-3274"]},ac09:{l:"バートル AC09・AC08",ids:["HV-3214"]},
+ sun:{l:"サンエス（空調風神服）",ids:["HV-BO32550"]},mura:{l:"村上被服（鳳皇）",ids:["HV-1077"]},
+ wm:{l:"ワークマン",ids:["WZ8100"]},other:{l:"それ以外・わからない",ids:null}};
+const STY={outer:{l:"上着として着る",s:"作業服の上に羽織る",f:d=>!inner(d)},in:{l:"服の下に着る（インナー）",s:"薄手で着ぶくれしにくい",f:inner},any:{l:"どちらでもよい",s:"",f:()=>true}};
+const PRI={warm:{l:"とにかく暖かく",s:"最高温度・発熱か所が多い順",k:d=>-((d.t??0)*10+(d.z??0)),why:d=>[d.t?`最高 約${d.t}℃`:"最高温度は非公表",d.z?`発熱 ${d.z}か所`:""].filter(Boolean).join("・")},
+ run:{l:"一日しっかりもつ",s:"最長の使用時間が長い順",k:d=>-(d.runH??-1),why:d=>d.runH?`最長 約${d.runH}時間（弱運転）`:"使用時間は非公表"},
+ price:{l:"価格の安さ",s:"最安値が安い順",k:d=>price(d),why:d=>`${d.official?"公式価格":"楽天・Yahoo!の最安"} ${yen(price(d))}${d.official||live(d).lowest?"":"〜（参考価格）"}${d.bat?"":"（バッテリー別）"}`},
+ wash:{l:"洗いやすさ",s:"洗濯できるものを優先",k:d=>d.wash==="—"?2:(/洗濯機|外して/.test(d.wash)?0:1),why:d=>d.wash==="—"?"洗濯方法は非公表":`洗濯：${d.wash}`}};
+const st={pw:null,fan:null,sty:null,pri:null};
+const seq=()=>{if(st.pw==="fan")return ["pw","fan"];if(st.pw==="tool")return ["pw"];return ["pw","sty","pri"];};
+const cur=()=>seq().find(k=>st[k]===null)||"done";
+function prog(){const s=seq(),i=s.indexOf(cur());const n=i<0?s.length:i;const bars=document.querySelectorAll("#prog i");bars.forEach((e,j)=>e.classList.toggle("on",cur()==="done"||j<Math.round(n/s.length*bars.length)));}
+function opts(list){return `<div class="opts">${list.map(([v,b,s])=>`<button type="button" class="opt" data-v="${esc(v)}"><b>${esc(b)}</b>${s?`<span>${esc(s)}</span>`:""}</button>`).join("")}</div>`}
+function nav(){
+  const a=[];if(st.pw)a.push(PW[st.pw].l);if(st.fan)a.push(FAN[st.fan].l);if(st.sty)a.push(STY[st.sty].l);if(st.pri)a.push(PRI[st.pri].l);
+  return `<div class="nav">${st.pw!==null?'<button type="button" class="back" id="back">← 1つ戻る</button>':"<span></span>"}<span class="ans">${esc(a.join("／"))}</span></div>`;
+}
+function render(){
+  prog();
+  const S=document.getElementById("stage"),c=cur(),n=seq().indexOf(c)+1;let h="";
+  if(c==="pw")h=`<p class="q">Q${n}. 電源（バッテリー）はどうしますか？</p>`+opts(Object.entries(PW).map(([k,v])=>[k,v.l,v.s]));
+  else if(c==="fan")h=`<p class="q">Q${n}. お持ちの空調服バッテリーのメーカーは？</p>`+opts(Object.entries(FAN).map(([k,v])=>[k,v.l,k==="other"?"モバイルバッテリーで使えるものを探す":""]));
+  else if(c==="sty")h=`<p class="q">Q${n}. どう着ますか？</p>`+opts(Object.entries(STY).map(([k,v])=>[k,v.l,v.s]));
+  else if(c==="pri")h=`<p class="q">Q${n}. いちばん重視するのは？</p>`+opts(Object.entries(PRI).map(([k,v])=>[k,v.l,v.s]));
+  else h=result();
+  S.innerHTML=h+nav();
+  S.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>{st[cur()]=b.dataset.v;render();}));
+  const bk=document.getElementById("back");if(bk)bk.addEventListener("click",back);
+}
+function back(){const s=seq().filter(k=>st[k]!==null);const k=s[s.length-1];st[k]=null;if(k==="pw"){st.fan=null;st.sty=null;st.pri=null;}render();}
+function tags(d){let t=d.y===2026?'<span class="tag new">2026-27新製品</span>':'';t+=d.bat?'<span class="tag">バッテリー付き</span>':'<span class="tag">バッテリー別売</span>';if(d.tag)t+=`<span class="tag">${esc(d.tag)}</span>`;if(d.own)t+='<span class="tag">当社もAmazonで販売</span>';return `<div class="tags">${t}</div>`;}
+const shops=d=>d.official?`<div class="shops one"><a class="buy official" href="${d.official.url}" target="_blank" rel="noopener">${esc(d.official.label)}<span class="bp">${yen(d.official.price)}</span></a></div>`:`<div class="shops"><a class="buy amazon" href="${amz(d.q)}" ${R}>Amazon<span class="bp go">価格を見る</span></a><a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場${sitePrice(d,"rakuten")}</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!${sitePrice(d,"yahoo")}</a></div>`;
+function result(){
+  let pool,note="",why;
+  if(st.pw==="fan"&&FAN[st.fan].ids){pool=D.filter(d=>FAN[st.fan].ids.includes(d.id));why=d=>`お持ちの${FAN[st.fan].l}で使えます`;}
+  else if(st.pw==="fan"){pool=D.filter(PW.usb.f).sort((a,b)=>price(a)-price(b));note="ほかのメーカーの空調服バッテリーで使える電熱ベストは見つかりませんでした。代わりに、市販のUSBモバイルバッテリーで使える製品を価格の安い順に挙げています。";why=d=>`市販のUSBモバイルバッテリーで使えます（${d.bat?"専用バッテリー付属":"バッテリー別売"}）`;}
+  else if(st.pw==="tool"){pool=D.filter(PW.tool.f);why=d=>"マキタ10.8〜18Vの工具バッテリーで使えます";}
+  else{
+    pool=D.filter(PW[st.pw].f);
+    const bySty=pool.filter(STY[st.sty].f);
+    if(bySty.length)pool=bySty;else note=`「${esc(PW[st.pw].l)}」の中に「${esc(STY[st.sty].l)}」タイプがないため、すべてのタイプから選びました。`;
+    const k=PRI[st.pri].k;pool=[...pool].sort((a,b)=>k(a)-k(b)||price(a)-price(b));why=PRI[st.pri].why;
+  }
+  pool=pool.slice(0,3);
+  const cards=pool.map((d,i)=>`<article class="card">
+      <span class="rank">候補 ${i+1}</span>
+      <div><span class="mk">${esc(d.mk)}</span><span class="md">${esc(d.md)}</span><b class="nm">${esc(d.nm)}</b>${tags(d)}</div>
+      <p class="why">${esc(why(d))}</p>
+      <dl class="spec"><div><dt>発熱</dt><dd>${d.z?d.z+"か所":"—"}</dd></div><div><dt>最高温度</dt><dd>${d.t?d.t+"℃":"—"}</dd></div><div><dt>最長</dt><dd>${d.runH?d.runH+"時間":"—"}</dd></div><div><dt>洗濯</dt><dd>${d.wash==="—"?"—":(/洗濯機/.test(d.wash)?"洗濯機":"手洗い等")}</dd></div></dl>
+      <p class="pw">電源：${esc(d.pw)}</p>
+      ${d.warn?`<p class="cp"><span class="warn">${esc(d.warn)}</span></p>`:""}
+      ${shops(d)}
+    </article>`).join("");
+  const more=`全16製品は<a href="https://www.stockmedia.biz/heated-vest" target="_top">電熱ベスト比較（一覧表）</a>で比べられます。`+(CTX==="article"?`会社でまとめて購入する方は、作業服通販<a href="https://x.gd/0n7uS" target="_blank" rel="nofollow sponsored noopener">「フクくる」</a>（PR）もご検討ください。`:"");
+  const own=pool.some(d=>d.own)?"「当社もAmazonで販売」の製品は、当サイトの運営会社（Stock合同会社）がAmazonで販売しています。":"";
+  const fanNote=st.pw==="fan"&&FAN[st.fan].ids?"お手持ちのバッテリーの型番が「電源」の欄に含まれるか、購入前にご確認ください。":"";
+  return `<p class="q">あなたへの候補</p>${note?`<p class="note">${note}</p>`:""}<div class="res">${cards}</div><p class="note">${fanNote}楽天市場・Yahoo!ショッピングの価格は各店の税込最安値（送料別の場合あり）で、毎朝更新しています。Amazonの価格は販売ページでご確認ください。${own}${more}</p>`;
+}
+render();
+fetch(PRICE_URL,{cache:"no-store"}).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.items){LIVE=j.items;if(cur()==="done")render();}}).catch(()=>{});
+</script>
+</body>
+</html>
