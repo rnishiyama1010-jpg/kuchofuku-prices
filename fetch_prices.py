@@ -3,7 +3,7 @@
 キーは環境変数（GitHub Secrets）から読む。リポジトリには書かない。
   RAKUTEN_APP_ID / RAKUTEN_ACCESS_KEY / YAHOO_CLIENT_ID
 楽天市場・Yahoo!ショッピングとも商品URLは素のまま保存し、
-ページ側（table.html / shindan.html）でもしもアフィリエイトのリンクに包む。
+ページ側（table.html / shindan.html など）でアフィリエイトリンクに包む（楽天＝もしも、Yahoo!＝バリューコマース）。
 """
 import json
 import os
@@ -109,7 +109,7 @@ def yahoo(p):
         "price_from": int(p["ref"] * FLOOR),
         "price_to": int(p["ref"] * CEIL),
     }
-    # アフィリエイトはもしも経由。素の商品URLを保存し、table.html / shindan.html 側で包む
+    # アフィリエイトはバリューコマース経由。素の商品URLを保存し、ページ側で包む
     data = get_json(YAHOO_URL + "?" + urllib.parse.urlencode(params))
     RAW[(p["id"], "yahoo")] = [(h.get("name", "")[:80], h.get("price")) for h in data.get("hits", [])[:12]]
     best = None
@@ -123,7 +123,7 @@ def yahoo(p):
             ship = it.get("shipping") or {}
             best = {
                 "price": price,
-                "url": it.get("url"),  # もしもリンクはページ側で付ける
+                "url": it.get("url"),  # バリューコマースのリンクはページ側で付ける
                 "shop": (it.get("seller") or {}).get("name"),
                 "freeShipping": "無料" in str(ship.get("name", "")),
                 "name": it.get("name"),

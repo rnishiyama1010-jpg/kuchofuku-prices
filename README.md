@@ -10,4 +10,4 @@ Stock合同会社（stockmedia.biz）の空調服バッテリー比較ページ�
 APIキーは GitHub の Secrets に保存し、このリポジトリには含めません。
 製品を追加するときは `products.json` に1行足します。
 
-アフィリエイト：楽天市場・Yahoo!ショッピングはもしもアフィリエイト（どこでもリンク）、Amazonはアソシエイト（stockmedia-22）。楽天・Yahoo!の商品URLは `prices.json` に素のまま保存し、ページ側でもしものリンクに包みます。
+アフィリエイト：楽天市場はもしもアフィリエイト（どこでもリンク）、Yahoo!ショッピングはバリューコマース（MyLink、sid=3783843 / pid=892721954）、Amazonはアソシエイト（stockmedia-22）。楽天・Yahoo!の商品URLは `prices.json` に素のまま保存し、ページ側で各ASPのリンクに包みます。

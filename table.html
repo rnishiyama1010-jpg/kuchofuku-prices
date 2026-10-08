@@ -190,15 +190,15 @@ const amz=q=>"https://www.amazon.co.jp/s?k="+encodeURIComponent(q)+"&tag=stockme
 const MSM_R="https://af.moshimo.com/af/c/click?a_id=5837116&p_id=54&pc_id=54&pl_id=616&url=";
 const msmR=u=>MSM_R+encodeURIComponent(u);
 const rkt=q=>msmR("https://search.rakuten.co.jp/search/mall/"+encodeURIComponent(q)+"/");
-// Yahoo!ショッピングはもしもアフィリエイト（どこでもリンク）経由
-const MSM_Y="https://af.moshimo.com/af/c/click?a_id=5837160&p_id=1225&pc_id=1925&pl_id=18502&url=";
-const msmY=u=>MSM_Y+encodeURIComponent(u);
-const yhs=q=>msmY("https://shopping.yahoo.co.jp/search?p="+encodeURIComponent(q));
+// Yahoo!ショッピングはバリューコマース（MyLink）経由
+const VC_Y="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3783843&pid=892721954&vc_url=";
+const vcY=u=>VC_Y+encodeURIComponent(u);
+const yhs=q=>vcY("https://shopping.yahoo.co.jp/search?p="+encodeURIComponent(q));
 const R='target="_blank" rel="nofollow sponsored noopener"';
 const PRICE_URL="https://rnishiyama1010-jpg.github.io/kuchofuku-prices/prices.json";
 let LIVE={};
 const live=d=>LIVE[d.md]||{};
-const shopUrl=(d,site,fb)=>{const u=live(d)[site]&&live(d)[site].url;if(!u)return fb(d.q);if(site==="yahoo"&&/^https?:\/\/([a-z]+\.)?shopping\.yahoo\.co\.jp\//.test(u))return msmY(u);if(site==="rakuten"&&/^https?:\/\/item\.rakuten\.co\.jp\//.test(u))return msmR(u);return u;};
+const shopUrl=(d,site,fb)=>{const u=live(d)[site]&&live(d)[site].url;if(!u)return fb(d.q);if(site==="yahoo"&&/^https?:\/\/([a-z]+\.)?shopping\.yahoo\.co\.jp\//.test(u))return vcY(u);if(site==="rakuten"&&/^https?:\/\/item\.rakuten\.co\.jp\//.test(u))return msmR(u);return u;};
 const fmtSite={rakuten:"楽天市場",yahoo:"Yahoo!"};
 function sitePrice(d,k){
   const x=live(d)[k];

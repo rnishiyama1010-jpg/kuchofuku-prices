@@ -210,14 +210,15 @@ const amz=q=>"https://www.amazon.co.jp/s?k="+encodeURIComponent(q)+"&tag=stockme
 const MSM_R="https://af.moshimo.com/af/c/click?a_id=5837116&p_id=54&pc_id=54&pl_id=616&url=";
 const msmR=u=>MSM_R+encodeURIComponent(u);
 const rkt=q=>msmR("https://search.rakuten.co.jp/search/mall/"+encodeURIComponent(q)+"/");
-const MSM_Y="https://af.moshimo.com/af/c/click?a_id=5837160&p_id=1225&pc_id=1925&pl_id=18502&url=";
-const msmY=u=>MSM_Y+encodeURIComponent(u);
-const yhs=q=>msmY("https://shopping.yahoo.co.jp/search?p="+encodeURIComponent(q));
+// Yahoo!ショッピングはバリューコマース（MyLink）経由
+const VC_Y="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3783843&pid=892721954&vc_url=";
+const vcY=u=>VC_Y+encodeURIComponent(u);
+const yhs=q=>vcY("https://shopping.yahoo.co.jp/search?p="+encodeURIComponent(q));
 const R='target="_blank" rel="nofollow sponsored noopener"';
 const PRICE_URL="https://rnishiyama1010-jpg.github.io/kuchofuku-prices/prices.json";
 let LIVE={};
 const live=d=>LIVE[d.id]||{};
-const shopUrl=(d,site,fb)=>{const u=live(d)[site]&&live(d)[site].url;if(!u)return fb(d.q);if(site==="yahoo"&&/^https?:\/\/([a-z]+\.)?shopping\.yahoo\.co\.jp\//.test(u))return msmY(u);if(site==="rakuten"&&/^https?:\/\/item\.rakuten\.co\.jp\//.test(u))return msmR(u);return u;};
+const shopUrl=(d,site,fb)=>{const u=live(d)[site]&&live(d)[site].url;if(!u)return fb(d.q);if(site==="yahoo"&&/^https?:\/\/([a-z]+\.)?shopping\.yahoo\.co\.jp\//.test(u))return vcY(u);if(site==="rakuten"&&/^https?:\/\/item\.rakuten\.co\.jp\//.test(u))return msmR(u);return u;};
 function sitePrice(d,k){const x=live(d)[k];return x&&x.price?`<span class="bp">${yen(x.price)}${x.freeShipping?"":"<small>＋送料</small>"}</span>`:'<span class="bp go">価格を見る</span>';}
 const shops=d=>d.official?`<div class="shops"><a class="buy official" href="${d.official.url}" target="_blank" rel="noopener">${esc(d.official.label)}<span class="bp">${yen(d.official.price)}</span></a></div>`:`<div class="shops"><a class="buy amazon" href="${amz(d.q)}" ${R}>Amazon<span class="bp go">価格を見る</span></a><a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場${sitePrice(d,"rakuten")}</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!<span class="ys">ショッピング</span>${sitePrice(d,"yahoo")}</a></div>`;
 function chips(el,list,key){el.innerHTML="";list.forEach(item=>{const label=Array.isArray(item)?item[0]:item;const b=document.createElement("button");b.type="button";b.className="chip";b.textContent=label;b.setAttribute("aria-pressed",String(st[key]===label));b.addEventListener("click",()=>{st[key]=label;chips(el,list,key);render()});el.appendChild(b);});}
