@@ -22,7 +22,7 @@ RAKUTEN_URL = "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/2026
 YAHOO_URL = "https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch"
 # 参考価格からこの範囲を外れる結果は、付属品やウェア込みセットとみなして除外する
 FLOOR, CEIL = 0.6, 1.6
-COMMON_NG = ["中古", "未使用品", "USED", "箱無し", "フルセット", "ブルゾン", "ジャケット", "ベスト付", "訳あり", "ジャンク", "互換", "保護フィルム", "交換用ケーブルのみ"]
+COMMON_NG = ["中古", "未使用品", "【未使用】", "USED", "箱無し", "フルセット", "ブルゾン", "ジャケット", "ベスト付", "訳あり", "ジャンク", "互換", "保護フィルム", "交換用ケーブルのみ"]
 # 中古品を主に扱う店は除外する
 NG_SHOPS = ["質屋", "質店", "セカンドストリート", "2nd STREET", "ボーダレス", "BORDERLESS", "ブックオフ", "ハードオフ", "トレジャーファクトリー"]
 
