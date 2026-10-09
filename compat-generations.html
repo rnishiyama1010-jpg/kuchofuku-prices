@@ -15,12 +15,12 @@
   body{margin:0;background:#fff;color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;font-size:14px;line-height:1.6}
   .wrap{padding:6px 8px 6px}
   .tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
-  .tabs button{font:inherit;font-weight:700;font-size:13.5px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);cursor:pointer}
+  .tabs button{font:inherit;font-weight:700;font-size:12.5px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);cursor:pointer}
   .tabs button[aria-selected="true"]{background:var(--head);border-color:var(--head);color:#fff}
   .panel{display:none} .panel.on{display:block}
   .lead{margin:0 0 4px;color:var(--sub);font-size:12.5px}
   .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:8px}
-  table{border-collapse:separate;border-spacing:0;width:100%;min-width:640px}
+  table{border-collapse:separate;border-spacing:0;width:700px}
   th,td{padding:6px 8px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);text-align:center;vertical-align:middle}
   tr>*:last-child{border-right:none} tbody tr:last-child>*{border-bottom:none}
   thead th{background:var(--head);color:var(--headink);font-size:12.5px;font-weight:700;line-height:1.4}
@@ -37,6 +37,7 @@
   a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
   .legend{display:flex;flex-wrap:wrap;gap:4px 12px;margin:0 0 6px;font-size:12.5px;color:var(--sub)}
   .legend span{display:inline-flex;align-items:center;gap:4px}
+  @media (max-width:520px){.legend{font-size:11px;gap:2px 8px}.notes,.lead,.src{font-size:11px}.tabs button{font-size:12px;padding:4px 9px}}
 </style>
 </head>
 <body>
@@ -46,7 +47,7 @@
     <span class="ok"><b class="c">○</b>使える</span>
     <span class="mid"><b class="c">△</b>条件付き</span>
     <span class="ng"><b class="c">✕</b>使えない</span>
-    <span>確認日：2026年10月9日</span>
+    <span>2026/10/9確認</span>
   </div>
   <div class="tabs" role="tablist">
     <button role="tab" aria-selected="true" data-t="burtle">バートル</button>
@@ -55,7 +56,7 @@
   </div>
 
   <section class="panel on" id="burtle">
-    <p class="lead">縦がバッテリー、横がファンです。</p>
+    <p class="lead">縦がバッテリー、横がファン。</p>
     <div class="scroll"><table>
       <thead><tr>
         <th>バッテリー ＼ ファン</th>
@@ -74,16 +75,16 @@
       </tbody>
     </table></div>
     <ul class="notes">
-      <li>年式をまたぐ組み合わせでは、稼働時間と風量が同じ年式で使う場合と変わります。</li>
-      <li>2021年製以前のモデル（AC260・AC270など）とは互換性がありません。</li>
-      <li>充電器AC09-3は、変換ケーブルを使えばAC08・AC360・AC300も充電できます。</li>
-      <li>エアークラフトのウェアは、全モデルでファンの穴径が同じです。</li>
+      <li>年式をまたぐと稼働時間・風量が変わります。</li>
+      <li>2021年製以前（AC260・AC270等）とは互換なし。</li>
+      <li>充電器AC09-3は変換ケーブルでAC08・AC360・AC300に対応。</li>
+      <li>エアークラフトのウェアは全モデル同じ穴径。</li>
     </ul>
-    <p class="src">出典：<a href="https://www.kyoceraindustrialtools-burtle-device-support.jp/manuals/#a-compatibility" target="_blank" rel="noopener">バートル エアークラフト サポート（京セラ）ファン＆バッテリー互換表</a></p>
+    <p class="src">出典：<a href="https://www.kyoceraindustrialtools-burtle-device-support.jp/manuals/#a-compatibility" target="_blank" rel="noopener">バートル公式 互換表（京セラ）</a></p>
   </section>
 
   <section class="panel" id="fzn">
-    <p class="lead">縦がバッテリー、横がファンです。JapanLabelとGlobalLabelは別系統です。</p>
+    <p class="lead">縦がバッテリー、横がファン。JapanとGlobalは別系統。</p>
     <div class="scroll"><table>
       <thead><tr>
         <th>バッテリー ＼ ファン</th>
@@ -100,16 +101,16 @@
       </tbody>
     </table></div>
     <ul class="notes">
-      <li>※1 バッテリーRD9690PJ・RD9691NJ・RD9590PJ・RD9490PJ・RD9390PJ／ファンRD9610PH・RD9620PH・RD9410PH・RD9420PH・RD9310PH・RD9320PH・RD9330PC。</li>
-      <li>※2 バッテリーRD9292J・RD9293NJ・RD9290J・RD9291J・RD9190J・RD9090J／ファンRD9211H・RD9221H・RD9240・RD9210H・RD9220H・RD9230H ほか。</li>
-      <li>7V系のバッテリー（RD9890Jなど）は、7V系のファンにのみ使えます。</li>
-      <li>表にない空調風神服のバッテリーとは互換性がありません。</li>
+      <li>※1 電池RD9690PJ・9691NJ・9590PJ・9490PJ・9390PJ／ファンRD9610PH・9620PH・9410PH・9420PH・9310PH・9320PH・9330PC</li>
+      <li>※2 電池RD9292J・9293NJ・9290J・9291J・9190J・9090J／ファンRD9211H・9221H・9240・9210H・9220H・9230H ほか</li>
+      <li>7V系（RD9890J等）は7V系ファン専用。</li>
+      <li>表にない空調風神服のバッテリーとは互換なし。</li>
     </ul>
-    <p class="src">出典：<a href="https://fzn-suns.co.jp/wp/wp-content/uploads/2026/07/2026-device-compatibility.pdf" target="_blank" rel="noopener">FZN 空調風神服 デバイス互換性表（2026年7月版）</a></p>
+    <p class="src">出典：<a href="https://fzn-suns.co.jp/wp/wp-content/uploads/2026/07/2026-device-compatibility.pdf" target="_blank" rel="noopener">FZN公式 デバイス互換性表（2026年7月版）</a></p>
   </section>
 
   <section class="panel" id="hooh">
-    <p class="lead">縦がバッテリー、横がファンです。</p>
+    <p class="lead">縦がバッテリー、横がファン。</p>
     <div class="scroll"><table>
       <thead><tr>
         <th>バッテリー ＼ ファン</th>
@@ -124,11 +125,11 @@
       </tbody>
     </table></div>
     <ul class="notes">
-      <li>SV9系19Vバッテリーは、SV900ファンでは全段、SV5系ファンでは15V以下の設定で使えます。</li>
-      <li>SV5系15Vバッテリーは、SV900ファン・SV5系ファンのどちらでも全段使えます。</li>
-      <li>V19系は、2022年モデル（V15シリーズ）以前のファン・バッテリーとは互換性がありません。</li>
+      <li>SV9系19V電池：SV900ファンは全段、SV5系ファンは15V以下で可。</li>
+      <li>SV5系15V電池：どちらのファンでも全段可。</li>
+      <li>V19系は2022年モデル（V15）以前とは互換なし。</li>
     </ul>
-    <p class="src">出典：<a href="https://hooh.jp/dl-chart/" target="_blank" rel="noopener">村上被服 デバイス互換表（2026ファン・バッテリー互換表）</a></p>
+    <p class="src">出典：<a href="https://hooh.jp/dl-chart/" target="_blank" rel="noopener">村上被服公式 デバイス互換表</a></p>
   </section>
 </div>
 <script>
