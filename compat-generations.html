@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>空調服 世代別互換表</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f2328; --sub:#5b6470; --line:#dde1e6; --head:#24364b; --headink:#fff;
+    --ok:#1a7f37; --okbg:#e7f5ec; --mid:#9a6700; --midbg:#fff4d6; --ng:#c62828; --ngbg:#fdecec;
+    --own:#24364b; --ownbg:#e8eef6; --link:#0b63c5;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;font-size:14px;line-height:1.6}
+  .wrap{padding:12px 16px 16px}
+  .tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+  .tabs button{font:inherit;font-weight:700;font-size:13.5px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);cursor:pointer}
+  .tabs button[aria-selected="true"]{background:var(--head);border-color:var(--head);color:#fff}
+  .panel{display:none} .panel.on{display:block}
+  .lead{margin:0 0 8px;color:var(--sub);font-size:12.5px}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:8px}
+  table{border-collapse:separate;border-spacing:0;width:100%;min-width:640px}
+  th,td{padding:9px 10px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);text-align:center;vertical-align:middle}
+  tr>*:last-child{border-right:none} tbody tr:last-child>*{border-bottom:none}
+  thead th{background:var(--head);color:var(--headink);font-size:12.5px;font-weight:700;line-height:1.4}
+  thead th small,tbody th small{display:block;font-weight:400;font-size:11.5px;opacity:.85}
+  tbody th{background:#f4f6f8;text-align:left;font-size:13px;white-space:nowrap;position:sticky;left:0}
+  thead th:first-child{position:sticky;left:0;z-index:1;text-align:left}
+  .c{display:inline-block;min-width:2em;padding:1px 8px;border-radius:999px;font-weight:700;font-size:13px}
+  .ok .c{color:var(--ok);background:var(--okbg)} .mid .c{color:var(--mid);background:var(--midbg)}
+  .ng .c{color:var(--ng);background:var(--ngbg)} .own .c{color:var(--own);background:var(--ownbg)}
+  td small{display:block;color:var(--sub);font-size:11.5px;line-height:1.4;margin-top:3px}
+  .notes{margin:8px 0 0;padding-left:1.2em;color:var(--sub);font-size:12.5px}
+  .notes li{margin:2px 0}
+  .src{margin-top:6px;font-size:12px;color:var(--sub)}
+  a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+  .legend{display:flex;flex-wrap:wrap;gap:4px 12px;margin:0 0 10px;font-size:12.5px;color:var(--sub)}
+  .legend span{display:inline-flex;align-items:center;gap:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="legend">
+    <span class="own"><b class="c">純正</b>同じ年式</span>
+    <span class="ok"><b class="c">○</b>使える</span>
+    <span class="mid"><b class="c">△</b>条件付き</span>
+    <span class="ng"><b class="c">✕</b>使えない</span>
+    <span>確認日：2026年10月9日</span>
+  </div>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-t="burtle">バートル</button>
+    <button role="tab" aria-selected="false" data-t="fzn">サンエス／FZN</button>
+    <button role="tab" aria-selected="false" data-t="hooh">村上被服</button>
+  </div>
+
+  <section class="panel on" id="burtle">
+    <p class="lead">縦がバッテリー、横がファンです。</p>
+    <div class="scroll"><table>
+      <thead><tr>
+        <th>バッテリー ＼ ファン</th>
+        <th>AC10-1/AC10-2<small>2026年・30V</small></th>
+        <th>AC09-1/AC09-2<small>2025年・24V</small></th>
+        <th>AC08-1/AC08-2<small>2024年・22V</small></th>
+        <th>AC370/AC371<small>2023年・19V</small></th>
+        <th>AC310/AC311<small>2022年・17V</small></th>
+      </tr></thead>
+      <tbody>
+        <tr><th>AC10<small>2026年・30V</small></th><td class="own"><b class="c">純正</b></td><td class="ng"><b class="c">✕</b></td><td class="ng"><b class="c">✕</b></td><td class="ng"><b class="c">✕</b></td><td class="ng"><b class="c">✕</b></td></tr>
+        <tr><th>AC09<small>2025年・24V</small></th><td class="mid"><b class="c">△</b><small>ケーブルAC320</small></td><td class="own"><b class="c">純正</b></td><td class="ok"><b class="c">○</b></td><td class="ok"><b class="c">○</b></td><td class="ok"><b class="c">○</b></td></tr>
+        <tr><th>AC08<small>2024年・22V</small></th><td class="mid"><b class="c">△</b><small>ケーブルAC320</small></td><td class="ok"><b class="c">○</b></td><td class="own"><b class="c">純正</b></td><td class="ok"><b class="c">○</b></td><td class="ok"><b class="c">○</b></td></tr>
+        <tr><th>AC360<small>2023年・19V</small></th><td class="mid"><b class="c">△</b><small>ケーブルAC320</small></td><td class="ok"><b class="c">○</b></td><td class="ok"><b class="c">○</b></td><td class="own"><b class="c">純正</b></td><td class="ok"><b class="c">○</b></td></tr>
+        <tr><th>AC300<small>2022年・17V</small></th><td class="mid"><b class="c">△</b><small>ケーブルAC320</small></td><td class="ok"><b class="c">○</b></td><td class="ok"><b class="c">○</b></td><td class="ok"><b class="c">○</b></td><td class="own"><b class="c">純正</b></td></tr>
+      </tbody>
+    </table></div>
+    <ul class="notes">
+      <li>年式をまたぐ組み合わせでは、稼働時間と風量が同じ年式で使う場合と変わります。</li>
+      <li>2021年製以前のモデル（AC260・AC270など）とは互換性がありません。</li>
+      <li>充電器AC09-3は、変換ケーブルを使えばAC08・AC360・AC300も充電できます。</li>
+      <li>エアークラフトのウェアは、全モデルでファンの穴径が同じです。</li>
+    </ul>
+    <p class="src">出典：<a href="https://www.kyoceraindustrialtools-burtle-device-support.jp/manuals/#a-compatibility" target="_blank" rel="noopener">バートル エアークラフト サポート（京セラ）ファン＆バッテリー互換表</a></p>
+  </section>
+
+  <section class="panel" id="fzn">
+    <p class="lead">縦がバッテリー、横がファンです。JapanLabelとGlobalLabelは別系統です。</p>
+    <div class="scroll"><table>
+      <thead><tr>
+        <th>バッテリー ＼ ファン</th>
+        <th>RD9630H<small>GlobalLabel 30V</small></th>
+        <th>RD9530H<small>GlobalLabel 24V</small></th>
+        <th>RD9610PH・RD9620PH・RD9410PH・RD9420PH・RD9310PH・RD9320PH・RD9330PC<small>JapanLabel 24V（2023〜2026年）</small></th>
+        <th>RD9211H・RD9221H・RD9240・RD9210H・RD9220H・RD9230H ほか<small>JapanLabel 12V</small></th>
+      </tr></thead>
+      <tbody>
+        <tr><th>RD9680G<small>GlobalLabel 30V</small></th><td class="own"><b class="c">純正</b></td><td class="mid"><b class="c">△</b><small>24V以下に設定すれば可（30Vではファン停止）</small></td><td class="ng"><b class="c">✕</b></td><td class="ng"><b class="c">✕</b></td></tr>
+        <tr><th>RD9580G<small>GlobalLabel 24V</small></th><td class="ok"><b class="c">○</b></td><td class="own"><b class="c">純正</b></td><td class="ng"><b class="c">✕</b></td><td class="ng"><b class="c">✕</b></td></tr>
+        <tr><th>RD9690PJ・RD9691NJ・RD9590PJ・RD9490PJ・RD9390PJ<small>JapanLabel 24V</small></th><td class="ng"><b class="c">✕</b></td><td class="ng"><b class="c">✕</b></td><td class="ok"><b class="c">○</b><small>すべての組み合わせで可</small></td><td class="ng"><b class="c">✕</b></td></tr>
+        <tr><th>RD9292J・RD9293NJ・RD9290J・RD9291J・RD9190J・RD9090J<small>JapanLabel 12V</small></th><td class="ng"><b class="c">✕</b></td><td class="ng"><b class="c">✕</b></td><td class="ng"><b class="c">✕</b></td><td class="ok"><b class="c">○</b><small>すべての組み合わせで可</small></td></tr>
+      </tbody>
+    </table></div>
+    <ul class="notes">
+      <li>7V系のバッテリー（RD9890Jなど）は、7V系のファンにのみ使えます。</li>
+      <li>表にない空調風神服のバッテリーとは互換性がありません。</li>
+    </ul>
+    <p class="src">出典：<a href="https://fzn-suns.co.jp/wp/wp-content/uploads/2026/07/2026-device-compatibility.pdf" target="_blank" rel="noopener">FZN 空調風神服 デバイス互換性表（2026年7月版）</a></p>
+  </section>
+
+  <section class="panel" id="hooh">
+    <p class="lead">縦がバッテリー、横がファンです。</p>
+    <div class="scroll"><table>
+      <thead><tr>
+        <th>バッテリー ＼ ファン</th>
+        <th>V30ファン（V3002）<small>2026年・30V</small></th>
+        <th>V28ファン<small>2025年・28V</small></th>
+        <th>V19ファン<small>19V</small></th>
+      </tr></thead>
+      <tbody>
+        <tr><th>V3001<small>2026年・30V</small></th><td class="own"><b class="c">純正</b></td><td class="mid"><b class="c">△</b><small>19V以下の設定で可（30Vは不可）</small></td><td class="ng"><b class="c">✕</b></td></tr>
+        <tr><th>V28バッテリー<small>2025年・28V</small></th><td class="ok"><b class="c">○</b></td><td class="own"><b class="c">純正</b></td><td class="mid"><b class="c">△</b><small>19V以下の設定で可（28Vは不可）</small></td></tr>
+        <tr><th>V19バッテリー<small>19V</small></th><td class="ok"><b class="c">○</b></td><td class="ok"><b class="c">○</b></td><td class="own"><b class="c">純正</b></td></tr>
+      </tbody>
+    </table></div>
+    <ul class="notes">
+      <li>SV9系19Vバッテリーは、SV900ファンでは全段、SV5系ファンでは15V以下の設定で使えます。</li>
+      <li>SV5系15Vバッテリーは、SV900ファン・SV5系ファンのどちらでも全段使えます。</li>
+      <li>V19系は、2022年モデル（V15シリーズ）以前のファン・バッテリーとは互換性がありません。</li>
+    </ul>
+    <p class="src">出典：<a href="https://hooh.jp/dl-chart/" target="_blank" rel="noopener">村上被服 デバイス互換表（2026ファン・バッテリー互換表）</a></p>
+  </section>
+</div>
+<script>
+  document.querySelectorAll('.tabs button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected', x===b ? 'true':'false')});
+      document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on', p.id===b.dataset.t)});
+    });
+  });
+</script>
+</body>
+</html>

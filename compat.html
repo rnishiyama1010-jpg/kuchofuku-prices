@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>空調服 互換性 早見表</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f2328; --sub:#5b6470; --line:#dde1e6; --head:#24364b; --headink:#fff;
+    --zebra:#f7f9fb; --ok:#1a7f37; --okbg:#e7f5ec; --mid:#9a6700; --midbg:#fff4d6;
+    --ng:#c62828; --ngbg:#fdecec; --na:#6e7781; --nabg:#f1f3f5; --link:#0b63c5;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;font-size:14px;line-height:1.6}
+  .wrap{padding:12px 16px 16px}
+  .meta{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;margin:0 0 10px;color:var(--sub);font-size:12.5px}
+  .legend span{display:inline-flex;align-items:center;gap:4px;margin-right:10px}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:8px}
+  table{border-collapse:separate;border-spacing:0;width:100%;min-width:1000px}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+  thead th{background:var(--head);color:var(--headink);font-weight:700;font-size:13px;position:sticky;top:0;white-space:nowrap}
+  tbody tr:nth-child(even) td{background:var(--zebra)}
+  tbody tr:last-child td{border-bottom:none}
+  th:first-child,td:first-child{position:sticky;left:0;z-index:1;min-width:150px;border-right:1px solid var(--line)}
+  thead th:first-child{z-index:2}
+  td:first-child{background:#fff;font-weight:700}
+  tbody tr:nth-child(even) td:first-child{background:var(--zebra)}
+  .brand small{display:block;font-weight:400;color:var(--sub);font-size:12px}
+  .model{white-space:nowrap}
+  .model small{display:block;color:var(--sub);font-size:12px;white-space:normal}
+  .b{display:inline-block;min-width:1.9em;padding:1px 7px;border-radius:999px;font-weight:700;font-size:12.5px;text-align:center;margin-right:6px;vertical-align:1px}
+  .ok{color:var(--ok);background:var(--okbg)} .mid{color:var(--mid);background:var(--midbg)}
+  .ng{color:var(--ng);background:var(--ngbg)} .na{color:var(--na);background:var(--nabg);font-weight:500}
+  .note{display:block;color:var(--sub);font-size:12px;margin-top:2px}
+  .src{color:var(--sub);font-size:11.5px}
+  a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+  .foot{margin-top:10px;color:var(--sub);font-size:12px}
+  .foot p{margin:4px 0}
+  .buy{display:flex;flex-direction:column;gap:6px;min-width:110px}
+  .bt{display:block;text-align:center;padding:5px 10px;border-radius:6px;color:#fff;font-weight:700;font-size:12.5px;text-decoration:none!important}
+  .bt.az{background:#ff9900;color:#111} .bt.rk{background:#bf0000} .bt.yh{background:#ff0033}
+  td>a{white-space:nowrap}
+  .bt small{display:block;font-weight:500;font-size:11px;opacity:.95}
+  .bt .p{display:block;font-size:13px}
+  .bt:hover{filter:brightness(1.08)}
+  .pr{display:inline-block;margin-left:auto;font-size:11.5px;color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    <span>確認日：2026年10月9日（各メーカーの公式情報）</span>
+    <span id="upd"></span>
+    <span class="pr">【PR】本表には広告リンクを含みます</span>
+    <span class="legend">
+      <span><b class="b ok">○</b>使える</span>
+      <span><b class="b mid">△</b>条件付き</span>
+      <span><b class="b ng">✕</b>使えない</span>
+      <span><b class="b na">―</b>公式の記載なし</span>
+    </span>
+  </div>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr>
+        <th>メーカー</th>
+        <th>現行の主力デバイス</th>
+        <th>他社のファン・バッテリー</th>
+        <th>自社の旧世代との組み合わせ</th>
+        <th>冬の電熱ウェアと共用</th>
+        <th>公式情報</th>
+        <th>販売店で探す</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="brand">バートル<small>エアークラフト</small></td>
+        <td class="model">AC10（30V）<small>2026年モデル</small></td>
+        <td><b class="b ng">✕</b>使用できない<span class="note">ウェアへの他社ファン取付も非推奨</span></td>
+        <td><b class="b mid">△</b>2022〜2025年モデル同士は可<span class="note">旧バッテリー＋AC10ファンはケーブルAC320で可。AC10バッテリー＋旧ファンは不可</span></td>
+        <td><b class="b ok">○</b>サーモクラフトTC500<span class="note">対応はAC09・AC08・AC360・AC300</span></td>
+        <td><a href="https://www.kyoceraindustrialtools-burtle-device-support.jp/manuals/#a-compatibility" target="_blank" rel="noopener">公式互換表</a></td>
+        <td><div class="buy" data-id="AC10" data-q="バートル AC10 バッテリー"></div></td>
+      </tr>
+      <tr>
+        <td class="brand">株式会社空調服<small>空調服®</small></td>
+        <td class="model">BT25211（25V）<small>現行の最上位</small></td>
+        <td><b class="b ng">✕</b>故障・事故の原因になる</td>
+        <td><b class="b mid">△</b>同じ電圧どうしのみ可<span class="note">25V・18V・14.4V・7.2Vをまたぐ組み合わせは不可</span></td>
+        <td><b class="b ok">○</b>サーマルギア<span class="note">18V・14.4Vは変換アダプターが必要</span></td>
+        <td><a href="https://9229.co.jp/support/replacement/" target="_blank" rel="noopener">公式対応表</a></td>
+        <td><div class="buy" data-id="BT25211" data-q="空調服 BT25211"></div></td>
+      </tr>
+      <tr>
+        <td class="brand">自重堂<small>空調服®モデル</small></td>
+        <td class="model">空調服社のデバイス<small>BT25211など</small></td>
+        <td><b class="b ng">✕</b>専用機器のみ</td>
+        <td><b class="b mid">△</b>空調服社と同じ<span class="note">同じ電圧どうしのみ可</span></td>
+        <td><b class="b na">―</b><span class="note">電熱ベストFEVER GEARは専用バッテリー</span></td>
+        <td><a href="https://jichodo-shop.co.jp/products?category=aircon-acc" target="_blank" rel="noopener">公式通販</a></td>
+        <td><div class="buy" data-id="BT25211" data-q="空調服 BT25211"></div></td>
+      </tr>
+      <tr>
+        <td class="brand">サンエス／FZN<small>空調風神服</small></td>
+        <td class="model">RD9690PJ（24V）<small>2026年・JapanLabel</small>RD9680G（30V）<small>2026年・GlobalLabel</small></td>
+        <td><b class="b ng">✕</b>互換性なし</td>
+        <td><b class="b ok">○</b>JapanLabel 24Vは2023〜2026年で相互に可<span class="note">JapanLabelとGlobalLabel、12Vと24Vの間は不可</span></td>
+        <td><b class="b ok">○</b>雷神服 RD9570<span class="note">24V・12V系の2025年以前のバッテリー</span></td>
+        <td><a href="https://fzn-suns.co.jp/wp/wp-content/uploads/2026/07/2026-device-compatibility.pdf" target="_blank" rel="noopener">公式互換性表</a></td>
+        <td><div class="buy" data-id="RD9690PJ" data-q="空調風神服 RD9690PJ"></div></td>
+      </tr>
+      <tr>
+        <td class="brand">村上被服<small>HOOH 快適ウェア</small></td>
+        <td class="model">V3001（30V）<small>2026年モデル</small></td>
+        <td><b class="b ng">✕</b>故障は責任を負わない</td>
+        <td><b class="b mid">△</b>V3001はV28ファンに19V以下で可<span class="note">V19ファンには使えない</span></td>
+        <td><b class="b mid">△</b>旧世代のバッテリーのみ<span class="note">ヒートベストに8.4V以下で使用可</span></td>
+        <td><a href="https://hooh.jp/dl-chart/" target="_blank" rel="noopener">公式互換表</a></td>
+        <td><div class="buy" data-id="V3001" data-q="鳳皇 V3001"></div></td>
+      </tr>
+      <tr>
+        <td class="brand">アイズフロンティア<small>エアーサイクロン</small></td>
+        <td class="model">90023（32V）<small>2026年モデル</small></td>
+        <td><b class="b na">―</b></td>
+        <td><b class="b ng">✕</b>90023は90022ファン専用</td>
+        <td><b class="b na">―</b></td>
+        <td><a href="https://izfr.co.jp/items/90023/" target="_blank" rel="noopener">公式商品ページ</a></td>
+        <td><div class="buy" data-id="" data-q="アイズフロンティア 90023"></div></td>
+      </tr>
+      <tr>
+        <td class="brand">ワークマン<small>WindCore</small></td>
+        <td class="model">WZ4690（30V）<small>2026年モデル</small></td>
+        <td><b class="b na">―</b></td>
+        <td><b class="b ng">✕</b>他のWindCoreと互換性なし</td>
+        <td><b class="b na">―</b></td>
+        <td><span class="src">公式商品ページ（販売終了）</span></td>
+        <td><span class="src">公式通販・店舗のみ</span></td>
+      </tr>
+      <tr>
+        <td class="brand">ミドリ安全<small>クールファン</small></td>
+        <td class="model">TYPE-PRO（24V）</td>
+        <td><b class="b ng">✕</b>使用しないこと</td>
+        <td><b class="b mid">△</b>変換ケーブルで一部可<span class="note">HPシリーズとは不可</span></td>
+        <td><b class="b na">―</b></td>
+        <td><a href="https://ec.midori-anzen.com/shop/e/ea392_001/" target="_blank" rel="noopener">公式互換表</a></td>
+        <td><div class="buy" data-id="" data-q="ミドリ安全 WE20BAT7PRO"></div></td>
+      </tr>
+      <tr>
+        <td class="brand">マキタ<small>ファンジャケット</small></td>
+        <td class="model">電動工具用バッテリー<small>10.8V・14.4V・18V（ホルダー経由）</small></td>
+        <td><b class="b na">―</b></td>
+        <td><b class="b mid">△</b>新ホルダー＋旧ファンはケーブルユニットCで可<span class="note">旧ホルダー＋新ファンは不可（販売店情報）</span></td>
+        <td><b class="b na">―</b></td>
+        <td><a href="https://www.makita.co.jp/" target="_blank" rel="noopener">公式サイト</a></td>
+        <td><div class="buy" data-id="" data-q="マキタ A-72132"></div></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="foot">
+    <p>※価格は楽天市場・Yahoo!ショッピングの税込最安値です（送料別の場合あり）。Amazonは規約により価格を掲載していません。</p>
+    <p>※各メーカーとも、他社製のファン・バッテリーを組み合わせた場合の故障や事故は保証の対象外です。</p>
+    <p>※「旧世代との組み合わせ」は同じメーカー内の年式違いのことです。詳しい組み合わせは下の世代別互換表をご覧ください。</p>
+  </div>
+</div>
+<script>
+(function(){
+  var AMZ=function(q){return "https://www.amazon.co.jp/s?k="+encodeURIComponent(q)+"&tag=stockmedia-22"};
+  var MSM="https://af.moshimo.com/af/c/click?a_id=5837116&p_id=54&pc_id=54&pl_id=616&url=";
+  var VC="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3783843&pid=892721954&vc_url=";
+  var rk=function(u){return MSM+encodeURIComponent(u)}, yh=function(u){return VC+encodeURIComponent(u)};
+  var R='target="_blank" rel="nofollow sponsored noopener"';
+  var yen=function(n){return "¥"+Number(n).toLocaleString("ja-JP")};
+  function draw(live){
+    document.querySelectorAll(".buy").forEach(function(el){
+      var q=el.dataset.q, x=(live&&el.dataset.id&&live[el.dataset.id])||{};
+      var r=x.rakuten, y=x.yahoo, low=x.lowest&&x.lowest.site;
+      var ru=r&&/^https?:\/\/item\.rakuten\.co\.jp\//.test(r.url)?rk(r.url):rk("https://search.rakuten.co.jp/search/mall/"+encodeURIComponent(q)+"/");
+      var yu=y&&/^https?:\/\/([a-z]+\.)?shopping\.yahoo\.co\.jp\//.test(y.url)?yh(y.url):yh("https://shopping.yahoo.co.jp/search?p="+encodeURIComponent(q));
+      var lab=function(o,site){return o&&o.price?'<span class="p">'+yen(o.price)+(low===site?" 最安":"")+'</span>'+(o.freeShipping?"":"<small>＋送料</small>"):'<small>価格を見る</small>'};
+      el.innerHTML='<a class="bt az" href="'+AMZ(q)+'" '+R+'>Amazon<small>価格を見る</small></a>'+
+        '<a class="bt rk" href="'+ru+'" '+R+' referrerpolicy="no-referrer-when-downgrade">楽天市場'+lab(r,"rakuten")+'</a>'+
+        '<a class="bt yh" href="'+yu+'" '+R+'>Yahoo!'+lab(y,"yahoo")+'</a>';
+    });
+  }
+  draw(null);
+  fetch("https://rnishiyama1010-jpg.github.io/kuchofuku-prices/prices.json",{cache:"no-store"})
+    .then(function(r){return r.json()}).then(function(d){draw(d.items);var u=document.getElementById("upd");if(u&&d.updated)u.textContent="価格更新："+d.updated.slice(0,10).replace(/-/g,"/")+"（毎朝自動更新）"}).catch(function(){});
+})();
+</script>
+</body>
+</html>
