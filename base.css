@@ -21,6 +21,7 @@ td small,.k small{display:block;font-weight:400;color:var(--sub);font-size:12px}
 a{color:var(--link);text-decoration:none}
 @media (max-width:560px){
   body{font-size:14px}
+  h2.ttl{font-size:21px;margin:4px 0 12px}
   table,thead,tbody,tr,td{display:block;width:100%}
   thead{display:none}
   table{border:none;background:transparent}
