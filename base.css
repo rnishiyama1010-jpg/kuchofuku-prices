@@ -3,6 +3,7 @@
 html,body{margin:0;background:transparent}
 body{color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;font-size:14.5px;line-height:1.6}
 .wrap{padding:4px 6px}
+h2.ttl{font-family:"Noto Serif JP",serif;font-weight:500;font-size:30px;text-align:center;margin:6px 0 16px;color:var(--ink)}
 h3{font-size:15px;margin:14px 0 6px;color:var(--head)}
 h3:first-child{margin-top:0}
 .lead{margin:0 0 8px;color:var(--sub);font-size:13px}
