@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-10T05:59:14+09:00",
+ "updated": "2026-10-11T05:57:06+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -166,8 +166,8 @@
    },
    "yahoo": {
     "price": 11113,
-    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt25211.html",
-    "shop": "カナジン 2号店",
+    "url": "https://store.shopping.yahoo.co.jp/toolking/bt25211.html",
+    "shop": "ツールキング",
     "freeShipping": false,
     "name": "BT25211 バッテリー 25V 本体のみ バッテリー 8216025 空調服 小型便 在庫"
    },
@@ -287,14 +287,14 @@
     "url": "https://item.rakuten.co.jp/auc-michio/305fga79000/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
     "shop": "ミチオショップ",
     "freeShipping": false,
-    "name": "電熱ベスト Z-DRAGON 防寒着 FEVER GEAR FGA79000 ヒーター内蔵電熱ベスト 自重堂 SS〜LL"
+    "name": "[在庫限り]電熱ベスト Z-DRAGON 防寒着 FEVER GEAR FGA79000 ヒーター内蔵電熱ベスト 自重堂 SS〜LL"
    },
    "yahoo": {
     "price": 4945,
     "url": "https://store.shopping.yahoo.co.jp/michioshop/305fga79000.html",
     "shop": "ミチオショップYahoo!店",
     "freeShipping": true,
-    "name": "電熱ベスト Z-DRAGON 防寒着 FEVER GEAR FGA79000 ヒーター内蔵電熱ベスト 自重堂 SS〜LL"
+    "name": "電熱ベスト Z-DRAGON 防寒着 FEVER GEAR FGA79000 ヒーター内蔵電熱ベスト 自重堂 SS〜LL[在庫限り]"
    },
    "lowest": {
     "site": "rakuten",
@@ -314,7 +314,7 @@
     "url": "https://store.shopping.yahoo.co.jp/michioshop/305fga79010.html",
     "shop": "ミチオショップYahoo!店",
     "freeShipping": true,
-    "name": "電熱ベスト Z-DRAGON 防寒着 FEVER GEAR FGA79010 ヒーター内蔵電熱ベスト 自重堂 SS〜LL"
+    "name": "電熱ベスト Z-DRAGON 防寒着 FEVER GEAR FGA79010 ヒーター内蔵電熱ベスト 自重堂 SS〜LL[在庫限り]"
    },
    "lowest": {
     "site": "rakuten",
@@ -343,22 +343,22 @@
   },
   "HV-FGA20010": {
    "rakuten": {
-    "price": 4945,
-    "url": "https://item.rakuten.co.jp/auc-michio/305fga20010/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "ミチオショップ",
+    "price": 5248,
+    "url": "https://item.rakuten.co.jp/wakuwaku-sunrise/k1-fga20010-3l/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "安全靴作業用品わくわくサンライズ",
     "freeShipping": false,
-    "name": "電熱ベスト 防寒着 FEVER GEAR FGA20010 ヒーター内蔵電熱インナーベスト 自重堂 SS〜LL"
+    "name": "【FEVER GEAR ADVANCE】電熱インナーベスト FGA20010 EL（3L）（発熱体内臓型・専用バッテリー付）｜ 発熱 / 防寒 / 寒さ対策 / 作業着 / 自重堂 /"
    },
    "yahoo": {
-    "price": 4945,
-    "url": "https://store.shopping.yahoo.co.jp/michioshop/305fga20010.html",
-    "shop": "ミチオショップYahoo!店",
+    "price": 5250,
+    "url": "https://store.shopping.yahoo.co.jp/azumanet2014/jichoudo-fga20010b.html",
+    "shop": "アズマクロージング",
     "freeShipping": true,
-    "name": "電熱ベスト 防寒着 FEVER GEAR FGA20010 ヒーター内蔵電熱インナーベスト 自重堂 SS〜LL"
+    "name": "電熱インナーベスト EL バッテリー付き 防寒ベスト 電熱ベスト 自重堂 FGA20010 保温性 暖かい 防寒服 防寒着 アウトドア 秋冬 作業服 作業着"
    },
    "lowest": {
     "site": "rakuten",
-    "price": 4945
+    "price": 5248
    }
   },
   "HV-3274": {
@@ -431,8 +431,8 @@
    },
    "yahoo": {
     "price": 11368,
-    "url": "https://store.shopping.yahoo.co.jp/kucho100ka/099-bo32550-rd9570.html",
-    "shop": "武蔵野ユニフォーム 空調服・作業着取扱店",
+    "url": "https://store.shopping.yahoo.co.jp/uniform100ka/099-bo32550-rd9570.html",
+    "shop": "空調服・ファン付き作業着取扱店 ユニフォーム百科",
     "freeShipping": false,
     "name": "サンエス インナーベスト 発熱ユニットセット BO32550-RD9570 5層構造でしっかり防風 秋冬 ヒートアイテム 作業着 作業服 メンズ ユニセックス ※バッテリー別売"
    },
@@ -481,7 +481,7 @@
     "url": "https://item.rakuten.co.jp/himaraya/0000001216025/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
     "shop": "ヒマラヤ楽天市場店",
     "freeShipping": false,
-    "name": "【10月9日1:59まで！ほとんど全品ポイントUP】タルテックス TULTEX 電熱ベスト 防寒 メンズ レディース Vネックヒーターベスト インナー型 アイトス AITOZ AZ-8313 ‥"
+    "name": "タルテックス TULTEX 電熱ベスト 防寒 メンズ レディース Vネックヒーターベスト インナー型 アイトス AITOZ AZ-8313 ‥"
    },
    "yahoo": {
     "price": 4390,
@@ -501,7 +501,7 @@
     "url": "https://item.rakuten.co.jp/himaraya/0000001216024/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
     "shop": "ヒマラヤ楽天市場店",
     "freeShipping": false,
-    "name": "【10月9日1:59まで！ほとんど全品ポイントUP】タルテックス TULTEX 電熱ベスト 防寒 メンズ レディース 衿付ヒーターベスト アウター型 アイトス AITOZ 【ご自宅配送限定】 AZ-8312 ‥"
+    "name": "タルテックス TULTEX 電熱ベスト 防寒 メンズ レディース 衿付ヒーターベスト アウター型 アイトス AITOZ 【ご自宅配送限定】 AZ-8312 ‥"
    },
    "yahoo": {
     "price": 4980,
