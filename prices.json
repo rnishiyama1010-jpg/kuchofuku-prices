@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-12T05:58:19+09:00",
+ "updated": "2026-10-13T06:01:54+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -24,11 +24,11 @@
   },
   "AC09": {
    "rakuten": {
-    "price": 12001,
-    "url": "https://item.rakuten.co.jp/jukoin/186051694/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "JUKO.IN 楽天市場店",
+    "price": 12000,
+    "url": "https://item.rakuten.co.jp/act-kougu/rc_itkm4onoxci0_kbw2/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "アクトツール楽天市場店",
     "freeShipping": true,
-    "name": "即出荷可能 バートル AC09 エアークラフト専用 リチウムイオン バッテリー 24V 2025年モデル BURTLE"
+    "name": "【新古】◇バートル(BURTLE) 空調服用リチウムイオンバッテリー AC09 エアークラフト【八潮店】"
    },
    "yahoo": {
     "price": 12001,
@@ -39,12 +39,12 @@
    },
    "lowest": {
     "site": "rakuten",
-    "price": 12001
+    "price": 12000
    }
   },
   "RD9690PJ": {
    "rakuten": {
-    "price": 16980,
+    "price": 14980,
     "url": "https://item.rakuten.co.jp/teradaya2nd/kjm-4g-204-6/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
     "shop": "大阪寺田や",
     "freeShipping": true,
@@ -59,7 +59,7 @@
    },
    "lowest": {
     "site": "rakuten",
-    "price": 16980
+    "price": 14980
    }
   },
   "RD9691NJ": {
@@ -565,8 +565,8 @@
    },
    "yahoo": {
     "price": 5870,
-    "url": "https://store.shopping.yahoo.co.jp/worktk/xb-167.html",
-    "shop": "作業服・空調服・医療白衣のWorkTK",
+    "url": "https://store.shopping.yahoo.co.jp/tk-netshop/xb-167.html",
+    "shop": "スポーツインナーSportsTK",
     "freeShipping": true,
     "name": "ヒーター内蔵ベスト ヒートベスト 服単品 ジーベック ポリエステル 防風 保温 防寒 秋冬 XEBEC xb-167"
    },
