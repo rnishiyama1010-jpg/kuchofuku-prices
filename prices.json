@@ -1,25 +1,25 @@
 {
- "updated": "2026-10-16T06:14:04+09:00",
+ "updated": "2026-10-17T06:11:32+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
    "rakuten": {
-    "price": 10500,
-    "url": "https://item.rakuten.co.jp/a-price/4571648699773/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "XPRICE楽天市場店",
-    "freeShipping": false,
-    "name": "BURTLE バートル エアークラフト 2026年モデル 30V バッテリー 683946B AC10-1 AC10-2 IC10-1 対応 リチウムイオンバッテリー 空調ウェア 予備バッテリー 熱中症対策グッズ"
+    "price": 11200,
+    "url": "https://item.rakuten.co.jp/living-hard-r/burtle-ac10/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "LIVING&HARD 楽天市場店",
+    "freeShipping": true,
+    "name": "BURTLE バートル ファン付ベスト用 30V バッテリー AC10 78 マットブラック エアークラフト 作業着 熱中症対策 空調ウェア"
    },
    "yahoo": {
-    "price": 11400,
-    "url": "https://store.shopping.yahoo.co.jp/iefan/burtle-8yt-001.html",
-    "shop": "家ファン! Yahoo!店",
+    "price": 11869,
+    "url": "https://store.shopping.yahoo.co.jp/ws-captain/ac09.html",
+    "shop": "workshop captain",
     "freeShipping": true,
-    "name": "BURTLE AC10 エアークラフトリチウムイオンバッテリー 78.マットブラック AIR CRAFT Li-ion 30V バートル"
+    "name": "バートル バッテリー AC10 30V 2026年最新 京セラ製 急速充電 エアークラフト BURTLE aircraft"
    },
    "lowest": {
     "site": "rakuten",
-    "price": 10500
+    "price": 11200
    }
   },
   "AC09": {
@@ -75,7 +75,7 @@
     "url": "https://store.shopping.yahoo.co.jp/cocoterracemore/icn-acb-002461134.html",
     "shop": "イチネンネットmore",
     "freeShipping": true,
-    "name": "(あすつく) サンエス:２４Ｖリチウムイオンバッテリーセット（BN） RD9691NJ 熱中症対策 熱中症 サンエス  空調風神服??"
+    "name": "＼ポイント5倍！10/18まで／(あすつく) サンエス:２４Ｖリチウムイオンバッテリーセット（BN） RD9691NJ 熱中症対策 熱中症 サンエス  空調風神服??"
    },
    "lowest": {
     "site": "rakuten",
@@ -89,7 +89,7 @@
     "url": "https://store.shopping.yahoo.co.jp/cocoterracemore/icn-acb-002461137.html",
     "shop": "イチネンネットmore",
     "freeShipping": true,
-    "name": "(あすつく) サンエス:３０Ｖバッテリーセット RD9680G 熱中症対策 熱中症 サンエス  空調風神服??  リチウムイオンバッテリー"
+    "name": "＼ポイント5倍！10/18まで／(あすつく) サンエス:３０Ｖバッテリーセット RD9680G 熱中症対策 熱中症 サンエス  空調風神服??  リチウムイオンバッテリー"
    },
    "lowest": {
     "site": "yahoo",
@@ -122,7 +122,7 @@
     "url": "https://item.rakuten.co.jp/ezaki-g/atbs-rd9590pj/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
     "shop": "EZAKI NET GOLF",
     "freeShipping": false,
-    "name": "【10/15 エントリー/抽選で最大100%ポイントバック】 アタックベース 正規品 空調風神服装着ファン対応 JAPAN LABEL 24V仕様 リチウムイオンバッテリーセットJL-1 「 2025モデル 日本製 RD9590PJ 」 【当店在庫品】"
+    "name": "【10/18 エントリー/抽選で最大100%ポイントバック】 アタックベース 正規品 空調風神服装着ファン対応 JAPAN LABEL 24V仕様 リチウムイオンバッテリーセットJL-1 「 2025モデル 日本製 RD9590PJ 」 【当店在庫品】"
    },
    "yahoo": {
     "price": 13200,
@@ -206,8 +206,8 @@
    },
    "yahoo": {
     "price": 11132,
-    "url": "https://store.shopping.yahoo.co.jp/total-homes/18302.html",
-    "shop": "Total Homes",
+    "url": "https://store.shopping.yahoo.co.jp/takahashihonsha/18302.html",
+    "shop": "高橋本社Yahoo!店",
     "freeShipping": true,
     "name": "桑和 G.G. SOWA 18302 EFウェア 20V バッテリー(バッテリー+充電器) 20000mAh 2024年春夏新作"
    },
@@ -431,8 +431,8 @@
    },
    "yahoo": {
     "price": 11368,
-    "url": "https://store.shopping.yahoo.co.jp/kucho100ka/099-bo32550-rd9570.html",
-    "shop": "武蔵野ユニフォーム 空調服・作業着取扱店",
+    "url": "https://store.shopping.yahoo.co.jp/uniform100ka/099-bo32550-rd9570.html",
+    "shop": "空調服・ファン付き作業着取扱店 ユニフォーム百科",
     "freeShipping": false,
     "name": "サンエス インナーベスト 発熱ユニットセット BO32550-RD9570 5層構造でしっかり防風 秋冬 ヒートアイテム 作業着 作業服 メンズ ユニセックス ※バッテリー別売"
    },
@@ -565,8 +565,8 @@
    },
    "yahoo": {
     "price": 5870,
-    "url": "https://store.shopping.yahoo.co.jp/worktk/xb-167.html",
-    "shop": "作業服・空調服・医療白衣のWorkTK",
+    "url": "https://store.shopping.yahoo.co.jp/tk-netshop/xb-167.html",
+    "shop": "スポーツインナーSportsTK",
     "freeShipping": true,
     "name": "ヒーター内蔵ベスト ヒートベスト 服単品 ジーベック ポリエステル 防風 保温 防寒 秋冬 XEBEC xb-167"
    },
