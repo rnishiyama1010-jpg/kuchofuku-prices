@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-17T06:11:32+09:00",
+ "updated": "2026-10-18T07:42:21+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -186,8 +186,8 @@
    },
    "yahoo": {
     "price": 9552,
-    "url": "https://store.shopping.yahoo.co.jp/toolking/bt23211-xebec.html",
-    "shop": "ツールキング",
+    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt23211-xebec.html",
+    "shop": "カナジン 2号店",
     "freeShipping": false,
     "name": "ジーベック BT23211 バッテリー 本体 18V 999-888 空調服 XEBEC 小型便 在庫"
    },
@@ -206,8 +206,8 @@
    },
    "yahoo": {
     "price": 11132,
-    "url": "https://store.shopping.yahoo.co.jp/takahashihonsha/18302.html",
-    "shop": "高橋本社Yahoo!店",
+    "url": "https://store.shopping.yahoo.co.jp/total-homes/18302.html",
+    "shop": "Total Homes",
     "freeShipping": true,
     "name": "桑和 G.G. SOWA 18302 EFウェア 20V バッテリー(バッテリー+充電器) 20000mAh 2024年春夏新作"
    },
@@ -287,7 +287,7 @@
     "url": "https://item.rakuten.co.jp/auc-michio/305fga79000/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
     "shop": "ミチオショップ",
     "freeShipping": false,
-    "name": "【マラソン期間＼P2倍／】[在庫限り]電熱ベスト Z-DRAGON 防寒着 FEVER GEAR FGA79000 ヒーター内蔵電熱ベスト 自重堂 SS〜LL"
+    "name": "[在庫限り]電熱ベスト Z-DRAGON 防寒着 FEVER GEAR FGA79000 ヒーター内蔵電熱ベスト 自重堂 SS〜LL"
    },
    "yahoo": {
     "price": 4945,
@@ -565,8 +565,8 @@
    },
    "yahoo": {
     "price": 5870,
-    "url": "https://store.shopping.yahoo.co.jp/tk-netshop/xb-167.html",
-    "shop": "スポーツインナーSportsTK",
+    "url": "https://store.shopping.yahoo.co.jp/worktk/xb-167.html",
+    "shop": "作業服・空調服・医療白衣のWorkTK",
     "freeShipping": true,
     "name": "ヒーター内蔵ベスト ヒートベスト 服単品 ジーベック ポリエステル 防風 保温 防寒 秋冬 XEBEC xb-167"
    },
