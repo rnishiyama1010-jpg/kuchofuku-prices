@@ -1,14 +1,14 @@
 {
- "updated": "2026-10-20T08:58:42+09:00",
+ "updated": "2026-10-21T08:27:25+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
    "rakuten": {
-    "price": 11200,
-    "url": "https://item.rakuten.co.jp/living-hard-r/burtle-ac10/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "LIVING&HARD 楽天市場店",
+    "price": 11150,
+    "url": "https://item.rakuten.co.jp/outletusa/bt_60-ac10/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "作業服・無地Tシャツのユニワーク",
     "freeShipping": true,
-    "name": "BURTLE バートル ファン付ベスト用 30V バッテリー AC10 78 マットブラック エアークラフト 作業着 熱中症対策 空調ウェア"
+    "name": "【即日発送】BURTLE リチウムイオンバッテリー 30V AIRCRAFT 単品 メンズ レディース 全3色 マーリン/マットブラック/メタリックレッド 2026SSモデル AC10"
    },
    "yahoo": {
     "price": 11869,
@@ -19,7 +19,7 @@
    },
    "lowest": {
     "site": "rakuten",
-    "price": 11200
+    "price": 11150
    }
   },
   "AC09": {
@@ -186,8 +186,8 @@
    },
    "yahoo": {
     "price": 9552,
-    "url": "https://store.shopping.yahoo.co.jp/toolking/bt23211-xebec.html",
-    "shop": "ツールキング",
+    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt23211-xebec.html",
+    "shop": "カナジン 2号店",
     "freeShipping": false,
     "name": "ジーベック BT23211 バッテリー 本体 18V 999-888 空調服 XEBEC 小型便 在庫"
    },
@@ -351,8 +351,8 @@
    },
    "yahoo": {
     "price": 5250,
-    "url": "https://store.shopping.yahoo.co.jp/azumanet2014/jichoudo-fga20010b.html",
-    "shop": "アズマクロージング",
+    "url": "https://store.shopping.yahoo.co.jp/darumashouten/jichoudo-fga20010b.html",
+    "shop": "作業服の専門店だるま商店",
     "freeShipping": true,
     "name": "電熱インナーベスト EL バッテリー付き 防寒ベスト 電熱ベスト 自重堂 FGA20010 保温性 暖かい 防寒服 防寒着 アウトドア 秋冬 作業服 作業着"
    },
