@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-22T08:41:21+09:00",
+ "updated": "2026-10-23T08:39:09+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -166,8 +166,8 @@
    },
    "yahoo": {
     "price": 11113,
-    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt25211.html",
-    "shop": "カナジン 2号店",
+    "url": "https://store.shopping.yahoo.co.jp/toolking/bt25211.html",
+    "shop": "ツールキング",
     "freeShipping": false,
     "name": "BT25211 バッテリー 25V 本体のみ バッテリー 8216025 空調服 小型便 在庫"
    },
@@ -287,7 +287,7 @@
     "url": "https://item.rakuten.co.jp/auc-michio/305fga79000/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
     "shop": "ミチオショップ",
     "freeShipping": false,
-    "name": "[在庫限り]電熱ベスト Z-DRAGON 防寒着 FEVER GEAR FGA79000 ヒーター内蔵電熱ベスト 自重堂 SS〜LL"
+    "name": "[即日発送][P5倍]電熱ベスト Z-DRAGON 防寒着 FEVER GEAR FGA79000 ヒーター内蔵電熱ベスト 自重堂 SS〜LL[在庫限り]"
    },
    "yahoo": {
     "price": 4945,
@@ -351,8 +351,8 @@
    },
    "yahoo": {
     "price": 5250,
-    "url": "https://store.shopping.yahoo.co.jp/darumashouten/jichoudo-fga20010b.html",
-    "shop": "作業服の専門店だるま商店",
+    "url": "https://store.shopping.yahoo.co.jp/azumanet2014/jichoudo-fga20010b.html",
+    "shop": "アズマクロージング",
     "freeShipping": true,
     "name": "電熱インナーベスト EL バッテリー付き 防寒ベスト 電熱ベスト 自重堂 FGA20010 保温性 暖かい 防寒服 防寒着 アウトドア 秋冬 作業服 作業着"
    },
@@ -431,8 +431,8 @@
    },
    "yahoo": {
     "price": 11368,
-    "url": "https://store.shopping.yahoo.co.jp/kucho100ka/099-bo32550-rd9570.html",
-    "shop": "武蔵野ユニフォーム 空調服・作業着取扱店",
+    "url": "https://store.shopping.yahoo.co.jp/uniform100ka/099-bo32550-rd9570.html",
+    "shop": "空調服・ファン付き作業着取扱店 ユニフォーム百科",
     "freeShipping": false,
     "name": "サンエス インナーベスト 発熱ユニットセット BO32550-RD9570 5層構造でしっかり防風 秋冬 ヒートアイテム 作業着 作業服 メンズ ユニセックス ※バッテリー別売"
    },
