@@ -1,14 +1,14 @@
 {
- "updated": "2026-10-23T08:39:09+09:00",
+ "updated": "2026-10-24T08:34:05+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
    "rakuten": {
-    "price": 11200,
-    "url": "https://item.rakuten.co.jp/living-hard-r/burtle-ac10/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "LIVING&HARD 楽天市場店",
+    "price": 9990,
+    "url": "https://item.rakuten.co.jp/working/3214tc/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "学生服の専門店 ワークサポート",
     "freeShipping": true,
-    "name": "BURTLE バートル ファン付ベスト用 30V バッテリー AC10 78 マットブラック エアークラフト 作業着 熱中症対策 空調ウェア"
+    "name": "【予約商品】バートル 2026新作 防寒 ベスト 3274 サーモベスト+TC501 電熱パッド THERMOCRAFT のセット (発熱に必要なAC10バッテリー別売り) ユニセックス 【送料無料】【11/上旬発送予定】"
    },
    "yahoo": {
     "price": 11869,
@@ -19,7 +19,7 @@
    },
    "lowest": {
     "site": "rakuten",
-    "price": 11200
+    "price": 9990
    }
   },
   "AC09": {
@@ -75,7 +75,7 @@
     "url": "https://store.shopping.yahoo.co.jp/cocoterracemore/icn-acb-002461134.html",
     "shop": "イチネンネットmore",
     "freeShipping": true,
-    "name": "(あすつく) サンエス:２４Ｖリチウムイオンバッテリーセット（BN） RD9691NJ 熱中症対策 熱中症 サンエス  空調風神服??"
+    "name": "＼ポイント5倍！10/25まで／(あすつく) サンエス:２４Ｖリチウムイオンバッテリーセット（BN） RD9691NJ 熱中症対策 熱中症 サンエス  空調風神服??"
    },
    "lowest": {
     "site": "rakuten",
@@ -83,17 +83,23 @@
    }
   },
   "RD9680G": {
-   "rakuten": null,
+   "rakuten": {
+    "price": 12100,
+    "url": "https://item.rakuten.co.jp/santecdirect/rd9680g/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "サンテクダイレクト 楽天市場店",
+    "freeShipping": true,
+    "name": "30Vバッテリーセット RD9680G サンエス sun-s 空調風神服対応 リチウムイオンバッテリーとACアダプターのセット グローバルレーベル GLOBAL LABELモデルのファンのみ対応（別売対応ファン：RD9630H、RD9530H※RD9530Hは24Vで稼働） 2026年入荷"
+   },
    "yahoo": {
     "price": 13700,
     "url": "https://store.shopping.yahoo.co.jp/cocoterracemore/icn-acb-002461137.html",
     "shop": "イチネンネットmore",
     "freeShipping": true,
-    "name": "(あすつく) サンエス:３０Ｖバッテリーセット RD9680G 熱中症対策 熱中症 サンエス  空調風神服??  リチウムイオンバッテリー"
+    "name": "＼ポイント5倍！10/25まで／(あすつく) サンエス:３０Ｖバッテリーセット RD9680G 熱中症対策 熱中症 サンエス  空調風神服??  リチウムイオンバッテリー"
    },
    "lowest": {
-    "site": "yahoo",
-    "price": 13700
+    "site": "rakuten",
+    "price": 12100
    }
   },
   "RD9293NJ": {
@@ -122,7 +128,7 @@
     "url": "https://item.rakuten.co.jp/ezaki-g/atbs-rd9590pj/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
     "shop": "EZAKI NET GOLF",
     "freeShipping": false,
-    "name": "アタックベース 正規品 空調風神服装着ファン対応 JAPAN LABEL 24V仕様 リチウムイオンバッテリーセットJL-1 「 2025モデル 日本製 RD9590PJ 」 【当店在庫品】"
+    "name": "【10/25 エントリー/抽選で最大100%ポイントバック】 アタックベース 正規品 空調風神服装着ファン対応 JAPAN LABEL 24V仕様 リチウムイオンバッテリーセットJL-1 「 2025モデル 日本製 RD9590PJ 」 【当店在庫品】"
    },
    "yahoo": {
     "price": 13200,
@@ -166,8 +172,8 @@
    },
    "yahoo": {
     "price": 11113,
-    "url": "https://store.shopping.yahoo.co.jp/toolking/bt25211.html",
-    "shop": "ツールキング",
+    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt25211.html",
+    "shop": "カナジン 2号店",
     "freeShipping": false,
     "name": "BT25211 バッテリー 25V 本体のみ バッテリー 8216025 空調服 小型便 在庫"
    },
@@ -206,8 +212,8 @@
    },
    "yahoo": {
     "price": 11132,
-    "url": "https://store.shopping.yahoo.co.jp/takahashihonsha/18302.html",
-    "shop": "高橋本社Yahoo!店",
+    "url": "https://store.shopping.yahoo.co.jp/total-homes/18302.html",
+    "shop": "Total Homes",
     "freeShipping": true,
     "name": "桑和 G.G. SOWA 18302 EFウェア 20V バッテリー(バッテリー+充電器) 20000mAh 2024年春夏新作"
    },
@@ -310,15 +316,15 @@
     "name": "【FEVER GEAR ADVANCE】電熱ベスト FGA79010 SS〜LL （発熱体内臓型・専用バッテリー付）｜ 発熱 / 防寒 / 寒さ対策 / 作業着 / 自重堂 / Z-DRAGON"
    },
    "yahoo": {
-    "price": 5140,
-    "url": "https://store.shopping.yahoo.co.jp/oosumi-marutake/fga79010.html",
-    "shop": "作業服 キノウェアショップ",
-    "freeShipping": false,
-    "name": "(バッテリー付) FEVER GEAR ADVANCE 自重堂 FGA79010 電熱ベスト SS〜5L ヒーターベスト ヒートベスト"
+    "price": 4950,
+    "url": "https://store.shopping.yahoo.co.jp/uni-b/dsk-fga79010.html",
+    "shop": "作業服のユニバース",
+    "freeShipping": true,
+    "name": "＼P10倍／ 電熱ベスト 自重堂 FGA79010 ジィードラゴン アウター 防寒 モバイルバッテリーセット 電熱ウェア USB バッテリー付き FEVER GEAR メンズ レディース"
    },
    "lowest": {
-    "site": "rakuten",
-    "price": 5089
+    "site": "yahoo",
+    "price": 4950
    }
   },
   "HV-FGA20000": {
@@ -351,8 +357,8 @@
    },
    "yahoo": {
     "price": 5250,
-    "url": "https://store.shopping.yahoo.co.jp/azumanet2014/jichoudo-fga20010b.html",
-    "shop": "アズマクロージング",
+    "url": "https://store.shopping.yahoo.co.jp/darumashouten/jichoudo-fga20010b.html",
+    "shop": "作業服の専門店だるま商店",
     "freeShipping": true,
     "name": "電熱インナーベスト EL バッテリー付き 防寒ベスト 電熱ベスト 自重堂 FGA20010 保温性 暖かい 防寒服 防寒着 アウトドア 秋冬 作業服 作業着"
    },
@@ -431,8 +437,8 @@
    },
    "yahoo": {
     "price": 11368,
-    "url": "https://store.shopping.yahoo.co.jp/uniform100ka/099-bo32550-rd9570.html",
-    "shop": "空調服・ファン付き作業着取扱店 ユニフォーム百科",
+    "url": "https://store.shopping.yahoo.co.jp/kucho100ka/099-bo32550-rd9570.html",
+    "shop": "武蔵野ユニフォーム 空調服・作業着取扱店",
     "freeShipping": false,
     "name": "サンエス インナーベスト 発熱ユニットセット BO32550-RD9570 5層構造でしっかり防風 秋冬 ヒートアイテム 作業着 作業服 メンズ ユニセックス ※バッテリー別売"
    },
@@ -483,16 +489,10 @@
     "freeShipping": false,
     "name": "タルテックス TULTEX 電熱ベスト 防寒 メンズ レディース Vネックヒーターベスト インナー型 アイトス AITOZ AZ-8313 ‥"
    },
-   "yahoo": {
-    "price": 4390,
-    "url": "https://store.shopping.yahoo.co.jp/himaraya/0000001216025.html",
-    "shop": "ヒマラヤ Yahoo!店",
-    "freeShipping": false,
-    "name": "タルテックス TULTEX 電熱ベスト 防寒 メンズ レディース Ｖネックヒーターベスト インナー型 アイトス AITOZ AZ-8313 【ご自宅配送限定】‥"
-   },
+   "yahoo": null,
    "lowest": {
-    "site": "yahoo",
-    "price": 4390
+    "site": "rakuten",
+    "price": 4698
    }
   },
   "HV-AZ8312": {
