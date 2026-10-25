@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T07:46:16+09:00",
+ "updated": "2026-10-26T07:50:54+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -192,8 +192,8 @@
    },
    "yahoo": {
     "price": 9552,
-    "url": "https://store.shopping.yahoo.co.jp/toolking/bt23211-xebec.html",
-    "shop": "ツールキング",
+    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt23211-xebec.html",
+    "shop": "カナジン 2号店",
     "freeShipping": false,
     "name": "ジーベック BT23211 バッテリー 本体 18V 999-888 空調服 XEBEC 小型便 在庫"
    },
@@ -489,10 +489,16 @@
     "freeShipping": false,
     "name": "タルテックス TULTEX 電熱ベスト 防寒 メンズ レディース Vネックヒーターベスト インナー型 アイトス AITOZ AZ-8313 ‥"
    },
-   "yahoo": null,
+   "yahoo": {
+    "price": 4390,
+    "url": "https://store.shopping.yahoo.co.jp/himaraya/0000001216025.html",
+    "shop": "ヒマラヤ Yahoo!店",
+    "freeShipping": false,
+    "name": "タルテックス TULTEX 電熱ベスト 防寒 メンズ レディース Ｖネックヒーターベスト インナー型 アイトス AITOZ AZ-8313 【ご自宅配送限定】‥"
+   },
    "lowest": {
-    "site": "rakuten",
-    "price": 4698
+    "site": "yahoo",
+    "price": 4390
    }
   },
   "HV-AZ8312": {
