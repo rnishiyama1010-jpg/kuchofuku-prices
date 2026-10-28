@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27T09:07:20+09:00",
+ "updated": "2026-10-28T09:03:42+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -172,8 +172,8 @@
    },
    "yahoo": {
     "price": 11113,
-    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt25211.html",
-    "shop": "カナジン 2号店",
+    "url": "https://store.shopping.yahoo.co.jp/toolking/bt25211.html",
+    "shop": "ツールキング",
     "freeShipping": false,
     "name": "BT25211 バッテリー 25V 本体のみ バッテリー 8216025 空調服 小型便 在庫"
    },
@@ -184,22 +184,22 @@
   },
   "BT23211": {
    "rakuten": {
-    "price": 9647,
-    "url": "https://item.rakuten.co.jp/kanajin/bt23211-xebec/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "カナジン 楽天市場店",
-    "freeShipping": false,
-    "name": "ジーベック BT23211 バッテリー 本体 18V 999-888 空調服 XEBEC 小型便 在庫"
+    "price": 9240,
+    "url": "https://item.rakuten.co.jp/pc2b/10001094/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "株式会社空調服 直営店",
+    "freeShipping": true,
+    "name": "空調服(R)　バッテリー BT23211 7.2Vバッテリー 遠隔操作可能 Bluetooth(R)接続 特許取得済 専用コント－ラーあり(別売り) 保守パーツ 予備 バッテリーのみ【公式ショップ】"
    },
    "yahoo": {
     "price": 9552,
-    "url": "https://store.shopping.yahoo.co.jp/toolking/bt23211-xebec.html",
-    "shop": "ツールキング",
+    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt23211-xebec.html",
+    "shop": "カナジン 2号店",
     "freeShipping": false,
     "name": "ジーベック BT23211 バッテリー 本体 18V 999-888 空調服 XEBEC 小型便 在庫"
    },
    "lowest": {
-    "site": "yahoo",
-    "price": 9552
+    "site": "rakuten",
+    "price": 9240
    }
   },
   "18302": {
@@ -212,8 +212,8 @@
    },
    "yahoo": {
     "price": 11132,
-    "url": "https://store.shopping.yahoo.co.jp/takahashihonsha/18302.html",
-    "shop": "高橋本社Yahoo!店",
+    "url": "https://store.shopping.yahoo.co.jp/total-homes/18302.html",
+    "shop": "Total Homes",
     "freeShipping": true,
     "name": "桑和 G.G. SOWA 18302 EFウェア 20V バッテリー(バッテリー+充電器) 20000mAh 2024年春夏新作"
    },
@@ -453,7 +453,7 @@
     "url": "https://item.rakuten.co.jp/auc-michio/305sowa17029/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
     "shop": "ミチオショップ",
     "freeShipping": false,
-    "name": "【マラソン限定☆P2倍☆】[即日発送]電熱ベスト 防寒着 電熱ウェア ヒートベストコンプリートセット 17029 秋冬 電熱ベスト インナーベスト 軽防寒 桑和 SOWA"
+    "name": "[即日発送]電熱ベスト 防寒着 電熱ウェア ヒートベストコンプリートセット 17029 秋冬 電熱ベスト インナーベスト 軽防寒 桑和 SOWA"
    },
    "yahoo": {
     "price": 4680,
@@ -483,11 +483,11 @@
   },
   "HV-AZ8313": {
    "rakuten": {
-    "price": 4698,
-    "url": "https://item.rakuten.co.jp/himaraya/0000001216025/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "ヒマラヤ楽天市場店",
+    "price": 3480,
+    "url": "https://item.rakuten.co.jp/sports-tk/az-8313/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "スポーツインナーsportsTK",
     "freeShipping": false,
-    "name": "タルテックス TULTEX 電熱ベスト 防寒 メンズ レディース Vネックヒーターベスト インナー型 アイトス AITOZ AZ-8313 ‥"
+    "name": "【お得!在庫処分】TULTEX 電熱ベスト バッテリー付 ヒートベスト ヒーターベスト 電熱ウェア 防寒ベスト 冬 暖かい メンズ レディース 仕事服 作業着 夜間作業 アウトドア キャンプ 登山 釣り バイク アイトス タルテックス az-8313"
    },
    "yahoo": {
     "price": 4390,
@@ -497,8 +497,8 @@
     "name": "タルテックス TULTEX 電熱ベスト 防寒 メンズ レディース Ｖネックヒーターベスト インナー型 アイトス AITOZ AZ-8313 【ご自宅配送限定】‥"
    },
    "lowest": {
-    "site": "yahoo",
-    "price": 4390
+    "site": "rakuten",
+    "price": 3480
    }
   },
   "HV-AZ8312": {
