@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T09:23:45+09:00",
+ "updated": "2026-11-08T09:00:17+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -357,8 +357,8 @@
    },
    "yahoo": {
     "price": 5250,
-    "url": "https://store.shopping.yahoo.co.jp/darumashouten/jichoudo-fga20010b.html",
-    "shop": "作業服の専門店だるま商店",
+    "url": "https://store.shopping.yahoo.co.jp/azumanet2014/jichoudo-fga20010b.html",
+    "shop": "アズマクロージング",
     "freeShipping": true,
     "name": "電熱インナーベスト EL バッテリー付き 防寒ベスト 電熱ベスト 自重堂 FGA20010 保温性 暖かい 防寒服 防寒着 アウトドア 秋冬 作業服 作業着"
    },
@@ -389,11 +389,11 @@
   },
   "HV-3214": {
    "rakuten": {
-    "price": 2790,
-    "url": "https://item.rakuten.co.jp/namefree/so3214br/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "社名刺繍無料の作業着屋",
+    "price": 2499,
+    "url": "https://item.rakuten.co.jp/w-shokai/burtle-3214-2/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "作業服の渡辺商会",
     "freeShipping": false,
-    "name": "最短即日 当店在庫処分品 バートル 防寒着 3214 サーモクラフト対応防寒ベスト(ユニセックス) インディゴ【サーモクラフト・バッテリー別売】 メンズ レディース BURTLE ストレッチ ワーク ユニフォーム S〜XXL ポリエステル100％ フリーストレッチ ラミネートコーティング"
+    "name": "【15点のみ在庫処分価格★即日発送】2021年モデル 防寒服 バートル サーモクラフト ヒートベスト 軽防寒ベスト 3214 L-XL 単品 TC500対応 防寒 発熱 ヒーター 防寒着 暖かい ホット BURTLE【在庫処分】【返品交換不可】"
    },
    "yahoo": {
     "price": 1990,
@@ -460,7 +460,7 @@
     "url": "https://store.shopping.yahoo.co.jp/michioshop/305sowa17029.html",
     "shop": "ミチオショップYahoo!店",
     "freeShipping": true,
-    "name": "SOWA 桑和 電熱ベスト 防寒着 電熱ウェア ヒートベストコンプリートセット 17029 秋冬 電熱ベスト インナーベスト 軽防寒[即日発送]"
+    "name": "SOWA 桑和 ヒートベストコンプリートセット 17029 防寒着 電熱ベスト インナーベスト 軽防寒[即日発送]"
    },
    "lowest": {
     "site": "rakuten",
@@ -571,8 +571,8 @@
    },
    "yahoo": {
     "price": 5870,
-    "url": "https://store.shopping.yahoo.co.jp/worktk/xb-167.html",
-    "shop": "作業服・空調服・医療白衣のWorkTK",
+    "url": "https://store.shopping.yahoo.co.jp/season-tk/xb-167.html",
+    "shop": "作業着 空調服&防寒着Season-TK",
     "freeShipping": true,
     "name": "ヒーター内蔵ベスト ヒートベスト 服単品 ジーベック ポリエステル 防風 保温 防寒 秋冬 XEBEC xb-167"
    },
