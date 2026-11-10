@@ -118,6 +118,7 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 .nextread{margin:8px 0 0;text-align:left;line-height:1.5}.nextread a{display:inline-block;padding:6px 14px;border-radius:4px;background:var(--accent);color:#fff;font-size:13px;font-weight:700;text-decoration:none}.nextread a:hover{opacity:.9}@media (max-width:760px){.nextread a{font-size:12px;padding:5px 10px}.biz,.notice{margin-top:8px}.related{margin-top:4px}}
+.buy.na{opacity:.45;cursor:default}
 </style>
 
 <div class="wrap">
@@ -172,13 +173,13 @@ const D=[
  {mk:"サンエス",nm:"空調風神服 GlobalLabel 30V",md:"RD9680G",y:2026,v:30,vt:"30V / 24V / 15V / 12V",air:108,run:12,runN:"15V・12V時",ch:"約3.5時間",w:380,p:16280,pN:"公式",kind:"充電器付",cp:"GlobalLabelファン",warn:"風量は仕様表では約100L/秒",q:"空調風神服 RD9680G"},
  {mk:"サンエス",nm:"空調風神服 JapanLabel 12V",md:"RD9293NJ",y:2026,v:12,vt:"12V / 9V / 6V",air:null,run:22,runN:"6V時",ch:"約4時間",w:300,p:14740,pN:"公式",kind:"充電器付",cp:"JapanLabel 12Vファン",tag:"日本製",q:"空調風神服 RD9293NJ"},
  {mk:"サンエス",nm:"空調風神服 JapanLabel 24V（Bluetooth対応）",md:"RD9590PJ",y:2025,v:24,vt:"24V / 15V / 12V / 8V",air:100,run:24,runN:"8V時",ch:"約3.5時間",w:340,p:18590,pN:"公式",kind:"充電器付",cp:"JapanLabel 24Vファン",tag:"日本製",q:"空調風神服 RD9590PJ"},
- {mk:"株式会社空調服",nm:"空調服® スターターキット 25V",md:"SK25012K90",y:2026,v:25,vt:"最大25V",air:103,run:null,runN:"",ch:"—",w:null,p:26334,pN:"直営店",kind:"ファン付きセット",cp:"25V系ファン（同梱）",tag:"ロングケーブル",q:"空調服 SK25012"},
+ {mk:"株式会社空調服",nm:"空調服® スターターキット 25V",md:"SK25012K90",y:2026,v:25,vt:"最大25V",air:103,run:null,runN:"",ch:"—",w:null,p:26334,pN:"直営店",kind:"ファン付きセット",cp:"25V系ファン（同梱）",tag:"ロングケーブル",noamz:true,q:"空調服 SK25012"},
  {mk:"株式会社空調服",nm:"空調服® バッテリー 25V",md:"BT25211",y:2025,v:25,vt:"25V / 20V / 15V / 12V",air:103,run:16,runN:"12V時",ch:"約5.5時間",w:402,p:14080,pN:"販売店",kind:"単品",cp:"FA25112ファン",tag:"ライセンス各社対応",q:"空調服 BT25211"},
  {mk:"株式会社空調服",nm:"空調服® バッテリー 18V",md:"BT23211",y:2025,v:18,vt:"18V / 15V / 10V / 6V",air:106,run:24,runN:"6V時",ch:"約3時間",w:353,p:12100,pN:"販売店",kind:"単品",cp:"FA23112ファン",tag:"ライセンス各社対応",q:"空調服 BT23211"},
  {mk:"桑和",nm:"G.G. バッテリーセット 20V",md:"18302",y:2026,v:20,vt:"20V / 15V / 12V / 8V",air:97,run:32,runN:"8V時",ch:"約3.7時間",w:350,p:12650,pN:"販売店",kind:"充電器付",cp:"18301・18201・18001・18101系",warn:"19系USBデバイス不可",q:"桑和 18302 バッテリー"},
  {mk:"桑和",nm:"G.G. 16108機器セット 15V",md:"16108",y:2026,v:15,vt:"15V / 12V / 9V",air:80,run:24,runN:"9V時",ch:"約5時間",w:340,p:16500,pN:"販売店",kind:"ファン付きセット",cp:"G.G.専用",q:"桑和 16108"},
- {mk:"村上被服",nm:"鳳皇 バッテリーセット V30",md:"V3001",y:2026,v:30,vt:"30V / 19V / 17V / 15V / 12V",air:120,run:17,runN:"12V時",ch:"約4.5時間",w:470,p:13695,pN:"販売店",kind:"充電器付",cp:"V30・V28ファン",warn:"V28は30V不可・V19は非対応",tag:"USB同時出力",q:"鳳皇 V3001"},
- {mk:"村上被服",nm:"鳳皇 28Vファン・バッテリーセット",md:"V2801+V2802",y:2025,v:28,vt:"28V / 19V / 15V / 12V",air:105,run:10,runN:"12V時",ch:"約3.5時間",w:375,p:17600,pN:"販売店",kind:"ファン付きセット",cp:"V28ファン（同梱）",warn:"重量は販売店で375g/445gと表記が分かれる",q:"鳳皇 V2801"},
+ {mk:"村上被服",nm:"鳳皇 バッテリーセット V30",md:"V3001",y:2026,v:30,vt:"30V / 19V / 17V / 15V / 12V",air:120,run:17,runN:"12V時",ch:"約4.5時間",w:470,p:13695,pN:"販売店",kind:"充電器付",cp:"V30・V28ファン",warn:"V28は30V不可・V19は非対応",tag:"USB同時出力",aq:"村上被服 V3001",q:"鳳皇 V3001"},
+ {mk:"村上被服",nm:"鳳皇 28Vファン・バッテリーセット",md:"V2801+V2802",y:2025,v:28,vt:"28V / 19V / 15V / 12V",air:105,run:10,runN:"12V時",ch:"約3.5時間",w:375,p:17600,pN:"販売店",kind:"ファン付きセット",cp:"V28ファン（同梱）",warn:"重量は販売店で375g/445gと表記が分かれる",aq:"村上被服 V2801",q:"鳳皇 V2801"},
  {mk:"村上被服",nm:"鳳皇 コンプリートセット 15V",md:"SV900",y:2025,v:15,vt:"15V / 13V / 10V / 8.4V",air:82,run:17.5,runN:"8.4V時",ch:"—",w:330,p:13178,pN:"販売店",kind:"ファン付きセット",cp:"SV900ファン（同梱）",tag:"USB-C充電",q:"鳳皇 SV900"}
 ];
 const MAKERS=["すべて","バートル","サンエス","株式会社空調服","桑和","村上被服"];
@@ -206,7 +207,7 @@ function sitePrice(d,k){
   const x=live(d)[k];
   return x&&x.price?`<span class="bp">${yen(x.price)}${x.freeShipping?"":"<small>＋送料</small>"}</span>`:'<span class="bp go">価格を見る</span>';
 }
-const shops=d=>`<div class="shops"><a class="buy amazon" href="${amz(d.q)}" ${R}>Amazon<span class="bp go">価格を見る</span></a><a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場${sitePrice(d,"rakuten")}</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!<span class="ys">ショッピング</span>${sitePrice(d,"yahoo")}</a></div>`;
+const shops=d=>`<div class="shops">${d.noamz?'<span class="buy amazon na">Amazon<span class="bp">取扱なし</span></span>':`<a class="buy amazon" href="${amz(d.aq||d.q)}" ${R}>Amazon<span class="bp go">価格を見る</span></a>`}<a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場${sitePrice(d,"rakuten")}</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!<span class="ys">ショッピング</span>${sitePrice(d,"yahoo")}</a></div>`;
 
 function chips(el,list,key){
   el.innerHTML="";
