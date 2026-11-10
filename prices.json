@@ -3,13 +3,7 @@
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
-   "rakuten": {
-    "price": 9990,
-    "url": "https://item.rakuten.co.jp/working/3214tc/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "学生服の専門店 ワークサポート",
-    "freeShipping": true,
-    "name": "【即日発送】バートル 2026新作 防寒 ベスト 3274 サーモベスト+TC501 電熱パッド THERMOCRAFT のセット (発熱に必要なAC10バッテリー別売り) ユニセックス 【送料無料】【11月上旬発送予定】"
-   },
+   "rakuten": null,
    "yahoo": {
     "price": 11869,
     "url": "https://store.shopping.yahoo.co.jp/ws-captain/ac09.html",
@@ -18,18 +12,12 @@
     "name": "バートル バッテリー AC10 30V 2026年最新 京セラ製 急速充電 エアークラフト BURTLE aircraft"
    },
    "lowest": {
-    "site": "rakuten",
-    "price": 9990
+    "site": "yahoo",
+    "price": 11869
    }
   },
   "AC09": {
-   "rakuten": {
-    "price": 12375,
-    "url": "https://item.rakuten.co.jp/kajewel/muzaiko-26ss-burtle8/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "KAJEWEL楽天市場店",
-    "freeShipping": true,
-    "name": "バートル BURTLE AC10 バートルバッテリー リチウムイオンバッテリー サーモクラフト 充電器 セット 最大30V 京セラ製 エアークラフト AIRCRAFT ファン付き空調作業服 電動ファン付き 作業服 作業着 AC09-1 AC09-2 AC08 AC370 AC310"
-   },
+   "rakuten": null,
    "yahoo": {
     "price": 12001,
     "url": "https://store.shopping.yahoo.co.jp/juko-in/186051694.html",
@@ -223,13 +211,7 @@
    }
   },
   "16108": {
-   "rakuten": {
-    "price": 11000,
-    "url": "https://item.rakuten.co.jp/act-kougu/rc_it9108rxlgcs_g5fh/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "アクトツール楽天市場店",
-    "freeShipping": true,
-    "name": "【新古】◇桑和(SOWA) G.G ファンバッテリーデバイスセット 16108 2025年モデル【岩槻店】"
-   },
+   "rakuten": null,
    "yahoo": {
     "price": 14198,
     "url": "https://store.shopping.yahoo.co.jp/gochi-shop/sowa-16108.html",
@@ -238,8 +220,8 @@
     "name": "桑和 SOWA 16108 G.G. デバイスセット バッテリーファンセット EFウェア 空調ウェア 空調ベスト ファンバッテリーセット 作業着 作業服"
    },
    "lowest": {
-    "site": "rakuten",
-    "price": 11000
+    "site": "yahoo",
+    "price": 14198
    }
   },
   "V3001": {
