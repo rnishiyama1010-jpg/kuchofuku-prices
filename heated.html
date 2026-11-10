@@ -128,6 +128,9 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
 .buy.official{--shop:var(--ink)}
 .compat .warn::before{content:none}
 .nextread{margin:8px 0 0;text-align:left;line-height:1.5}.nextread a{display:inline-block;padding:6px 14px;border-radius:4px;background:var(--accent);color:#fff;font-size:13px;font-weight:700;text-decoration:none}.nextread a:hover{opacity:.9}@media (max-width:760px){.nextread a{font-size:12px;padding:5px 10px}.biz,.notice{margin-top:8px}.related{margin-top:4px}}
+.buy.na{opacity:.45;cursor:default}
+/* スマホ幅で表がはみ出さないように（グリッド列を親幅に収める） */
+@media (max-width:760px){section{grid-template-columns:minmax(0,1fr)}.cards,.card{grid-template-columns:minmax(0,1fr)}.card *{min-width:0;overflow-wrap:anywhere}.controls>*,.ctl{min-width:0}.ctl select{width:100%;max-width:100%;min-width:0}}
 </style>
 
 <div class="wrap">
@@ -193,12 +196,12 @@ const D=[
  {id:"HV-FGA20010",mk:"自重堂",nm:"FEVER GEAR 電熱インナーベスト",md:"FGA20010",z:9,zd:"前2・背中7",t:55,bat:true,fan:false,usb:true,pw:"専用10,000mAh付属（市販USB 5V・2A以上も可）",run:"強 約3時間／弱 約7.5時間",wash:"手洗い",p:5200,q:"自重堂 FGA20010",own:true,tag:"インナー"},
  {id:"HV-3274",mk:"バートル",nm:"サーモベスト＋電熱パッド TC501",md:"3274＋TC501",y:2026,z:1,zd:"背中にパッド1枚",t:60,bat:false,fan:true,usb:false,pw:"空調服用AC10（別売）専用",run:"60℃で約4時間／40℃で約10時間",wash:"—",p:10000,q:"バートル 3274 TC501",warn:"AC09以前のバッテリーは使えません"},
  {id:"HV-3214",mk:"バートル",nm:"ライトウエイトベスト（電熱パッドTC500対応）",md:"3214",z:1,zd:"背中にパッド1枚（TC500別売）",t:60,bat:false,fan:true,usb:false,pw:"空調服用AC09・AC08ほか（別売）",run:"60℃は約1時間で54℃へ／38℃で約11時間",wash:"—",p:3200,q:"バートル 3214",warn:"価格はベストのみ。電熱パッドTC500とバッテリーは別売"},
- {id:"HV-EH32490",mk:"サンエス",nm:"EXHEAT カーボンヒートベスト",md:"EH32490",z:5,zd:"首・背中・腰・お腹など5か所",t:null,bat:false,fan:false,usb:true,pw:"USBモバイルバッテリー（別売・推奨RD9241）",run:"強 約5時間／弱 約8時間",wash:"手洗い",p:10000,q:"サンエス EH32490",tag:"プレヒート"},
+ {id:"HV-EH32490",mk:"サンエス",nm:"EXHEAT カーボンヒートベスト",md:"EH32490",z:5,zd:"首・背中・腰・お腹など5か所",t:null,bat:false,fan:false,usb:true,pw:"USBモバイルバッテリー（別売・推奨RD9641）",run:"強 約5時間／弱 約8時間",wash:"手洗い",p:10000,q:"サンエス EH32490",tag:"プレヒート"},
  {id:"HV-BO32550",mk:"サンエス",nm:"雷神服 インナーベスト＋発熱ユニット",md:"BO32550＋RD9570",z:2,zd:"背中に2枚",t:null,bat:false,fan:true,usb:true,pw:"空調風神服の24V・12Vバッテリー、またはUSB 2A以上（別売）",run:"弱で約11時間（24V系）",wash:"—",p:12000,q:"雷神服 BO32550 RD9570",tag:"インナー"},
- {id:"HV-17029",mk:"桑和",nm:"G.G. ヒートベスト コンプリートセット",md:"17029",z:null,zd:"前後を切替",t:60,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"—",wash:"—",p:6500,q:"桑和 17029",warn:"在庫限りの店が多い"},
- {id:"HV-17019",mk:"桑和",nm:"G.G. ヒートベスト（シート脱着式）",md:"17019",z:2,zd:"取り外せるシート2枚",t:45,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"高 約3.5時間／低 約6時間",wash:"シートを外して洗える",p:8000,q:"桑和 17019"},
+ {id:"HV-17029",mk:"桑和",nm:"G.G. ヒートベスト コンプリートセット",md:"17029",z:null,zd:"前後を切替",t:60,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"—",wash:"—",p:6500,noamz:true,q:"桑和 17029",warn:"在庫限りの店が多い"},
+ {id:"HV-17019",mk:"桑和",nm:"G.G. ヒートベスト（シート脱着式）",md:"17019",z:2,zd:"取り外せるシート2枚",t:45,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"高 約3.5時間／低 約6時間",wash:"シートを外して洗える",p:8000,noamz:true,q:"桑和 17019"},
  {id:"HV-AZ8313",mk:"アイトス",nm:"TULTEX Vネック ヒーターベスト",md:"AZ-8313",z:2,zd:"背中・腰",t:55,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"—",wash:"手洗い",p:5000,q:"タルテックス 8313 ヒーターベスト",tag:"インナー"},
- {id:"HV-AZ8312",mk:"アイトス",nm:"TULTEX 衿付 ヒーターベスト",md:"AZ-8312",z:2,zd:"2か所",t:null,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属",run:"—",wash:"手洗い",p:5000,q:"タルテックス 8312 ヒーターベスト"},
+ {id:"HV-AZ8312",mk:"アイトス",nm:"TULTEX 衿付 ヒーターベスト",md:"AZ-8312",z:2,zd:"2か所",t:null,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属",run:"—",wash:"手洗い",p:5000,noamz:true,q:"タルテックス 8312 ヒーターベスト"},
  {id:"HV-1077",mk:"村上被服",nm:"鳳皇 インナーヒートベスト",md:"1077",z:null,zd:"背中一面",t:null,bat:false,fan:true,usb:false,pw:"スモールバッテリーV1333（別売）。快適ウェア用バッテリーでも起動",run:"弱 約16〜23時間（V1333）",wash:"—",p:3500,q:"鳳皇 1077 ヒートベスト",tag:"インナー"},
  {id:"WZ8100",mk:"ワークマン",nm:"ウィンドコア ヒーターベスト",md:"WZ8100",z:null,zd:"背中・腰",t:50,bat:false,fan:true,usb:false,pw:"ハーフバッテリーWZ3310（別売4,900円）。ファン付きウェアと共用",run:"高 約4.3時間／低 約16時間",wash:"—",p:3900,q:"ワークマン ウィンドコア ヒーターベスト",official:{label:"ワークマン公式",price:3900,url:"https://workman.jp/"}},
  {id:"HV-CV202D",mk:"マキタ",nm:"充電式暖房ベスト",md:"CV202DZ",z:4,zd:"首元まで4か所",t:null,bat:false,fan:false,usb:false,pw:"マキタ10.8〜18Vバッテリ（ホルダ・充電器とも別売）",run:"18V 6.0Ahで強 約10時間／弱 約35時間",wash:"バッテリを外せば洗濯機可",p:15000,q:"マキタ CV202DZ",tag:"工具バッテリー"},
@@ -223,7 +226,7 @@ let LIVE={};
 const live=d=>LIVE[d.id]||{};
 const shopUrl=(d,site,fb)=>{const u=live(d)[site]&&live(d)[site].url;if(!u)return fb(d.q);if(site==="yahoo"&&/^https?:\/\/([a-z]+\.)?shopping\.yahoo\.co\.jp\//.test(u))return vcY(u);if(site==="rakuten"&&/^https?:\/\/item\.rakuten\.co\.jp\//.test(u))return msmR(u);return u;};
 function sitePrice(d,k){const x=live(d)[k];return x&&x.price?`<span class="bp">${yen(x.price)}${x.freeShipping?"":"<small>＋送料</small>"}</span>`:'<span class="bp go">価格を見る</span>';}
-const shops=d=>d.official?`<div class="shops"><a class="buy official" href="${d.official.url}" target="_blank" rel="noopener">${esc(d.official.label)}<span class="bp">${yen(d.official.price)}</span></a></div>`:`<div class="shops"><a class="buy amazon" href="${amz(d.q)}" ${R}>Amazon<span class="bp go">価格を見る</span></a><a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場${sitePrice(d,"rakuten")}</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!<span class="ys">ショッピング</span>${sitePrice(d,"yahoo")}</a></div>`;
+const shops=d=>d.official?`<div class="shops"><a class="buy official" href="${d.official.url}" target="_blank" rel="noopener">${esc(d.official.label)}<span class="bp">${yen(d.official.price)}</span></a></div>`:`<div class="shops">${d.noamz?'<span class="buy amazon na">Amazon<span class="bp">取扱なし</span></span>':`<a class="buy amazon" href="${amz(d.aq||d.q)}" ${R}>Amazon<span class="bp go">価格を見る</span></a>`}<a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場${sitePrice(d,"rakuten")}</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!<span class="ys">ショッピング</span>${sitePrice(d,"yahoo")}</a></div>`;
 function chips(el,list,key){el.innerHTML="";list.forEach(item=>{const label=Array.isArray(item)?item[0]:item;const b=document.createElement("button");b.type="button";b.className="chip";b.textContent=label;b.setAttribute("aria-pressed",String(st[key]===label));b.addEventListener("click",()=>{st[key]=label;chips(el,list,key);render()});el.appendChild(b);});}
 function tags(d){
   let t=d.y===2026?'<span class="tag new">2026-27新製品</span>':'';
