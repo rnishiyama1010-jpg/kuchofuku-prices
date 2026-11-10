@@ -7,7 +7,7 @@
 <title>空調服バッテリー比較表</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" media="print" onload="this.media=\'all\'">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap"></noscript>
 <style>
 /* Layout: 白基調のカタログ。上に条件バー、下に仕様表（狭い画面ではカード）。数値は等幅で揃える */
@@ -120,6 +120,17 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 .nextread{margin:8px 0 0;text-align:left;line-height:1.5}.nextread a{display:inline-block;padding:6px 14px;border-radius:4px;background:var(--accent);color:#fff;font-size:13px;font-weight:700;text-decoration:none}.nextread a:hover{opacity:.9}@media (max-width:760px){.nextread a{font-size:12px;padding:5px 10px}.biz,.notice{margin-top:8px}.related{margin-top:4px}}
 .buy.na{opacity:.45;cursor:default}
+/* 商品写真とメーカーロゴ */
+.prod{display:flex;gap:12px;align-items:flex-start}
+.prod .txt{min-width:0;flex:1}
+.pic{flex:0 0 76px;width:76px;height:76px;border:1px solid var(--line);border-radius:4px;background:#fff;object-fit:contain;display:block}
+.pic.nopic{display:flex;align-items:center;justify-content:center;padding:8px;background:#F7F8FA}
+.pic.nopic img{max-width:100%;max-height:26px}
+.pic.nopic.dk{background:#2B2F35}
+.mk{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.mlogo{height:16px;width:auto;max-width:92px;display:block}
+.mlogo.dk{background:#2B2F35;padding:2px 4px;border-radius:2px;height:18px}
+@media (max-width:760px){.pic{flex-basis:64px;width:64px;height:64px}}
 </style>
 
 <div class="wrap">
@@ -157,6 +168,7 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
 
   <div class="notice">
     <p>価格は変動します。表示は調査・取得時点の公式通販・販売店の掲載値です。購入前に販売ページで最新の価格と仕様をご確認ください。</p>
+    <p>商品写真・ロゴ：各メーカー公式サイト・販売店サイトより（メーカー掲載許可済み）。写真はイメージで、色や付属品が異なる場合があります。</p>
     <p>稼働時間・風量はメーカーまたは販売店の公称値です。気温や使い方で変わります。「—」は公表値が見つからなかった項目です。</p>
     <p>セット品はファンを含んだ価格です。楽天市場・Yahoo!ショッピングの価格は、それぞれの新品の税込最安値を毎朝取得したもので、送料は含みません（「＋送料」は送料別の店です）。最安値が取れなかった店は「価格を見る」と表示しています。Amazonの価格は販売ページでご確認ください。</p>
   </div>
@@ -180,13 +192,19 @@ const D=[
  {mk:"桑和",nm:"G.G. バッテリーセット 20V",md:"18302",y:2026,v:20,vt:"20V / 15V / 12V / 8V",air:97,run:32,runN:"8V時",ch:"約3.7時間",w:350,p:12650,pN:"販売店",kind:"充電器付",cp:"18301・18201・18001・18101系",warn:"19系USBデバイス不可",q:"桑和 18302 バッテリー"},
  {mk:"桑和",nm:"G.G. 16108機器セット 15V",md:"16108",y:2026,v:15,vt:"15V / 12V / 9V",air:80,run:24,runN:"9V時",ch:"約5時間",w:340,p:16500,pN:"販売店",kind:"ファン付きセット",cp:"G.G.専用",q:"桑和 16108"},
  {mk:"村上被服",nm:"鳳皇 バッテリーセット V30",md:"V3001",y:2026,v:30,vt:"30V / 19V / 17V / 15V / 12V",air:120,run:17,runN:"12V時",ch:"約4.5時間",w:470,p:13695,pN:"販売店",kind:"充電器付",cp:"V30・V28ファン",warn:"V28は30V不可・V19は非対応",tag:"USB同時出力",aq:"村上被服 V3001",q:"鳳皇 V3001"},
- {mk:"村上被服",nm:"鳳皇 28Vファン・バッテリーセット",md:"V2801+V2802",y:2025,v:28,vt:"28V / 19V / 15V / 12V",air:105,run:10,runN:"12V時",ch:"約3.5時間",w:375,p:17600,pN:"販売店",kind:"ファン付きセット",cp:"V28ファン（同梱）",warn:"重量は販売店で375g/445gと表記が分かれる",aq:"村上被服 V2801",q:"鳳皇 V2801"},
+ {mk:"村上被服",nm:"鳳皇 28Vファン・バッテリーセット",md:"V2801+V2802",im:"V2801",y:2025,v:28,vt:"28V / 19V / 15V / 12V",air:105,run:10,runN:"12V時",ch:"約3.5時間",w:375,p:17600,pN:"販売店",kind:"ファン付きセット",cp:"V28ファン（同梱）",warn:"重量は販売店で375g/445gと表記が分かれる",aq:"村上被服 V2801",q:"鳳皇 V2801"},
  {mk:"村上被服",nm:"鳳皇 コンプリートセット 15V",md:"SV900",y:2025,v:15,vt:"15V / 13V / 10V / 8.4V",air:82,run:17.5,runN:"8.4V時",ch:"—",w:330,p:13178,pN:"販売店",kind:"ファン付きセット",cp:"SV900ファン（同梱）",tag:"USB-C充電",q:"鳳皇 SV900"}
 ];
 const MAKERS=["すべて","バートル","サンエス","株式会社空調服","桑和","村上被服"];
 const VOLTS=[["すべて",()=>true],["30V級",v=>v>=30],["24〜28V",v=>v>=24&&v<30],["20V以下",v=>v<24]];
 const st={mk:"すべて",vc:"すべて",sort:"air",only26:false};
 const maxAir=Math.max(...D.map(d=>d.air||0));
+const LOGO={"バートル":{f:"burtle.png"},"サンエス":{f:"sun-s.png"},"株式会社空調服":{f:"kuchofuku.svg"},"桑和":{f:"sowa.svg"},"村上被服":{f:"hooh.png"}};
+const PICS=new Set(["AC10","RD9690PJ","RD9691NJ","RD9680G","RD9293NJ","RD9590PJ","SK25012K90","BT25211","BT23211","16108","V3001","V2801","SV900","AC09","18302"]);
+const pk=d=>d.im||d.md;
+const lg=(d,c)=>{const l=LOGO[d.mk];return l?`<img class="${c}${l.dk?" dk":""}" src="img/logo/${l.f}" alt="${esc(d.mk)}のロゴ" loading="lazy">`:"";};
+const pic=d=>PICS.has(pk(d))?`<img class="pic" src="img/p/${pk(d)}.jpg" alt="${esc(d.mk+" "+d.md)}" width="76" height="76" loading="lazy">`:`<span class="pic nopic${(LOGO[d.mk]||{}).dk?" dk":""}" title="写真なし">${lg(d,"")}</span>`;
+const mkr=d=>`<span class="mk">${lg(d,"mlogo")}<span class="maker">${esc(d.mk)}</span><span class="model">${esc(d.md)}</span></span>`;
 const yen=n=>"¥"+n.toLocaleString("ja-JP");
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const amz=q=>"https://www.amazon.co.jp/s?k="+encodeURIComponent(q)+"&tag=stockmedia-22";
@@ -242,7 +260,7 @@ function render(){
     cd.innerHTML='<div class="empty">条件に合うバッテリーはありません。条件を変えてください。</div>';return;
   }
   tb.innerHTML=r.map(d=>`<tr>
-    <td class="name"><span class="maker">${esc(d.mk)}</span>　<span class="model">${esc(d.md)}</span><b>${esc(d.nm)}</b><span class="compat">${esc(d.cp)}${d.warn?`<span class="warn">${esc(d.warn)}</span>`:""}</span>${tags(d)}</td>
+    <td class="name"><div class="prod">${pic(d)}<div class="txt">${mkr(d)}<b>${esc(d.nm)}</b><span class="compat">${esc(d.cp)}${d.warn?`<span class="warn">${esc(d.warn)}</span>`:""}</span>${tags(d)}</div></div></td>
     <td class="num">${d.air?d.air+" L/秒":"—"}${d.air?`<div class="bar"><i style="width:${d.air/maxAir*100}%"></i></div>`:""}</td>
     <td class="num" title="${esc(d.vt)}">${d.v}V</td>
     <td class="num">${d.run?d.run+" 時間":"—"}<span class="sub">${[d.runN,d.ch!=="—"?"充電"+d.ch:""].filter(Boolean).map(esc).join("<br>")}</span></td>
@@ -250,7 +268,7 @@ function render(){
     <td>${shops(d)}</td>
   </tr>`).join("");
   cd.innerHTML=r.map(d=>`<article class="card">
-    <div class="name"><span class="maker">${esc(d.mk)}</span>　<span class="model">${esc(d.md)}</span><b>${esc(d.nm)}</b>${tags(d)}</div>
+    <div class="name prod">${pic(d)}<div class="txt">${mkr(d)}<b>${esc(d.nm)}</b>${tags(d)}</div></div>
     <dl>
       <div><dt>最大風量</dt><dd>${d.air?d.air+" L/秒":"—"}</dd></div>
       <div><dt>最大電圧</dt><dd>${d.v}V</dd></div>

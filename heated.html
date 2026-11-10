@@ -7,7 +7,7 @@
 <title>電熱ベスト比較表</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" media="print" onload="this.media=\'all\'">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap"></noscript>
 <style>
 /* Layout: 白基調のカタログ。上に条件バー、下に仕様表（狭い画面ではカード）。数値は等幅で揃える */
@@ -132,6 +132,17 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
 .buy.na{opacity:.45;cursor:default}
 /* スマホ幅で表がはみ出さないように（グリッド列を親幅に収める） */
 @media (max-width:760px){section{grid-template-columns:minmax(0,1fr)}.cards,.card{grid-template-columns:minmax(0,1fr)}.card *{min-width:0;overflow-wrap:anywhere}.controls>*,.ctl{min-width:0}.ctl select{width:100%;max-width:100%;min-width:0}}
+/* 商品写真とメーカーロゴ */
+.prod{display:flex;gap:12px;align-items:flex-start}
+.prod .txt{min-width:0;flex:1}
+.pic{flex:0 0 76px;width:76px;height:76px;border:1px solid var(--line);border-radius:4px;background:#fff;object-fit:contain;display:block}
+.pic.nopic{display:flex;align-items:center;justify-content:center;padding:8px;background:#F7F8FA}
+.pic.nopic img{max-width:100%;max-height:26px}
+.pic.nopic.dk{background:#2B2F35}
+.mk{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.mlogo{height:16px;width:auto;max-width:92px;display:block}
+.mlogo.dk{background:#2B2F35;padding:2px 4px;border-radius:2px;height:18px}
+@media (max-width:760px){.pic{flex-basis:64px;width:64px;height:64px}}
 </style>
 
 <div class="wrap">
@@ -180,6 +191,7 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
 
   <div class="notice">
     <p>価格は変動します。表示は取得時点の価格のため、購入前に販売ページで最新の価格と仕様をご確認ください。</p>
+    <p>商品写真・ロゴ：各メーカー公式サイト・販売店サイトより（メーカー掲載許可済み）。写真はイメージで、色や付属品が異なる場合があります。</p>
     <p>発熱か所・温度・使用時間はメーカーまたは販売店の公称値です。気温や着方で変わります。「—」は公表値が見つからなかった項目です。</p>
     <p>楽天市場・Yahoo!ショッピングの価格は新品の税込最安値を毎朝取得したもので、送料は含みません（「＋送料」は送料別の店です）。最安値が取れなかった店は「価格を見る」と表示しています。Amazonの価格は販売ページでご確認ください。</p>
     <p>当サイトの運営会社（Stock合同会社）は、この表の一部の製品（自重堂 FEVERGEARなど）をAmazonで販売しています。</p>
@@ -195,22 +207,28 @@ const D=[
  {id:"HV-FGA79010",mk:"自重堂",nm:"FEVER GEAR 電熱ベスト（リップストップ）",md:"FGA79010",z:9,zd:"首1・前2・背中6",t:55,bat:true,fan:false,usb:true,pw:"専用10,000mAh付属（市販USB 5V・2A以上も可）",run:"強 約3時間／弱 約7.5時間",wash:"手洗い",p:5500,q:"自重堂 FGA79010",own:true},
  {id:"HV-FGA20000",mk:"自重堂",nm:"FEVER GEAR 電熱ベスト（襟付き）",md:"FGA20000",z:9,zd:"首1・前2・背中6",t:55,bat:true,fan:false,usb:true,pw:"専用10,000mAh付属（市販USB 5V・2A以上も可）",run:"強 約3時間／弱 約7.5時間",wash:"手洗い",p:5200,q:"自重堂 FGA20000",own:true},
  {id:"HV-FGA20010",mk:"自重堂",nm:"FEVER GEAR 電熱インナーベスト",md:"FGA20010",z:9,zd:"前2・背中7",t:55,bat:true,fan:false,usb:true,pw:"専用10,000mAh付属（市販USB 5V・2A以上も可）",run:"強 約3時間／弱 約7.5時間",wash:"手洗い",p:5200,q:"自重堂 FGA20010",own:true,tag:"インナー"},
- {id:"HV-3274",mk:"バートル",nm:"サーモベスト＋電熱パッド TC501",md:"3274＋TC501",y:2026,z:1,zd:"背中にパッド1枚",t:60,bat:false,fan:true,usb:false,pw:"空調服用AC10（別売）専用",run:"60℃で約4時間／40℃で約10時間",wash:"—",p:10000,q:"バートル 3274 TC501",warn:"AC09以前のバッテリーは使えません"},
+ {id:"HV-3274",mk:"バートル",nm:"サーモベスト＋電熱パッド TC501",md:"3274＋TC501",im:"3274",y:2026,z:1,zd:"背中にパッド1枚",t:60,bat:false,fan:true,usb:false,pw:"空調服用AC10（別売）専用",run:"60℃で約4時間／40℃で約10時間",wash:"—",p:10000,q:"バートル 3274 TC501",warn:"AC09以前のバッテリーは使えません"},
  {id:"HV-3214",mk:"バートル",nm:"ライトウエイトベスト（電熱パッドTC500対応）",md:"3214",z:1,zd:"背中にパッド1枚（TC500別売）",t:60,bat:false,fan:true,usb:false,pw:"空調服用AC09・AC08ほか（別売）",run:"60℃は約1時間で54℃へ／38℃で約11時間",wash:"—",p:3200,q:"バートル 3214",warn:"価格はベストのみ。電熱パッドTC500とバッテリーは別売"},
  {id:"HV-EH32490",mk:"サンエス",nm:"EXHEAT カーボンヒートベスト",md:"EH32490",z:5,zd:"首・背中・腰・お腹など5か所",t:null,bat:false,fan:false,usb:true,pw:"USBモバイルバッテリー（別売・推奨RD9641）",run:"強 約5時間／弱 約8時間",wash:"手洗い",p:10000,q:"サンエス EH32490",tag:"プレヒート"},
- {id:"HV-BO32550",mk:"サンエス",nm:"雷神服 インナーベスト＋発熱ユニット",md:"BO32550＋RD9570",z:2,zd:"背中に2枚",t:null,bat:false,fan:true,usb:true,pw:"空調風神服の24V・12Vバッテリー、またはUSB 2A以上（別売）",run:"弱で約11時間（24V系）",wash:"—",p:12000,q:"雷神服 BO32550 RD9570",tag:"インナー"},
+ {id:"HV-BO32550",mk:"サンエス",nm:"雷神服 インナーベスト＋発熱ユニット",md:"BO32550＋RD9570",im:"BO32550",z:2,zd:"背中に2枚",t:null,bat:false,fan:true,usb:true,pw:"空調風神服の24V・12Vバッテリー、またはUSB 2A以上（別売）",run:"弱で約11時間（24V系）",wash:"—",p:12000,q:"雷神服 BO32550 RD9570",tag:"インナー"},
  {id:"HV-17029",mk:"桑和",nm:"G.G. ヒートベスト コンプリートセット",md:"17029",z:null,zd:"前後を切替",t:60,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"—",wash:"—",p:6500,noamz:true,q:"桑和 17029",warn:"在庫限りの店が多い"},
  {id:"HV-17019",mk:"桑和",nm:"G.G. ヒートベスト（シート脱着式）",md:"17019",z:2,zd:"取り外せるシート2枚",t:45,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"高 約3.5時間／低 約6時間",wash:"シートを外して洗える",p:8000,noamz:true,q:"桑和 17019"},
  {id:"HV-AZ8313",mk:"アイトス",nm:"TULTEX Vネック ヒーターベスト",md:"AZ-8313",z:2,zd:"背中・腰",t:55,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"—",wash:"手洗い",p:5000,q:"タルテックス 8313 ヒーターベスト",tag:"インナー"},
  {id:"HV-AZ8312",mk:"アイトス",nm:"TULTEX 衿付 ヒーターベスト",md:"AZ-8312",z:2,zd:"2か所",t:null,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属",run:"—",wash:"手洗い",p:5000,noamz:true,q:"タルテックス 8312 ヒーターベスト"},
  {id:"HV-1077",mk:"村上被服",nm:"鳳皇 インナーヒートベスト",md:"1077",z:null,zd:"背中一面",t:null,bat:false,fan:true,usb:false,pw:"スモールバッテリーV1333（別売）。快適ウェア用バッテリーでも起動",run:"弱 約16〜23時間（V1333）",wash:"—",p:3500,q:"鳳皇 1077 ヒートベスト",tag:"インナー"},
  {id:"WZ8100",mk:"ワークマン",nm:"ウィンドコア ヒーターベスト",md:"WZ8100",z:null,zd:"背中・腰",t:50,bat:false,fan:true,usb:false,pw:"ハーフバッテリーWZ3310（別売4,900円）。ファン付きウェアと共用",run:"高 約4.3時間／低 約16時間",wash:"—",p:3900,q:"ワークマン ウィンドコア ヒーターベスト",official:{label:"ワークマン公式",price:3900,url:"https://workman.jp/"}},
- {id:"HV-CV202D",mk:"マキタ",nm:"充電式暖房ベスト",md:"CV202DZ",z:4,zd:"首元まで4か所",t:null,bat:false,fan:false,usb:false,pw:"マキタ10.8〜18Vバッテリ（ホルダ・充電器とも別売）",run:"18V 6.0Ahで強 約10時間／弱 約35時間",wash:"バッテリを外せば洗濯機可",p:15000,q:"マキタ CV202DZ",tag:"工具バッテリー"},
+ {id:"HV-CV202D",mk:"マキタ",nm:"充電式暖房ベスト",md:"CV202DZ",im:"CV202D",z:4,zd:"首元まで4か所",t:null,bat:false,fan:false,usb:false,pw:"マキタ10.8〜18Vバッテリ（ホルダ・充電器とも別売）",run:"18V 6.0Ahで強 約10時間／弱 約35時間",wash:"バッテリを外せば洗濯機可",p:15000,q:"マキタ CV202DZ",tag:"工具バッテリー"},
  {id:"HV-XE167",mk:"ジーベック",nm:"ヒーター内蔵ベスト",md:"167",z:2,zd:"背中・腰",t:60,bat:false,fan:false,usb:true,pw:"USBモバイルバッテリー5V・2.1A以上（別売）",run:"約3〜5時間（2時間で自動停止）",wash:"手洗い",p:6800,q:"ジーベック 167 ヒーター"}
 ];
 const MAKERS=["すべて","自重堂","バートル","サンエス","桑和","アイトス","村上被服","ワークマン","マキタ","ジーベック"];
 const POWS=[["すべて",()=>true],["バッテリー付き",d=>d.bat],["空調服のバッテリーが使える",d=>d.fan],["市販のUSBモバイルバッテリーで使える",d=>d.usb]];
 const st={mk:"すべて",pw:"すべて",sort:"zones"};
+const LOGO={"自重堂":{f:"jichodo.png"},"バートル":{f:"burtle.png"},"サンエス":{f:"sun-s.png"},"桑和":{f:"sowa.svg"},"アイトス":{f:"aitoz.png"},"村上被服":{f:"hooh.png"},"ワークマン":{f:"workman.png"},"マキタ":{f:"makita.svg"},"ジーベック":{f:"xebec.png",dk:true}};
+const PICS=new Set(["FGA79000","FGA79010","FGA20000","FGA20010","3274","3214","EH32490","BO32550","AZ-8313","AZ-8312","1077","CV202D","17029","17019","167"]);
+const pk=d=>d.im||d.md;
+const lg=(d,c)=>{const l=LOGO[d.mk];return l?`<img class="${c}${l.dk?" dk":""}" src="img/logo/${l.f}" alt="${esc(d.mk)}のロゴ" loading="lazy">`:"";};
+const pic=d=>PICS.has(pk(d))?`<img class="pic" src="img/p/${pk(d)}.jpg" alt="${esc(d.mk+" "+d.md)}" width="76" height="76" loading="lazy">`:`<span class="pic nopic${(LOGO[d.mk]||{}).dk?" dk":""}" title="写真なし">${lg(d,"")}</span>`;
+const mkr=d=>`<span class="mk">${lg(d,"mlogo")}<span class="maker">${esc(d.mk)}</span><span class="model">${esc(d.md)}</span></span>`;
 const yen=n=>"¥"+n.toLocaleString("ja-JP");
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const amz=q=>"https://www.amazon.co.jp/s?k="+encodeURIComponent(q)+"&tag=stockmedia-22";
@@ -252,14 +270,14 @@ function render(){
   const tb=document.getElementById("rows"),cd=document.getElementById("cards");
   if(!r.length){tb.innerHTML='<tr><td colspan="5" class="empty">条件に合う製品はありません。条件を変えてください。</td></tr>';cd.innerHTML='<div class="empty">条件に合う製品はありません。条件を変えてください。</div>';return;}
   tb.innerHTML=r.map(d=>`<tr>
-    <td class="name"><span class="maker">${esc(d.mk)}</span>　<span class="model">${esc(d.md)}</span><b>${esc(d.nm)}</b>${d.warn?`<span class="compat"><span class="warn">${esc(d.warn)}</span></span>`:""}${tags(d)}</td>
+    <td class="name"><div class="prod">${pic(d)}<div class="txt">${mkr(d)}<b>${esc(d.nm)}</b>${d.warn?`<span class="compat"><span class="warn">${esc(d.warn)}</span></span>`:""}${tags(d)}</div></div></td>
     <td class="num">${zt(d)}<span class="sub">${esc(d.zd)}</span></td>
     <td class="num">${tt(d)}</td>
     <td><span class="det">${esc(d.pw)}</span>${d.run!=="—"?`<span class="det">${esc(d.run)}</span>`:""}${d.wash!=="—"?`<span class="det">洗濯：${esc(d.wash)}</span>`:""}</td>
     <td>${shops(d)}</td>
   </tr>`).join("");
   cd.innerHTML=r.map(d=>`<article class="card">
-    <div class="name"><span class="maker">${esc(d.mk)}</span>　<span class="model">${esc(d.md)}</span><b>${esc(d.nm)}</b>${tags(d)}</div>
+    <div class="name prod">${pic(d)}<div class="txt">${mkr(d)}<b>${esc(d.nm)}</b>${tags(d)}</div></div>
     <dl>
       <div><dt>発熱</dt><dd>${zt(d)}</dd></div>
       <div><dt>最高温度</dt><dd>${tt(d)}</dd></div>
