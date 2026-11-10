@@ -1,9 +1,15 @@
 {
- "updated": "2026-11-10T11:57:41+09:00",
+ "updated": "2026-11-10T12:12:35+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
-   "rakuten": null,
+   "rakuten": {
+    "price": 11400,
+    "url": "https://item.rakuten.co.jp/tomidenlabo/burtle77/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "TomiDenlaboWORKSHOP",
+    "freeShipping": false,
+    "name": "BURTLE バートル NEW ITEM AC10 リチウムイオンバッテリー PSE認証"
+   },
    "yahoo": {
     "price": 11869,
     "url": "https://store.shopping.yahoo.co.jp/ws-captain/ac09.html",
@@ -12,12 +18,18 @@
     "name": "バートル バッテリー AC10 30V 2026年最新 京セラ製 急速充電 エアークラフト BURTLE aircraft"
    },
    "lowest": {
-    "site": "yahoo",
-    "price": 11869
+    "site": "rakuten",
+    "price": 11400
    }
   },
   "AC09": {
-   "rakuten": null,
+   "rakuten": {
+    "price": 13000,
+    "url": "https://item.rakuten.co.jp/kaitekimizu/ac08/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "快適水空館",
+    "freeShipping": false,
+    "name": "バートル エアークラフト AC09 24V リチウムイオンバッテリー 2025SS BURTLE AIRCRAFT 空調 服 空調ウェア 最新 モデル"
+   },
    "yahoo": {
     "price": 12001,
     "url": "https://store.shopping.yahoo.co.jp/juko-in/186051694.html",
@@ -211,7 +223,13 @@
    }
   },
   "16108": {
-   "rakuten": null,
+   "rakuten": {
+    "price": 13534,
+    "url": "https://item.rakuten.co.jp/fukushigoto/s600400-00000000-16108-01/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "FUKUSHIGOTO STORE 楽天市場店",
+    "freeShipping": true,
+    "name": "SOWA 16108 デバイスセット F 【 作業着 作業服 桑和 ソーワ オールシーズン対応 小さめサイズ 普通サイズ 大きめサイズ】"
+   },
    "yahoo": {
     "price": 14198,
     "url": "https://store.shopping.yahoo.co.jp/gochi-shop/sowa-16108.html",
@@ -220,8 +238,8 @@
     "name": "桑和 SOWA 16108 G.G. デバイスセット バッテリーファンセット EFウェア 空調ウェア 空調ベスト ファンバッテリーセット 作業着 作業服"
    },
    "lowest": {
-    "site": "yahoo",
-    "price": 14198
+    "site": "rakuten",
+    "price": 13534
    }
   },
   "V3001": {
