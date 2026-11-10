@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T09:05:04+09:00",
+ "updated": "2026-11-10T11:57:41+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -184,22 +184,22 @@
   },
   "BT23211": {
    "rakuten": {
-    "price": 9240,
-    "url": "https://item.rakuten.co.jp/pc2b/10001094/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "株式会社空調服 直営店",
-    "freeShipping": true,
-    "name": "空調服(R)　バッテリー BT23211 7.2Vバッテリー 遠隔操作可能 Bluetooth(R)接続 特許取得済 専用コント－ラーあり(別売り) 保守パーツ 予備 バッテリーのみ【公式ショップ】"
+    "price": 9647,
+    "url": "https://item.rakuten.co.jp/kanajin/bt23211-xebec/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "カナジン 楽天市場店",
+    "freeShipping": false,
+    "name": "ジーベック BT23211 バッテリー 本体 18V 999-888 空調服 XEBEC 小型便 在庫"
    },
    "yahoo": {
     "price": 9552,
-    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt23211-xebec.html",
-    "shop": "カナジン 2号店",
+    "url": "https://store.shopping.yahoo.co.jp/toolking/bt23211-xebec.html",
+    "shop": "ツールキング",
     "freeShipping": false,
     "name": "ジーベック BT23211 バッテリー 本体 18V 999-888 空調服 XEBEC 小型便 在庫"
    },
    "lowest": {
-    "site": "rakuten",
-    "price": 9240
+    "site": "yahoo",
+    "price": 9552
    }
   },
   "18302": {
@@ -224,11 +224,11 @@
   },
   "16108": {
    "rakuten": {
-    "price": 13534,
-    "url": "https://item.rakuten.co.jp/fukushigoto/s600400-00000000-16108-01/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "FUKUSHIGOTO STORE 楽天市場店",
+    "price": 11000,
+    "url": "https://item.rakuten.co.jp/act-kougu/rc_it9108rxlgcs_g5fh/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "アクトツール楽天市場店",
     "freeShipping": true,
-    "name": "SOWA 16108 デバイスセット F 【 作業着 作業服 桑和 ソーワ オールシーズン対応 小さめサイズ 普通サイズ 大きめサイズ】"
+    "name": "【新古】◇桑和(SOWA) G.G ファンバッテリーデバイスセット 16108 2025年モデル【岩槻店】"
    },
    "yahoo": {
     "price": 14198,
@@ -239,7 +239,7 @@
    },
    "lowest": {
     "site": "rakuten",
-    "price": 13534
+    "price": 11000
    }
   },
   "V3001": {
@@ -571,8 +571,8 @@
    },
    "yahoo": {
     "price": 5870,
-    "url": "https://store.shopping.yahoo.co.jp/season-tk/xb-167.html",
-    "shop": "作業着 空調服&防寒着Season-TK",
+    "url": "https://store.shopping.yahoo.co.jp/worktk/xb-167.html",
+    "shop": "作業服・空調服・医療白衣のWorkTK",
     "freeShipping": true,
     "name": "ヒーター内蔵ベスト ヒートベスト 服単品 ジーベック ポリエステル 防風 保温 防寒 秋冬 XEBEC xb-167"
    },
