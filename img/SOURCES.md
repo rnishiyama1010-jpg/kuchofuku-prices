@@ -49,4 +49,14 @@
 | products/FGA20000.jpg | https://data-archives.jichodo.co.jp/data/2026aw/ | 公式ショップは「画像準備中」。公式デジタルカタログのページから下段カラー違い写真を切り出し(約400x560) |
 | products/FGA20010.jpg | https://data-archives.jichodo.co.jp/data/2026aw/ | 公式ショップは「画像準備中」。公式デジタルカタログのページから下段カラー違い写真を切り出し(約400x560) |
 
-公式で見つからず写真なし（メーカーロゴで代用表示）：AC09、桑和 18302・17029・17019、ワークマン WZ8100、ジーベック 167
+## 販売店サイトから（公式で見つからなかったもの、2026-11-10取得）
+
+| ファイル | 掲載ページ | 備考 |
+|---|---|---|
+| products/AC09.jpg | https://store.shopping.yahoo.co.jp/juko-in/186051694.html | 3色の写真からマットブラックを切り出し |
+| products/18302.jpg | https://store.shopping.yahoo.co.jp/total-homes/18302.html | バッテリー本体（充電器は写っていない） |
+| products/17029.jpg | https://item.rakuten.co.jp/auc-michio/305sowa17029/ | ブラック、ベスト＋バッテリー |
+| products/17019.jpg | https://item.rakuten.co.jp/b-side/sw-8979-06/ | 旧品番8979-06時代の写真（同じ製品） |
+| products/167.jpg | https://store.shopping.yahoo.co.jp/worktk/xb-167.html | 2色 |
+
+写真なし（メーカーロゴで代用表示）：ワークマン WZ8100（公式・楽天・Yahoo!・Amazonに本体の販売ページなし）
