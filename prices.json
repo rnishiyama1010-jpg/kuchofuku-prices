@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T12:12:35+09:00",
+ "updated": "2026-11-11T09:56:23+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -23,13 +23,7 @@
    }
   },
   "AC09": {
-   "rakuten": {
-    "price": 13000,
-    "url": "https://item.rakuten.co.jp/kaitekimizu/ac08/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "快適水空館",
-    "freeShipping": false,
-    "name": "バートル エアークラフト AC09 24V リチウムイオンバッテリー 2025SS BURTLE AIRCRAFT 空調 服 空調ウェア 最新 モデル"
-   },
+   "rakuten": null,
    "yahoo": {
     "price": 12001,
     "url": "https://store.shopping.yahoo.co.jp/juko-in/186051694.html",
@@ -75,7 +69,7 @@
     "url": "https://store.shopping.yahoo.co.jp/cocoterracemore/icn-acb-002461134.html",
     "shop": "イチネンネットmore",
     "freeShipping": true,
-    "name": "＼ポイント5倍！11/8まで／(あすつく) サンエス:２４Ｖリチウムイオンバッテリーセット（BN） RD9691NJ 熱中症対策 熱中症 サンエス  空調風神服??"
+    "name": "(あすつく) サンエス:２４Ｖリチウムイオンバッテリーセット（BN） RD9691NJ 熱中症対策 熱中症 サンエス  空調風神服??"
    },
    "lowest": {
     "site": "rakuten",
@@ -95,7 +89,7 @@
     "url": "https://store.shopping.yahoo.co.jp/cocoterracemore/icn-acb-002461137.html",
     "shop": "イチネンネットmore",
     "freeShipping": true,
-    "name": "＼ポイント5倍！11/8まで／(あすつく) サンエス:３０Ｖバッテリーセット RD9680G 熱中症対策 熱中症 サンエス  空調風神服??  リチウムイオンバッテリー"
+    "name": "(あすつく) サンエス:３０Ｖバッテリーセット RD9680G 熱中症対策 熱中症 サンエス  空調風神服??  リチウムイオンバッテリー"
    },
    "lowest": {
     "site": "rakuten",
@@ -172,8 +166,8 @@
    },
    "yahoo": {
     "price": 11113,
-    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt25211.html",
-    "shop": "カナジン 2号店",
+    "url": "https://store.shopping.yahoo.co.jp/toolking/bt25211.html",
+    "shop": "ツールキング",
     "freeShipping": false,
     "name": "BT25211 バッテリー 25V 本体のみ バッテリー 8216025 空調服 小型便 在庫"
    },
@@ -192,8 +186,8 @@
    },
    "yahoo": {
     "price": 9552,
-    "url": "https://store.shopping.yahoo.co.jp/toolking/bt23211-xebec.html",
-    "shop": "ツールキング",
+    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt23211-xebec.html",
+    "shop": "カナジン 2号店",
     "freeShipping": false,
     "name": "ジーベック BT23211 バッテリー 本体 18V 999-888 空調服 XEBEC 小型便 在庫"
    },
@@ -212,8 +206,8 @@
    },
    "yahoo": {
     "price": 11132,
-    "url": "https://store.shopping.yahoo.co.jp/total-homes/18302.html",
-    "shop": "Total Homes",
+    "url": "https://store.shopping.yahoo.co.jp/takahashihonsha/18302.html",
+    "shop": "高橋本社Yahoo!店",
     "freeShipping": true,
     "name": "桑和 G.G. SOWA 18302 EFウェア 20V バッテリー(バッテリー+充電器) 20000mAh 2024年春夏新作"
    },
@@ -373,7 +367,7 @@
     "url": "https://item.rakuten.co.jp/lion-ya/btl-3274-set1/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
     "shop": "ライオン屋",
     "freeShipping": false,
-    "name": "【P10倍】 【予約商品・一部即日出荷】 バートル 3274 サーモクラフトセット サーモベスト BURTLE 【軽防寒】 秋冬 3274＋TC501 ベスト＆電熱パッドセット THERMO CRAFT ヒーター 電熱ベスト ユニセックス 防寒 軽量 保温 お買い得セット 2026年製 ［バッテリー別売］"
+    "name": "【予約商品・一部即日出荷】 バートル 3274 サーモクラフトセット サーモベスト BURTLE 【軽防寒】 秋冬 3274＋TC501 ベスト＆電熱パッドセット THERMO CRAFT ヒーター 電熱ベスト ユニセックス 防寒 軽量 保温 お買い得セット 2026年製 ［バッテリー別売］"
    },
    "yahoo": {
     "price": 9990,
