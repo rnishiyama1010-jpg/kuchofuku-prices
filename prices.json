@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T09:21:00+09:00",
+ "updated": "2026-11-16T09:25:04+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -166,8 +166,8 @@
    },
    "yahoo": {
     "price": 11113,
-    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt25211.html",
-    "shop": "カナジン 2号店",
+    "url": "https://store.shopping.yahoo.co.jp/toolking/bt25211.html",
+    "shop": "ツールキング",
     "freeShipping": false,
     "name": "BT25211 バッテリー 25V 本体のみ バッテリー 8216025 空調服 小型便 在庫"
    },
@@ -206,8 +206,8 @@
    },
    "yahoo": {
     "price": 11132,
-    "url": "https://store.shopping.yahoo.co.jp/total-homes/18302.html",
-    "shop": "Total Homes",
+    "url": "https://store.shopping.yahoo.co.jp/takahashihonsha/18302.html",
+    "shop": "高橋本社Yahoo!店",
     "freeShipping": true,
     "name": "桑和 G.G. SOWA 18302 EFウェア 20V バッテリー(バッテリー+充電器) 20000mAh 2024年春夏新作"
    },
@@ -267,7 +267,7 @@
     "url": "https://item.rakuten.co.jp/edenki/ed6051700/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
     "shop": "測定器・工具のイーデンキ",
     "freeShipping": false,
-    "name": "【11/15限定！1万円以上購入で500円クーポン配布中】【即納在庫品】HOOH 快適ウェア用コンプリートセット SV900M 村上被服 メタリックピンク ファンセット バッテリーセット ケーブル付き 高出力 ハイパワー 30V 19V 12V IP54 防塵防滴 熱中症対策 暑さ対策 涼しい 夏 夏用"
+    "name": "【即納在庫品】HOOH 快適ウェア用コンプリートセット SV900M 村上被服 メタリックピンク ファンセット バッテリーセット ケーブル付き 高出力 ハイパワー 30V 19V 12V IP54 防塵防滴 熱中症対策 暑さ対策 涼しい 夏 夏用 作業着"
    },
    "yahoo": {
     "price": 10180,
@@ -565,8 +565,8 @@
    },
    "yahoo": {
     "price": 5870,
-    "url": "https://store.shopping.yahoo.co.jp/tk-netshop/xb-167.html",
-    "shop": "スポーツインナーSportsTK",
+    "url": "https://store.shopping.yahoo.co.jp/season-tk/xb-167.html",
+    "shop": "作業着 空調服&防寒着Season-TK",
     "freeShipping": true,
     "name": "ヒーター内蔵ベスト ヒートベスト 服単品 ジーベック ポリエステル 防風 保温 防寒 秋冬 XEBEC xb-167"
    },
