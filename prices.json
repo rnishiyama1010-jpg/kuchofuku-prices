@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T06:02:27+09:00",
+ "updated": "2026-11-18T08:01:27+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -192,8 +192,8 @@
    },
    "yahoo": {
     "price": 9552,
-    "url": "https://store.shopping.yahoo.co.jp/toolking/bt23211-xebec.html",
-    "shop": "ツールキング",
+    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt23211-xebec.html",
+    "shop": "カナジン 2号店",
     "freeShipping": false,
     "name": "ジーベック BT23211 バッテリー 本体 18V 999-888 空調服 XEBEC 小型便 在庫"
    },
@@ -212,8 +212,8 @@
    },
    "yahoo": {
     "price": 11132,
-    "url": "https://store.shopping.yahoo.co.jp/takahashihonsha/18302.html",
-    "shop": "高橋本社Yahoo!店",
+    "url": "https://store.shopping.yahoo.co.jp/total-homes/18302.html",
+    "shop": "Total Homes",
     "freeShipping": true,
     "name": "桑和 G.G. SOWA 18302 EFウェア 20V バッテリー(バッテリー+充電器) 20000mAh 2024年春夏新作"
    },
@@ -357,8 +357,8 @@
    },
    "yahoo": {
     "price": 5250,
-    "url": "https://store.shopping.yahoo.co.jp/darumashouten/jichoudo-fga20010b.html",
-    "shop": "作業服の専門店だるま商店",
+    "url": "https://store.shopping.yahoo.co.jp/azumanet2014/jichoudo-fga20010b.html",
+    "shop": "アズマクロージング",
     "freeShipping": true,
     "name": "電熱インナーベスト EL バッテリー付き 防寒ベスト 電熱ベスト 自重堂 FGA20010 保温性 暖かい 防寒服 防寒着 アウトドア 秋冬 作業服 作業着"
    },
@@ -437,8 +437,8 @@
    },
    "yahoo": {
     "price": 11368,
-    "url": "https://store.shopping.yahoo.co.jp/uniform100ka/099-bo32550-rd9570.html",
-    "shop": "空調服・ファン付き作業着取扱店 ユニフォーム百科",
+    "url": "https://store.shopping.yahoo.co.jp/kucho100ka/099-bo32550-rd9570.html",
+    "shop": "武蔵野ユニフォーム 空調服・作業着取扱店",
     "freeShipping": false,
     "name": "サンエス インナーベスト 発熱ユニットセット BO32550-RD9570 5層構造でしっかり防風 秋冬 ヒートアイテム 作業着 作業服 メンズ ユニセックス ※バッテリー別売"
    },
@@ -551,10 +551,10 @@
    },
    "yahoo": {
     "price": 15463,
-    "url": "https://store.shopping.yahoo.co.jp/kabutechno/cv202dzm.html",
+    "url": "https://store.shopping.yahoo.co.jp/kabutechno/cv202dzs.html",
     "shop": "kabutechno",
     "freeShipping": false,
-    "name": "マキタ CV202DZ(Mサイズ) (本体のみ) 10.8V/14.4V/18V充電式暖房ベスト バッテリ・ケーブルユニットB別売■安心の純正/新品■"
+    "name": "マキタ CV202DZ(Sサイズ) (本体のみ) 10.8V/14.4V/18V充電式暖房ベスト バッテリ・ケーブルユニットB別売■安心の純正/新品■"
    },
    "lowest": {
     "site": "yahoo",
