@@ -66,7 +66,7 @@ h2{font-family:var(--display);color:var(--ink);font-size:24px;margin:0;line-heig
       <h2 id="h">30秒バッテリー診断</h2>
       <div class="prog" id="prog" aria-hidden="true"><i></i><i></i><i></i></div>
     </div>
-    <p class="lead">質問に答えると、2026年版の15製品から候補を3つまでに絞り込みます。</p>
+    <p class="lead">質問に答えると、2026年版の14製品から候補を3つまでに絞り込みます。</p>
     <div id="stage" aria-live="polite"></div>
   </section>
   <p class="nextread"><a href="https://www.stockmedia.biz/battery" target="_top">次に読む：ファン付きウェア用バッテリーの最安値</a></p>
@@ -86,7 +86,6 @@ const D=[
  {mk:"桑和",nm:"G.G. バッテリーセット 20V",md:"18302",y:2026,v:20,vt:"20V / 15V / 12V / 8V",air:97,run:32,runN:"8V時",ch:"約3.7時間",w:350,p:12650,pN:"販売店",kind:"充電器付",cp:"18301・18201・18001・18101系",warn:"19系USBデバイス不可",q:"桑和 18302 バッテリー"},
  {mk:"桑和",nm:"G.G. 16108機器セット 15V",md:"16108",y:2026,v:15,vt:"15V / 12V / 9V",air:80,run:24,runN:"9V時",ch:"約5時間",w:340,p:16500,pN:"販売店",kind:"ファン付きセット",cp:"G.G.専用",q:"桑和 16108"},
  {mk:"村上被服",nm:"鳳皇 バッテリーセット V30",md:"V3001",y:2026,v:30,vt:"30V / 19V / 17V / 15V / 12V",air:120,run:17,runN:"12V時",ch:"約4.5時間",w:470,p:13695,pN:"販売店",kind:"充電器付",cp:"V30・V28ファン",warn:"V28は30V不可・V19は非対応",tag:"USB同時出力",q:"鳳皇 V3001"},
- {mk:"村上被服",nm:"鳳皇 28Vファン・バッテリーセット",md:"V2801+V2802",y:2025,v:28,vt:"28V / 19V / 15V / 12V",air:105,run:10,runN:"12V時",ch:"約3.5時間",w:375,p:17600,pN:"販売店",kind:"ファン付きセット",cp:"V28ファン（同梱）",warn:"重量は販売店で375g/445gと表記が分かれる",q:"鳳皇 V2801"},
  {mk:"村上被服",nm:"鳳皇 コンプリートセット 15V",md:"SV900",y:2025,v:15,vt:"15V / 13V / 10V / 8.4V",air:82,run:17.5,runN:"8.4V時",ch:"—",w:330,p:13178,pN:"販売店",kind:"ファン付きセット",cp:"SV900ファン（同梱）",tag:"USB-C充電",q:"鳳皇 SV900"}
 ];
 
@@ -155,7 +154,7 @@ function result(){
       <p class="cp">対応：${esc(d.cp)}${d.warn?`<span class="warn">／${esc(d.warn)}</span>`:""}</p>
       <div class="shops"><a class="buy amazon" href="${amz(d.q)}" ${R}>Amazon<span class="bp go">価格を見る</span></a><a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場${sitePrice(d,"rakuten")}</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!${sitePrice(d,"yahoo")}</a></div>
     </article>`}).join("");
-  const more=CTX==="article"?`<a href="https://www.stockmedia.biz/battery" target="_top">ファン付きウェア用バッテリーの最安値ページ</a>で全15製品を比べられます。会社でまとめて購入する方は、作業服通販<a href="https://x.gd/0n7uS" target="_blank" rel="nofollow sponsored noopener">「フクくる」</a>（PR）もご検討ください。`:`全15製品は<a href="https://www.stockmedia.biz/battery" target="_top">ファン付きウェア用バッテリーの最安値ページ（一覧表）</a>で比べられます。`;
+  const more=CTX==="article"?`<a href="https://www.stockmedia.biz/battery" target="_top">ファン付きウェア用バッテリーの最安値ページ</a>で全14製品を比べられます。会社でまとめて購入する方は、作業服通販<a href="https://x.gd/0n7uS" target="_blank" rel="nofollow sponsored noopener">「フクくる」</a>（PR）もご検討ください。`:`全15製品は<a href="https://www.stockmedia.biz/battery" target="_top">ファン付きウェア用バッテリーの最安値ページ（一覧表）</a>で比べられます。`;
   const own=mk?"お手持ちのファンの品番が「対応」に含まれるか、購入前にご確認ください。":"";
   return `<p class="q">あなたへの候補</p>${note?`<p class="note">${note}</p>`:""}<div class="res">${cards}</div><p class="note">${own}楽天市場・Yahoo!ショッピングの価格は各店の税込最安値（送料別の場合あり）で、毎朝更新しています。Amazonの価格は販売ページでご確認ください。${more}</p>`;
 }
