@@ -73,7 +73,8 @@ def rakuten(p):
         # 付属品（ケーブル・アダプター等）で上位が埋まらないよう、価格帯をAPI側で絞る
         "minPrice": int(p["ref"] * FLOOR),
         "maxPrice": int(p["ref"] * CEIL),
-        "NGKeyword": "変換 ケース ポーチ",
+        # 製品ごとの除外語（api_ng）も足す。安い別商品で上位30件が埋まり、本体が圏外になるのを防ぐ
+        "NGKeyword": " ".join(["変換", "ケース", "ポーチ"] + p.get("api_ng", [])),
     }
     url = RAKUTEN_URL + "?" + urllib.parse.urlencode(params)
     data = get_json(url, {"Referer": SITE, "Origin": SITE.rstrip("/")})
