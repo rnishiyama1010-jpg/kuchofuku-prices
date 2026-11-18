@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T12:13:27+09:00",
+ "updated": "2026-11-18T08:03:35+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -23,7 +23,13 @@
    }
   },
   "AC09": {
-   "rakuten": null,
+   "rakuten": {
+    "price": 13000,
+    "url": "https://item.rakuten.co.jp/kaitekimizu/ac08/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "快適水空館",
+    "freeShipping": false,
+    "name": "バートル エアークラフト AC09 24V リチウムイオンバッテリー 2025SS BURTLE AIRCRAFT 空調 服 空調ウェア 最新 モデル"
+   },
    "yahoo": {
     "price": 12001,
     "url": "https://store.shopping.yahoo.co.jp/juko-in/186051694.html",
@@ -351,8 +357,8 @@
    },
    "yahoo": {
     "price": 5250,
-    "url": "https://store.shopping.yahoo.co.jp/darumashouten/jichoudo-fga20010b.html",
-    "shop": "作業服の専門店だるま商店",
+    "url": "https://store.shopping.yahoo.co.jp/azumanet2014/jichoudo-fga20010b.html",
+    "shop": "アズマクロージング",
     "freeShipping": true,
     "name": "電熱インナーベスト EL バッテリー付き 防寒ベスト 電熱ベスト 自重堂 FGA20010 保温性 暖かい 防寒服 防寒着 アウトドア 秋冬 作業服 作業着"
    },
@@ -431,8 +437,8 @@
    },
    "yahoo": {
     "price": 11368,
-    "url": "https://store.shopping.yahoo.co.jp/uniform100ka/099-bo32550-rd9570.html",
-    "shop": "空調服・ファン付き作業着取扱店 ユニフォーム百科",
+    "url": "https://store.shopping.yahoo.co.jp/kucho100ka/099-bo32550-rd9570.html",
+    "shop": "武蔵野ユニフォーム 空調服・作業着取扱店",
     "freeShipping": false,
     "name": "サンエス インナーベスト 発熱ユニットセット BO32550-RD9570 5層構造でしっかり防風 秋冬 ヒートアイテム 作業着 作業服 メンズ ユニセックス ※バッテリー別売"
    },
@@ -537,42 +543,42 @@
   },
   "HV-CV202D": {
    "rakuten": {
-    "price": 13818,
-    "url": "https://item.rakuten.co.jp/tuzukiya/m03-6295/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "DIY FACTORY ONLINE SHOP",
-    "freeShipping": true,
-    "name": "マキタ CV202DZL 充電式 暖房ベスト(バッテリ・バッテリホルダ・充電器別売) L 黒 1点"
+    "price": 15730,
+    "url": "https://item.rakuten.co.jp/daikichi-ya/mk_cv202dzl/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "大吉屋 楽天市場店",
+    "freeShipping": false,
+    "name": "《丸洗い可能！》 マキタ 充電式暖房ベスト　L　CV202DZL【本体のみ】（ホルダ・バッテリ・充電器 別売り）"
    },
    "yahoo": {
     "price": 15463,
-    "url": "https://store.shopping.yahoo.co.jp/kabutechno/cv202dzl.html",
+    "url": "https://store.shopping.yahoo.co.jp/kabutechno/cv202dzs.html",
     "shop": "kabutechno",
     "freeShipping": false,
-    "name": "マキタ CV202DZ(Lサイズ) (本体のみ) 10.8V/14.4V/18V充電式暖房ベスト バッテリ・ケーブルユニットB別売■安心の純正/新品■"
+    "name": "マキタ CV202DZ(Sサイズ) (本体のみ) 10.8V/14.4V/18V充電式暖房ベスト バッテリ・ケーブルユニットB別売■安心の純正/新品■"
    },
    "lowest": {
-    "site": "rakuten",
-    "price": 13818
+    "site": "yahoo",
+    "price": 15463
    }
   },
   "HV-XE167": {
    "rakuten": {
-    "price": 4429,
-    "url": "https://item.rakuten.co.jp/dairyu21/167xe/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "作業服・作業用品のダイリュウ",
+    "price": 4900,
+    "url": "https://item.rakuten.co.jp/kanamon2022/xebec-1/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "かなモン楽天市場店",
     "freeShipping": true,
-    "name": "防寒ベスト ヒーター内蔵ベスト (単品) ジーベック 167 防寒着 送料無料"
+    "name": "【在庫あり】XEBEC　ヒーター内蔵ベスト167－90－L クロ 防寒ベスト"
    },
    "yahoo": {
     "price": 5870,
-    "url": "https://store.shopping.yahoo.co.jp/tk-netshop/xb-167.html",
-    "shop": "スポーツインナーSportsTK",
+    "url": "https://store.shopping.yahoo.co.jp/season-tk/xb-167.html",
+    "shop": "作業着 空調服&防寒着Season-TK",
     "freeShipping": true,
     "name": "ヒーター内蔵ベスト ヒートベスト 服単品 ジーベック ポリエステル 防風 保温 防寒 秋冬 XEBEC xb-167"
    },
    "lowest": {
     "site": "rakuten",
-    "price": 4429
+    "price": 4900
    }
   }
  }
