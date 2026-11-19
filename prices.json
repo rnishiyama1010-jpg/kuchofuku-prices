@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T11:38:16+09:00",
+ "updated": "2026-11-19T11:01:37+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -108,7 +108,7 @@
     "url": "https://item.rakuten.co.jp/a-price/4537065722357/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
     "shop": "XPRICE楽天市場店",
     "freeShipping": false,
-    "name": "空調風神服 空調ウェア ファン 作業服 暑さ対策 RD9293NJ F [12V リチウムイオンバッテリーセットBN] XP1120"
+    "name": "【11/20 19時~エントリーでP10倍】 空調風神服 空調ウェア ファン 作業服 暑さ対策 RD9293NJ F [12V リチウムイオンバッテリーセットBN] XP1120"
    },
    "yahoo": {
     "price": 12980,
@@ -128,7 +128,7 @@
     "url": "https://item.rakuten.co.jp/ezaki-g/atbs-rd9590pj/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
     "shop": "EZAKI NET GOLF",
     "freeShipping": false,
-    "name": "【11/18 エントリー/抽選で最大100%ポイントバック】 アタックベース 正規品 空調風神服装着ファン対応 JAPAN LABEL 24V仕様 リチウムイオンバッテリーセットJL-1 「 2025モデル 日本製 RD9590PJ 」 【当店在庫品】"
+    "name": "アタックベース 正規品 空調風神服装着ファン対応 JAPAN LABEL 24V仕様 リチウムイオンバッテリーセットJL-1 「 2025モデル 日本製 RD9590PJ 」 【当店在庫品】"
    },
    "yahoo": {
     "price": 13200,
@@ -212,8 +212,8 @@
    },
    "yahoo": {
     "price": 11132,
-    "url": "https://store.shopping.yahoo.co.jp/takahashihonsha/18302.html",
-    "shop": "高橋本社Yahoo!店",
+    "url": "https://store.shopping.yahoo.co.jp/total-homes/18302.html",
+    "shop": "Total Homes",
     "freeShipping": true,
     "name": "桑和 G.G. SOWA 18302 EFウェア 20V バッテリー(バッテリー+充電器) 20000mAh 2024年春夏新作"
    },
@@ -546,10 +546,10 @@
    },
    "yahoo": {
     "price": 15463,
-    "url": "https://store.shopping.yahoo.co.jp/kabutechno/cv202dzs.html",
+    "url": "https://store.shopping.yahoo.co.jp/kabutechno/cv202dzl.html",
     "shop": "kabutechno",
     "freeShipping": false,
-    "name": "マキタ CV202DZ(Sサイズ) (本体のみ) 10.8V/14.4V/18V充電式暖房ベスト バッテリ・ケーブルユニットB別売■安心の純正/新品■"
+    "name": "マキタ CV202DZ(Lサイズ) (本体のみ) 10.8V/14.4V/18V充電式暖房ベスト バッテリ・ケーブルユニットB別売■安心の純正/新品■"
    },
    "lowest": {
     "site": "yahoo",
