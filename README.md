@@ -4,7 +4,7 @@ Stock合同会社（stockmedia.biz）の空調服バッテリー比較ページ�
 
 - `products.json`：対象製品と検索条件（型番・除外語・参考価格）
 - `fetch_prices.py`：楽天市場とYahoo!ショッピングのAPIで最安値を取得し、`prices.json` に書き出す
-- `.github/workflows/update-prices.yml`：毎朝 5:47（日本時間）に自動実行
+- `.github/workflows/update-prices.yml`：毎朝 6:00（日本時間）に自動実行
 - `prices.json`：公開データ（GitHub Pages で配信）
 - `compat.html`：メーカー横断の互換性早見表（`prices.json` の最安値をボタンに表示）
 - `compat-generations.html`：バートル・FZN・村上被服の世代別互換表（2026-10-09 公式資料で確認）
