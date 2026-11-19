@@ -2,7 +2,7 @@ name: 最安値の毎日更新
 
 on:
   schedule:
-    - cron: "47 20 * * *"   # 毎朝 5:47（日本時間）
+    - cron: "0 21 * * *"    # 毎朝 6:00（日本時間）
   workflow_dispatch: {}      # Actions 画面から手動でも実行できる
 
 permissions:
