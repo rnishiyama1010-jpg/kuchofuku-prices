@@ -123,6 +123,7 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
 .tag.fan{background:var(--new-soft);color:var(--new)}
 .tag.bat{background:var(--panel);color:var(--ink)}
 .tag.off{background:var(--panel);color:var(--warn)}
+.tag.eol{background:var(--panel);color:var(--warn);font-weight:700;border:1px solid var(--warn)}
 .det{font-size:12px;color:var(--body);display:block;margin-top:4px}
 .safety{display:grid;gap:6px;font-size:13px;margin:0;padding-left:1.2em}
 .safety li{line-height:1.7}
@@ -195,6 +196,7 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
     <p>商品写真・ロゴ：各メーカー公式サイト・販売店サイトより。写真はイメージで、色や付属品が異なる場合があります。</p>
     <p>発熱か所・温度・使用時間はメーカーまたは販売店の公称値です。気温や着方で変わります。「—」は公表値が見つからなかった項目です。</p>
     <p>楽天市場・Yahoo!ショッピングの価格は新品の税込最安値を毎朝取得したもので、送料は含みません（「＋送料」は送料別の店です）。最安値が取れなかった店は「価格を見る」と表示しています。Amazonの価格は販売ページでご確認ください。</p>
+    <p>「廃番」は、メーカー公式サイトで廃番と表示されている製品です（アイトス AZ-8312・AZ-8313、2026年11月21日確認）。</p>
     <p>当サイトの運営会社（Stock合同会社）は、この表の一部の製品（自重堂 FEVERGEARなど）をAmazonで販売しています。</p>
   </div>
   <p class="nextread"><a href="https://www.stockmedia.biz/post/battery-care" target="_top">次に読む：長持ちさせる使い方と保管</a></p>
@@ -214,8 +216,8 @@ const D=[
  {id:"HV-BO32550",mk:"サンエス",nm:"雷神服 インナーベスト＋発熱ユニット",md:"BO32550＋RD9570",im:"BO32550",z:2,zd:"背中に2枚",t:null,bat:false,fan:true,usb:true,pw:"空調風神服の24V・12Vバッテリー、またはUSB 2A以上（別売）",run:"弱で約11時間（24V系）",wash:"—",p:12000,q:"雷神服 BO32550 RD9570",tag:"インナー"},
  {id:"HV-17029",mk:"桑和",nm:"G.G. ヒートベスト コンプリートセット",md:"17029",z:null,zd:"前後を切替",t:60,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"—",wash:"—",p:6500,noamz:true,q:"桑和 17029",warn:"在庫限りの店が多い"},
  {id:"HV-17019",mk:"桑和",nm:"G.G. ヒートベスト（シート脱着式）",md:"17019",z:2,zd:"取り外せるシート2枚",t:45,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"高 約3.5時間／低 約6時間",wash:"シートを外して洗える",p:8000,noamz:true,q:"桑和 17019"},
- {id:"HV-AZ8313",mk:"アイトス",nm:"TULTEX Vネック ヒーターベスト",md:"AZ-8313",z:2,zd:"背中・腰",t:55,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"—",wash:"手洗い",p:5000,q:"タルテックス 8313 ヒーターベスト",tag:"インナー"},
- {id:"HV-AZ8312",mk:"アイトス",nm:"TULTEX 衿付 ヒーターベスト",md:"AZ-8312",z:2,zd:"2か所",t:null,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属",run:"—",wash:"手洗い",p:5000,noamz:true,q:"タルテックス 8312 ヒーターベスト"},
+ {id:"HV-AZ8313",mk:"アイトス",nm:"TULTEX Vネック ヒーターベスト",md:"AZ-8313",eol:"廃番",eolN:"アイトス公式サイトで廃番と表示（2026-11-21確認）",z:2,zd:"背中・腰",t:55,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"—",wash:"手洗い",p:5000,q:"タルテックス 8313 ヒーターベスト",tag:"インナー"},
+ {id:"HV-AZ8312",mk:"アイトス",nm:"TULTEX 衿付 ヒーターベスト",md:"AZ-8312",eol:"廃番",eolN:"アイトス公式サイトで廃番と表示（2026-11-21確認）",z:2,zd:"2か所",t:null,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属",run:"—",wash:"手洗い",p:5000,noamz:true,q:"タルテックス 8312 ヒーターベスト"},
  {id:"HV-1077",mk:"村上被服",nm:"鳳皇 インナーヒートベスト",md:"1077",z:null,zd:"背中一面",t:null,bat:false,fan:true,usb:false,pw:"スモールバッテリーV1333（別売）。快適ウェア用バッテリーでも起動",run:"弱 約16〜23時間（V1333）",wash:"—",p:3500,q:"鳳皇 1077 ヒートベスト",tag:"インナー"},
  {id:"WZ8100",mk:"ワークマン",nm:"ウィンドコア ヒーターベスト",md:"WZ8100",z:null,zd:"背中・腰",t:50,bat:false,fan:true,usb:false,pw:"ハーフバッテリーWZ3310（別売4,900円）。ファン付きウェアと共用",run:"高 約4.3時間／低 約16時間",wash:"—",p:3900,q:"ワークマン ウィンドコア ヒーターベスト",official:{label:"ワークマン公式",price:3900,url:"https://workman.jp/"}},
  {id:"HV-CV202D",mk:"マキタ",nm:"充電式暖房ベスト",md:"CV202DZ",im:"CV202D",z:4,zd:"首元まで4か所",t:null,bat:false,fan:false,usb:false,pw:"マキタ10.8〜18Vバッテリ（ホルダ・充電器とも別売）",run:"18V 6.0Ahで強 約10時間／弱 約35時間",wash:"バッテリを外せば洗濯機可",p:15000,q:"マキタ CV202DZ",tag:"工具バッテリー"},
@@ -249,7 +251,8 @@ function sitePrice(d,k){const x=live(d)[k];return x&&x.price?`<span class="bp">$
 const shops=d=>d.official?`<div class="shops"><a class="buy official" href="${d.official.url}" target="_blank" rel="noopener">${esc(d.official.label)}<span class="bp">${yen(d.official.price)}</span></a></div>`:`<div class="shops">${d.noamz?'<span class="buy amazon na">Amazon<span class="bp">取扱なし</span></span>':`<a class="buy amazon" href="${amz(d.aq||d.q)}" ${R}>Amazon<span class="bp go">価格を見る</span></a>`}<a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場${sitePrice(d,"rakuten")}</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!<span class="ys">ショッピング</span>${sitePrice(d,"yahoo")}</a></div>`;
 function chips(el,list,key){el.innerHTML="";list.forEach(item=>{const label=Array.isArray(item)?item[0]:item;const b=document.createElement("button");b.type="button";b.className="chip";b.textContent=label;b.setAttribute("aria-pressed",String(st[key]===label));b.addEventListener("click",()=>{st[key]=label;chips(el,list,key);render()});el.appendChild(b);});}
 function tags(d){
-  let t=d.y===2026?'<span class="tag new">2026-27新製品</span>':'';
+  let t=d.eol?'<span class="tag eol" title="'+esc(d.eolN||"")+'">'+esc(d.eol)+'</span>':'';
+  t+=d.y===2026?'<span class="tag new">2026-27新製品</span>':'';
   t+=d.bat?'<span class="tag bat">バッテリー付き</span>':'<span class="tag off">バッテリー別売</span>';
   if(d.fan)t+='<span class="tag fan">空調服のバッテリー可</span>';
   if(d.tag)t+='<span class="tag">'+esc(d.tag)+'</span>';
