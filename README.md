@@ -13,3 +13,5 @@ APIキーは GitHub の Secrets に保存し、このリポジトリには含め
 製品を追加するときは `products.json` に1行足します。
 
 アフィリエイト：楽天市場はもしもアフィリエイト（どこでもリンク）、Yahoo!ショッピングはバリューコマース（MyLink、sid=3783843 / pid=892721954）、Amazonはアソシエイト（stockmedia-22）。楽天・Yahoo!の商品URLは `prices.json` に素のまま保存し、ページ側で各ASPのリンクに包みます。
+
+検索エンジン向けの設定：`table.html`・`heated.html`・`shindan.html`・`heated-shindan.html` は `<meta name="robots" content="noindex, indexifembedded">` にしています。GitHub Pages の単体のURLは検索に出さず、stockmedia.biz のページに埋め込まれたときだけ、そのページの中身として Google に読ませるためです（Google の indexifembedded）。
