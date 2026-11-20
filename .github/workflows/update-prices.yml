@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: update-prices
@@ -33,3 +34,7 @@ jobs:
           git add prices.json diagnostics.json
           git diff --cached --quiet || git commit -m "最安値を更新 $(TZ=Asia/Tokyo date +%F)"
           git push
+      - name: 値下がりのお知らせ（alerts.json の金額を切ったら Issue）
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python check_alerts.py
