@@ -57,6 +57,7 @@ h2{font-family:var(--display);color:var(--ink);font-size:24px;margin:0;line-heig
 .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
 .tag{font-size:10.5px;padding:1px 6px;border-radius:2px;background:var(--panel);color:var(--body)}
 .tag.new{background:var(--new-soft);color:var(--new)}
+.tag.eol{color:var(--warn);font-weight:700;border:1px solid var(--warn)}
 .pw{font-size:12px;margin:0;color:var(--body)}
 .note{font-size:12px;color:var(--mute);margin:0}
 .note a{color:var(--accent)}
@@ -88,8 +89,8 @@ const D=[
  {id:"HV-BO32550",runH:11,mk:"サンエス",nm:"雷神服 インナーベスト＋発熱ユニット",md:"BO32550＋RD9570",z:2,zd:"背中に2枚",t:null,bat:false,fan:true,usb:true,pw:"空調風神服の24V・12Vバッテリー、またはUSB 2A以上（別売）",run:"弱で約11時間（24V系）",wash:"—",p:12000,q:"雷神服 BO32550 RD9570",tag:"インナー"},
  {id:"HV-17029",runH:null,mk:"桑和",nm:"G.G. ヒートベスト コンプリートセット",md:"17029",z:null,zd:"前後を切替",t:60,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"—",wash:"—",p:6500,q:"桑和 17029",warn:"在庫限りの店が多い"},
  {id:"HV-17019",runH:6,mk:"桑和",nm:"G.G. ヒートベスト（シート脱着式）",md:"17019",z:2,zd:"取り外せるシート2枚",t:45,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"高 約3.5時間／低 約6時間",wash:"シートを外して洗える",p:8000,q:"桑和 17019"},
- {id:"HV-AZ8313",runH:null,mk:"アイトス",nm:"TULTEX Vネック ヒーターベスト",md:"AZ-8313",z:2,zd:"背中・腰",t:55,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"—",wash:"手洗い",p:5000,q:"タルテックス 8313 ヒーターベスト",tag:"インナー"},
- {id:"HV-AZ8312",runH:null,mk:"アイトス",nm:"TULTEX 衿付 ヒーターベスト",md:"AZ-8312",z:2,zd:"2か所",t:null,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属",run:"—",wash:"手洗い",p:5000,q:"タルテックス 8312 ヒーターベスト"},
+ {id:"HV-AZ8313",runH:null,mk:"アイトス",nm:"TULTEX Vネック ヒーターベスト",md:"AZ-8313",eol:"廃番",eolN:"アイトス公式サイトで廃番と表示（2026-11-21確認）",z:2,zd:"背中・腰",t:55,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"—",wash:"手洗い",p:5000,q:"タルテックス 8313 ヒーターベスト",tag:"インナー"},
+ {id:"HV-AZ8312",runH:null,mk:"アイトス",nm:"TULTEX 衿付 ヒーターベスト",md:"AZ-8312",eol:"廃番",eolN:"アイトス公式サイトで廃番と表示（2026-11-21確認）",z:2,zd:"2か所",t:null,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属",run:"—",wash:"手洗い",p:5000,q:"タルテックス 8312 ヒーターベスト"},
  {id:"HV-1077",runH:23,mk:"村上被服",nm:"鳳皇 インナーヒートベスト",md:"1077",z:null,zd:"背中一面",t:null,bat:false,fan:true,usb:false,pw:"スモールバッテリーV1333（別売）。快適ウェア用バッテリーでも起動",run:"弱 約16〜23時間（V1333）",wash:"—",p:3500,q:"鳳皇 1077 ヒートベスト",tag:"インナー"},
  {id:"WZ8100",runH:16,mk:"ワークマン",nm:"ウィンドコア ヒーターベスト",md:"WZ8100",z:null,zd:"背中・腰",t:50,bat:false,fan:true,usb:false,pw:"ハーフバッテリーWZ3310（別売4,900円）。ファン付きウェアと共用",run:"高 約4.3時間／低 約16時間",wash:"—",p:3900,q:"ワークマン ウィンドコア ヒーターベスト",official:{label:"ワークマン公式",price:3900,url:"https://workman.jp/"}},
  {id:"HV-CV202D",runH:35,mk:"マキタ",nm:"充電式暖房ベスト",md:"CV202DZ",z:4,zd:"首元まで4か所",t:null,bat:false,fan:false,usb:false,pw:"マキタ10.8〜18Vバッテリ（ホルダ・充電器とも別売）",run:"18V 6.0Ahで強 約10時間／弱 約35時間",wash:"バッテリを外せば洗濯機可",p:15000,q:"マキタ CV202DZ",tag:"工具バッテリー"},
@@ -150,7 +151,7 @@ function render(){
   const bk=document.getElementById("back");if(bk)bk.addEventListener("click",back);
 }
 function back(){const s=seq().filter(k=>st[k]!==null);const k=s[s.length-1];st[k]=null;if(k==="pw"){st.fan=null;st.sty=null;st.pri=null;}render();}
-function tags(d){let t=d.y===2026?'<span class="tag new">2026-27新製品</span>':'';t+=d.bat?'<span class="tag">バッテリー付き</span>':'<span class="tag">バッテリー別売</span>';if(d.tag)t+=`<span class="tag">${esc(d.tag)}</span>`;if(d.own)t+='<span class="tag">当社もAmazonで販売</span>';return `<div class="tags">${t}</div>`;}
+function tags(d){let t=d.eol?`<span class="tag eol" title="${esc(d.eolN||"")}">${esc(d.eol)}</span>`:'';t+=d.y===2026?'<span class="tag new">2026-27新製品</span>':'';t+=d.bat?'<span class="tag">バッテリー付き</span>':'<span class="tag">バッテリー別売</span>';if(d.tag)t+=`<span class="tag">${esc(d.tag)}</span>`;if(d.own)t+='<span class="tag">当社もAmazonで販売</span>';return `<div class="tags">${t}</div>`;}
 const shops=d=>d.official?`<div class="shops one"><a class="buy official" href="${d.official.url}" target="_blank" rel="noopener">${esc(d.official.label)}<span class="bp">${yen(d.official.price)}</span></a></div>`:`<div class="shops"><a class="buy amazon" href="${amz(d.q)}" ${R}>Amazon<span class="bp go">価格を見る</span></a><a class="buy rakuten" href="${shopUrl(d,"rakuten",rkt)}" ${R}>楽天市場${sitePrice(d,"rakuten")}</a><a class="buy yahoo" href="${shopUrl(d,"yahoo",yhs)}" ${R}>Yahoo!${sitePrice(d,"yahoo")}</a></div>`;
 function result(){
   let pool,note="",why;
