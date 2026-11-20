@@ -117,6 +117,7 @@ td .sub{display:block;font-family:var(--sans);font-size:11.5px;color:var(--mute)
 .related b{color:var(--ink);font-size:12.5px}
 .related a{color:var(--accent)}
 
+@media (max-width:560px){.wrap{padding-inline:8px}.controls{padding:12px;gap:12px 16px}.chips{gap:5px}.chip{font-size:12px;padding:3px 9px;letter-spacing:0}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 .nextread{margin:8px 0 0;text-align:left;line-height:1.5}.nextread a{display:inline-block;padding:6px 14px;border-radius:4px;background:var(--accent);color:#fff;font-size:13px;font-weight:700;text-decoration:none}.nextread a:hover{opacity:.9}@media (max-width:760px){.nextread a{font-size:12px;padding:5px 10px}.biz,.notice{margin-top:8px}.related{margin-top:4px}}
 .buy.na{opacity:.45;cursor:default}
@@ -194,6 +195,7 @@ const D=[
  {mk:"村上被服",nm:"鳳皇 バッテリーセット V30",md:"V3001",y:2026,v:30,vt:"30V / 19V / 17V / 15V / 12V",air:120,run:17,runN:"12V時",ch:"約4.5時間",w:470,p:13695,pN:"販売店",kind:"充電器付",cp:"V30・V28ファン",warn:"V28は30V不可・V19は非対応",tag:"USB同時出力",aq:"村上被服 V3001",q:"鳳皇 V3001"},
  {mk:"村上被服",nm:"鳳皇 コンプリートセット 15V",md:"SV900",y:2025,v:15,vt:"15V / 13V / 10V / 8.4V",air:82,run:17.5,runN:"8.4V時",ch:"—",w:330,p:13178,pN:"販売店",kind:"ファン付きセット",cp:"SV900ファン（同梱）",tag:"USB-C充電",q:"鳳皇 SV900"}
 ];
+const CHIPLBL={"株式会社空調服":"空調服"};
 const MAKERS=["すべて","バートル","サンエス","株式会社空調服","桑和","村上被服"];
 const VOLTS=[["すべて",()=>true],["30V級",v=>v>=30],["24〜28V",v=>v>=24&&v<30],["20V以下",v=>v<24]];
 const st={mk:"すべて",vc:"すべて",sort:"air",only26:false};
@@ -232,7 +234,7 @@ function chips(el,list,key){
   list.forEach(item=>{
     const label=Array.isArray(item)?item[0]:item;
     const b=document.createElement("button");
-    b.type="button";b.className="chip";b.textContent=label;
+    b.type="button";b.className="chip";b.textContent=CHIPLBL[label]||label;
     b.setAttribute("aria-pressed",String(st[key]===label));
     b.addEventListener("click",()=>{st[key]=label;chips(el,list,key);render()});
     el.appendChild(b);
