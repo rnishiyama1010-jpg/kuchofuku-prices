@@ -164,6 +164,8 @@ function result(){
     if(bySty.length)pool=bySty;else note=`「${esc(PW[st.pw].l)}」の中に「${esc(STY[st.sty].l)}」タイプがないため、すべてのタイプから選びました。`;
     const k=PRI[st.pri].k;pool=[...pool].sort((a,b)=>k(a)-k(b)||price(a)-price(b));why=PRI[st.pri].why;
   }
+  // 廃番の製品は候補に出さない（ほかに1つもないときだけ残す）。一覧表には残る
+  {const cur=pool.filter(d=>!d.eol);if(cur.length)pool=cur;}
   pool=pool.slice(0,3);
   const cards=pool.map((d,i)=>`<article class="card">
       <span class="rank">候補 ${i+1}</span>
