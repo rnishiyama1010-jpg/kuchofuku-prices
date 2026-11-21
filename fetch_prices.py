@@ -37,9 +37,20 @@ def norm(s):
     return re.sub(r"[\s\-_‐－]", "", s)
 
 
+def exact_model(name, model):
+    """型番が「AC10-1」「AC10-2」のような枝番つきの別品番ではなく、型番そのものとして出ているか。
+    norm() はハイフンを消すので、ここではハイフンを残したまま調べる。"""
+    s = unicodedata.normalize("NFKC", name or "").upper()
+    m = re.escape(unicodedata.normalize("NFKC", model).upper())
+    return re.search(rf"(?<![A-Z0-9]){m}(?![\-‐－‑–—ー]?[0-9])", s) is not None
+
+
 def matches(name, p):
     n = norm(name)
     if not all(norm(t) in n for t in p["must"]):
+        return False
+    # exact: 型番のあとに枝番（-1, -2 など）が続くものだけの商品は別品番として外す
+    if p.get("exact") and not all(exact_model(name, t) for t in p["must"]):
         return False
     if p["any"] and not any(norm(t) in n for t in p["any"]):
         return False
