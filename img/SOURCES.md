@@ -59,4 +59,4 @@
 | products/17019.jpg | https://item.rakuten.co.jp/b-side/sw-8979-06/ | 旧品番8979-06時代の写真（同じ製品） |
 | products/167.jpg | https://store.shopping.yahoo.co.jp/worktk/xb-167.html | 2色 |
 
-写真なし（メーカーロゴで代用表示）：ワークマン WZ8100（公式・楽天・Yahoo!・Amazonに本体の販売ページなし）
+写真なし（メーカーロゴで代用表示）：ワークマン W9200A（公式オンラインストアに商品ページあり。写真はまだ載せていない）

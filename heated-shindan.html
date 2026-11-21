@@ -92,7 +92,7 @@ const D=[
  {id:"HV-AZ8313",runH:null,mk:"アイトス",nm:"TULTEX Vネック ヒーターベスト",md:"AZ-8313",eol:"廃番",eolN:"アイトス公式サイトで廃番と表示（2026-11-21確認）",z:2,zd:"背中・腰",t:55,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属（PSE）",run:"—",wash:"手洗い",p:5000,q:"タルテックス 8313 ヒーターベスト",tag:"インナー"},
  {id:"HV-AZ8312",runH:null,mk:"アイトス",nm:"TULTEX 衿付 ヒーターベスト",md:"AZ-8312",eol:"廃番",eolN:"アイトス公式サイトで廃番と表示（2026-11-21確認）",z:2,zd:"2か所",t:null,bat:true,fan:false,usb:false,pw:"専用10,000mAh付属",run:"—",wash:"手洗い",p:5000,q:"タルテックス 8312 ヒーターベスト"},
  {id:"HV-1077",runH:23,mk:"村上被服",nm:"鳳皇 インナーヒートベスト",md:"1077",z:null,zd:"背中一面",t:null,bat:false,fan:true,usb:false,pw:"スモールバッテリーV1333（別売）。快適ウェア用バッテリーでも起動",run:"弱 約16〜23時間（V1333）",wash:"—",p:3500,q:"鳳皇 1077 ヒートベスト",tag:"インナー"},
- {id:"WZ8100",runH:16,mk:"ワークマン",nm:"ウィンドコア ヒーターベスト",md:"WZ8100",z:null,zd:"背中・腰",t:50,bat:false,fan:true,usb:false,pw:"ハーフバッテリーWZ3310（別売4,900円）。ファン付きウェアと共用",run:"高 約4.3時間／低 約16時間",wash:"—",p:3900,q:"ワークマン ウィンドコア ヒーターベスト",official:{label:"ワークマン公式",price:3900,url:"https://workman.jp/"}},
+ {id:"W9200A",runH:16,mk:"ワークマン",nm:"ウィンドコアヒーターインナーベスト",md:"W9200A",z:2,zd:"背中・腰",t:50,bat:false,fan:true,usb:false,pw:"ハーフバッテリーWZ3310（別売4,900円）。ファン付きウェアと共用",run:"高 約4.3時間／低 約16時間",wash:"手洗い",p:3900,q:"ワークマン W9200A ヒーターインナーベスト",official:{label:"ワークマン公式",price:3900,url:"https://workman.jp/shop/g/g2300036845025/"},tag:"インナー"},
  {id:"HV-CV202D",runH:35,mk:"マキタ",nm:"充電式暖房ベスト",md:"CV202DZ",z:4,zd:"首元まで4か所",t:null,bat:false,fan:false,usb:false,pw:"マキタ10.8〜18Vバッテリ（ホルダ・充電器とも別売）",run:"18V 6.0Ahで強 約10時間／弱 約35時間",wash:"バッテリを外せば洗濯機可",p:15000,q:"マキタ CV202DZ",tag:"工具バッテリー"},
  {id:"HV-XE167",runH:5,mk:"ジーベック",nm:"ヒーター内蔵ベスト",md:"167",z:2,zd:"背中・腰",t:60,bat:false,fan:false,usb:true,pw:"USBモバイルバッテリー5V・2.1A以上（別売）",run:"約3〜5時間（2時間で自動停止）",wash:"手洗い",p:6800,q:"ジーベック 167 ヒーター"}
 ];
@@ -123,7 +123,7 @@ const PW={bat:{l:"バッテリー付きで買いたい",s:"届いてすぐ使え
 // 空調服バッテリーのメーカー → 使える電熱ベスト
 const FAN={ac10:{l:"バートル AC10",ids:["HV-3274"]},ac09:{l:"バートル AC09・AC08",ids:["HV-3214"]},
  sun:{l:"サンエス（空調風神服）",ids:["HV-BO32550"]},mura:{l:"村上被服（鳳皇）",ids:["HV-1077"]},
- wm:{l:"ワークマン",ids:["WZ8100"]},other:{l:"それ以外・わからない",ids:null}};
+ wm:{l:"ワークマン",ids:["W9200A"]},other:{l:"それ以外・わからない",ids:null}};
 const STY={outer:{l:"上着として着る",s:"作業服の上に羽織る",f:d=>!inner(d)},in:{l:"服の下に着る（インナー）",s:"薄手で着ぶくれしにくい",f:inner},any:{l:"どちらでもよい",s:"",f:()=>true}};
 const PRI={warm:{l:"とにかく暖かく",s:"最高温度・発熱か所が多い順",k:d=>-((d.t??0)*10+(d.z??0)),why:d=>[d.t?`最高 約${d.t}℃`:"最高温度は非公表",d.z?`発熱 ${d.z}か所`:""].filter(Boolean).join("・")},
  run:{l:"一日しっかりもつ",s:"最長の使用時間が長い順",k:d=>-(d.runH??-1),why:d=>d.runH?`最長 約${d.runH}時間（弱運転）`:"使用時間は非公表"},
