@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T12:23:10+09:00",
+ "updated": "2026-11-28T12:00:58+09:00",
  "note": "楽天市場・Yahoo!ショッピングの税込価格（送料別の場合あり）。Amazonは掲載規約により未掲載。",
  "items": {
   "AC10": {
@@ -172,8 +172,8 @@
    },
    "yahoo": {
     "price": 11113,
-    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt25211.html",
-    "shop": "カナジン 2号店",
+    "url": "https://store.shopping.yahoo.co.jp/toolking/bt25211.html",
+    "shop": "ツールキング",
     "freeShipping": false,
     "name": "BT25211 バッテリー 25V 本体のみ バッテリー 8216025 空調服 小型便 在庫"
    },
@@ -192,8 +192,8 @@
    },
    "yahoo": {
     "price": 9552,
-    "url": "https://store.shopping.yahoo.co.jp/2kanajin/bt23211-xebec.html",
-    "shop": "カナジン 2号店",
+    "url": "https://store.shopping.yahoo.co.jp/toolking/bt23211-xebec.html",
+    "shop": "ツールキング",
     "freeShipping": false,
     "name": "ジーベック BT23211 バッテリー 本体 18V 999-888 空調服 XEBEC 小型便 在庫"
    },
@@ -212,8 +212,8 @@
    },
    "yahoo": {
     "price": 11132,
-    "url": "https://store.shopping.yahoo.co.jp/takahashihonsha/18302.html",
-    "shop": "高橋本社Yahoo!店",
+    "url": "https://store.shopping.yahoo.co.jp/total-homes/18302.html",
+    "shop": "Total Homes",
     "freeShipping": true,
     "name": "桑和 G.G. SOWA 18302 EFウェア 20V バッテリー(バッテリー+充電器) 20000mAh 2024年春夏新作"
    },
@@ -224,11 +224,11 @@
   },
   "16108": {
    "rakuten": {
-    "price": 13300,
-    "url": "https://item.rakuten.co.jp/worclo/sowa_16108/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
-    "shop": "ワークウェア通販 WORCLO",
+    "price": 11429,
+    "url": "https://item.rakuten.co.jp/jyusetsupro/1777002467/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
+    "shop": "住設プロ 楽天市場店",
     "freeShipping": false,
-    "name": "G.G. 16108 デバイス[ 桑和 G GROUND ジーグラウンド ファン付きウェア バッテリー ファン 交換用パーツ 熱中症対策 猛暑対策 暑さ対策 冷感 涼しい 節電 ]"
+    "name": "桑和（SOWA）　G．G．　16108デバイスセット用バッテリー　20000mAh　【品番：16105】"
    },
    "yahoo": {
     "price": 14198,
@@ -239,7 +239,7 @@
    },
    "lowest": {
     "site": "rakuten",
-    "price": 13300
+    "price": 11429
    }
   },
   "V3001": {
@@ -311,15 +311,15 @@
     "name": "【FEVER GEAR ADVANCE】電熱ベスト FGA79010 SS〜LL （発熱体内臓型・専用バッテリー付）｜ 発熱 / 防寒 / 寒さ対策 / 作業着 / 自重堂 / Z-DRAGON"
    },
    "yahoo": {
-    "price": 5140,
-    "url": "https://store.shopping.yahoo.co.jp/oosumi-marutake/fga79010.html",
-    "shop": "作業服 キノウェアショップ",
-    "freeShipping": false,
-    "name": "(バッテリー付) FEVER GEAR ADVANCE 自重堂 FGA79010 電熱ベスト SS〜5L ヒーターベスト ヒートベスト"
+    "price": 4950,
+    "url": "https://store.shopping.yahoo.co.jp/uni-b/dsk-fga79010.html",
+    "shop": "作業服のユニバース",
+    "freeShipping": true,
+    "name": "＼P3倍／ 電熱ベスト 自重堂 FGA79010 ジィードラゴン アウター 防寒 モバイルバッテリーセット 電熱ウェア USB バッテリー付き FEVER GEAR 秋冬"
    },
    "lowest": {
-    "site": "rakuten",
-    "price": 5089
+    "site": "yahoo",
+    "price": 4950
    }
   },
   "HV-FGA20000": {
@@ -352,8 +352,8 @@
    },
    "yahoo": {
     "price": 5250,
-    "url": "https://store.shopping.yahoo.co.jp/azumanet2014/jichoudo-fga20010b.html",
-    "shop": "アズマクロージング",
+    "url": "https://store.shopping.yahoo.co.jp/darumashouten/jichoudo-fga20010b.html",
+    "shop": "作業服の専門店だるま商店",
     "freeShipping": true,
     "name": "電熱インナーベスト EL バッテリー付き 防寒ベスト 電熱ベスト 自重堂 FGA20010 保温性 暖かい 防寒服 防寒着 アウトドア 秋冬 作業服 作業着"
    },
@@ -375,7 +375,7 @@
     "url": "https://store.shopping.yahoo.co.jp/gakuseifuku/3214tc500.html",
     "shop": "学生服の専門店 学生王",
     "freeShipping": true,
-    "name": "【予約販売】バートル 防寒着 BURTLE 3274 サーモベスト+ TC501 電熱パッドのセット  (バッテリー別売り) 防寒ベスト 電熱ベスト サーモクラフト (12月初旬発送)"
+    "name": "【即日発送】バートル 防寒着 BURTLE 3274 サーモベスト+ TC501 電熱パッドのセット  (バッテリー別売り) 防寒ベスト 電熱ベスト サーモクラフト 11月末発送開始"
    },
    "lowest": {
     "site": "rakuten",
@@ -388,7 +388,7 @@
     "url": "https://item.rakuten.co.jp/w-shokai/burtle-3214vest/?rafcid=wsc_i_is_be0a2312-29f9-4fff-9b0e-cc441259db22",
     "shop": "作業服の渡辺商会",
     "freeShipping": false,
-    "name": "★在庫処分価格 【在庫限り／即日発送】防寒服 バートル サーモクラフト 軽防寒ベスト 3214 M-XL 単品 防寒 発熱 ヒーター 防寒着 暖かい ホット 作業服 作業着 ユニセックス メンズ レディース BURTLE 返品交換不可"
+    "name": "【在庫処分価格★現品限り★即日発送】防寒服 バートル サーモクラフト 軽防寒ベスト 3214 M-XL 単品 防寒 発熱 ヒーター 防寒着 暖かい ホット 作業服 作業着 ユニセックス メンズ レディース BURTLE 返品交換不可"
    },
    "yahoo": {
     "price": 2400,
@@ -566,8 +566,8 @@
    },
    "yahoo": {
     "price": 5870,
-    "url": "https://store.shopping.yahoo.co.jp/tk-netshop/xb-167.html",
-    "shop": "スポーツインナーSportsTK",
+    "url": "https://store.shopping.yahoo.co.jp/worktk/xb-167.html",
+    "shop": "作業服・空調服・医療白衣のWorkTK",
     "freeShipping": true,
     "name": "ヒーター内蔵ベスト ヒートベスト 服単品 ジーベック ポリエステル 防風 保温 防寒 秋冬 XEBEC xb-167"
    },
